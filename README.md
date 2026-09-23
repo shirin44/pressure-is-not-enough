@@ -1,4 +1,6 @@
-# AISI
+# Pressure Is Not Enough
+
+**A Causal Test of Whether Optimization Induces Encoded Chain-of-Thought**
 
 Sparse encoding (SAE-based) detection of adversarially trained steganographic encoding in LLM chain-of-thought reasoning.
 
