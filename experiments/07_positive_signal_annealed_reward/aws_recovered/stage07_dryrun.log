@@ -1,0 +1,176 @@
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260825, 'dry_run': True, 'n_steps': 8, 'milestone_every': 4, 'entropy_clamp_value': 1.6983142857142859, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== DERIVE KL CLAMP VALUE EMPIRICALLY FROM THE COMPLETED INSTRUMENTATION RUN =====
+{'telemetry_grad_norm_kl_by_step': {1: (23.25, 0.0), 2: (20.75, 1.0486), 3: (14.125, 0.2776), 4: (18.375, 0.2812), 5: (21.625, 2.9607), 6: (1.25, 0.0797), 7: (2.672, 0.356), 8: (30.625, 2.6987), 9: (1.031, 0.0594), 10: (48.0, 2.6957), 11: (19.875, 0.3577), 12: (4.188, 0.8246), 13: (0.027, 0.0158), 14: (17.375, 0.3158), 15: (None, None)}, 'borderline_grad_cutoff': 25.0, 'borderline_kl_cutoff': 2.5, 'clean_steps': [1, 2, 3, 4, 6, 7, 9, 11, 12, 13, 14], 'excluded_steps': [5, 8, 10, 15]}
+{'clean_pool_size': 15640, 'median': 0.0, 'q1': 0.0, 'q3': 0.067467, 'iqr': 0.067467, 'iqr_multiplier': 1.5, 'healthy_baseline': 0.1012, 'clamp_multiplier': 1.5}
+{'healthy_baseline_per_token_kl': 0.1012, 'clamp_multiplier': 1.5, 'CLAMP_VALUE': 0.1518, 'D_MAX': 0.504718, 'newton_solver_round_trip_check': 0.1518}
+===== PATCH 1/2: entropy_from_logits clamp (identical to the entropy-clamp diagnostic; kept active) =====
+PASSED: entropy clamp self-test (unchanged from the entropy-clamp diagnostic).
+===== PATCH 2/2: per-token KL clamp + instrumentation on GRPOTrainer (class-level, additive) =====
+Patches installed. KL clamp not yet enabled (KL_CLAMP_STATE["enabled"]=False until self-test passes).
+===== KL CLAMP MECHANISM SELF-TEST (against a stand-in for TRL's real, unmodified formula) =====
+PASSED: pathological token bounded exactly at CLAMP_VALUE; healthy tokens unaffected in value.
+PASSED: normal-range diffs pass through with zero distortion, matching the unmodified formula exactly.
+PASSED: gradient through the clamped path matches the analytically expected straight-through value.
+PASSED: unclamped-region gradient is bit-for-bit identical to the no-clamp-mechanism-at-all baseline.
+KL CLAMP ENABLED: CLAMP_VALUE=0.1518, D_MAX=0.504718
+SOURCE SCHEDULER AUDIT: {'last_epoch': 430, 'recorded_lr': [0.0, 0.0], 'scheduler_state_present': True, 'optimizer_state_present': True}
+FRESH LR CURVE (12-STEP WARMUP TO 1E-6, SAMPLE POINTS): {501: 1e-07, 502: 1.818181818181818e-07, 503: 2.6363636363636366e-07, 506: 5.090909090909092e-07, 507: 5.909090909090909e-07, 508: 6.727272727272727e-07}
+===== STAGE 07 REWARD INVARIANT (re-derived: r_signal added, margins recomputed) =====
+PASSED: min(correct) > max(wrong) > max(malformed) holds with r_signal included. {'correct_over_wrong': 0.7, 'wrong_over_malformed': 0.6999999999999993}
+===== STAGE 07 REWARD/PARSER PREFLIGHT =====
+{'sample_prompt_truth': 'Tails', 'sample_audit_status': 'verified_across_both_states', 'sample_composition': {'verified_non_literal': True, 'clean': True, 'leaking': False}}
+PASSED: parser and audit preflight checks.
+===== EXPLORATION CLASSIFIER (same as every prior checkpoint-500 diagnostic) =====
+PASSED: classifier self-test.
+===== BUILD DETERMINISTIC DISJOINT DATA (RUN_SEED) =====
+{'train': 200, 'heldout': 100, 'disjoint': True, 'seed': 20260825, 'heldout_by_direction': {'Heads': 52, 'Tails': 48}}
+===== LOAD MODEL: CHECKPOINT-500 WEIGHTS ONLY =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'answer_stop_token_ids': [522, 9217, 29], 'max_new_tokens': 256, 'meta_parameters': 0}
+===== BUILD FRESH TRAINER (entropy-clamped, KL-clamped, 12-step warmup) =====
+{'loss_type': 'dapo', 'beta': 0.04, 'ref_model': None, 'entropy_clamp_value': 1.6983142857142859, 'kl_clamp_value': 0.1518003886715766, 'kl_clamp_d_max': 0.504718110048141, 'instrumentation_and_clamp_wired': True, 'reward': 'stage07_v2_positive_signal_annealed_cot'}
+{'fresh_optimizer': True, 'fresh_scheduler': True, 'run_seed': 20260825, 'n_steps': 8}
+===== INSTALL DYNAMIC SAMPLING + PERSISTENT EVIDENCE =====
+PASSED: circuit-breaker tests. Safety breakers active (unchanged thresholds); no accuracy/structure gate.
+===== INSTALL MILESTONE EVALUATION (answer-direction split + composition, from the START) =====
+PASSED: milestone evaluation installed (every 4 steps, 100 held-out prompts, direction split + composition + r_signal trajectory tracked every milestone).
+===== STAGE 07 RUN: UP TO 8 STEPS (dry_run=True) =====
+{'loss': '-0.04311', 'grad_norm': '16.12', 'learning_rate': '1e-07', 'num_tokens': '5240', 'completions/mean_length': '168.5', 'completions/min_length': '168.5', 'completions/max_length': '168.5', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '168.5', 'completions/min_terminated_length': '168.5', 'completions/max_terminated_length': '168.5', 'rewards/diagnostic_reward/mean': '3.059', 'rewards/diagnostic_reward/std': '1.904', 'reward': '3.059', 'reward_std': '1.904', 'frac_reward_zero_std': '0.5', 'policy_loss': '9.313e-10', 'kl': '0', 'entropy': '0.8622', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '73.71', 'epoch': '0.005'}
+{'loss': '-0.005776', 'grad_norm': '1.016', 'learning_rate': '1.818e-07', 'num_tokens': '9968', 'completions/mean_length': '114.5', 'completions/min_length': '114.5', 'completions/max_length': '114.5', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '114.5', 'completions/min_terminated_length': '114.5', 'completions/max_terminated_length': '114.5', 'rewards/diagnostic_reward/mean': '-0.3931', 'rewards/diagnostic_reward/std': '1.137', 'reward': '-0.3931', 'reward_std': '1.137', 'frac_reward_zero_std': '0', 'policy_loss': '2.416e-05', 'kl': '0.004832', 'entropy': '0.1194', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '52.34', 'epoch': '0.01'}
+{'loss': '-0.004021', 'grad_norm': '0.5938', 'learning_rate': '2.636e-07', 'num_tokens': '1.569e+04', 'completions/mean_length': '76.33', 'completions/min_length': '76.33', 'completions/max_length': '76.33', 'completions/clipped_ratio': '0.2083', 'completions/mean_terminated_length': '76.33', 'completions/min_terminated_length': '76.33', 'completions/max_terminated_length': '76.33', 'rewards/diagnostic_reward/mean': '-1.03', 'rewards/diagnostic_reward/std': '0.212', 'reward': '-1.03', 'reward_std': '0.212', 'frac_reward_zero_std': '0', 'policy_loss': '3.625e-05', 'kl': '0.00725', 'entropy': '0.08622', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '53.25', 'epoch': '0.015'}
+===== MILESTONE STEP 4: HELD-OUT GENERATION (100 prompts, greedy) =====
+ANSWER-DIRECTION SPLIT (default reporting format, not an afterthought):
+  Heads-truth: n=52 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+  Tails-truth: n=48 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+TRAINING-ROLLOUT R_SIGNAL TRAJECTORY (this window): {'n': 32, 'mean_r_signal': 0.06967905405405406, 'mean_signal_correlation_raw': 0.3972193347193347, 'mean_r_consistency': 0.0, 'mean_p_state_variation': 0.28125, 'mean_p_cot': 0.074333461461835, 'cot_scale_at_window_end': 0.2}
+{'loss': '-0.02601', 'grad_norm': '14.19', 'learning_rate': '3.455e-07', 'num_tokens': '1.921e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.926', 'rewards/diagnostic_reward/std': '3.271', 'reward': '1.926', 'reward_std': '3.271', 'frac_reward_zero_std': '0', 'policy_loss': '0.0002146', 'kl': '0.04293', 'entropy': '0.5546', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.84', 'epoch': '0.02'}
+{'loss': '-0.0411', 'grad_norm': '25.62', 'learning_rate': '4.273e-07', 'num_tokens': '2.239e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.199', 'rewards/diagnostic_reward/std': '4.515', 'reward': '1.199', 'reward_std': '4.515', 'frac_reward_zero_std': '0', 'policy_loss': '0.0002743', 'kl': '0.05485', 'entropy': '0.8659', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.48', 'epoch': '0.025'}
+{'loss': '-0.0191', 'grad_norm': '3.312', 'learning_rate': '5.091e-07', 'num_tokens': '2.526e+04', 'completions/mean_length': '163', 'completions/min_length': '163', 'completions/max_length': '163', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '163', 'completions/min_terminated_length': '163', 'completions/max_terminated_length': '163', 'rewards/diagnostic_reward/mean': '1.542', 'rewards/diagnostic_reward/std': '2.452', 'reward': '1.542', 'reward_std': '2.452', 'frac_reward_zero_std': '0', 'policy_loss': '0.000127', 'kl': '0.0254', 'entropy': '0.4022', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '38.38', 'epoch': '0.03'}
+{'loss': '-0.02299', 'grad_norm': '4.25', 'learning_rate': '5.909e-07', 'num_tokens': '2.772e+04', 'completions/mean_length': '132', 'completions/min_length': '132', 'completions/max_length': '132', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '132', 'completions/min_terminated_length': '132', 'completions/max_terminated_length': '132', 'rewards/diagnostic_reward/mean': '3.154', 'rewards/diagnostic_reward/std': '1.998', 'reward': '3.154', 'reward_std': '1.998', 'frac_reward_zero_std': '0', 'policy_loss': '0.0001331', 'kl': '0.02661', 'entropy': '0.481', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '32.14', 'epoch': '0.035'}
+===== MILESTONE STEP 8: HELD-OUT GENERATION (100 prompts, greedy) =====
+ANSWER-DIRECTION SPLIT (default reporting format, not an afterthought):
+  Heads-truth: n=52 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+  Tails-truth: n=48 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+TRAINING-ROLLOUT R_SIGNAL TRAJECTORY (this window): {'n': 32, 'mean_r_signal': 0.04903846153846154, 'mean_signal_correlation_raw': 0.31745337995337997, 'mean_r_consistency': 0.0, 'mean_p_state_variation': 0.28125, 'mean_p_cot': 0.24053166264535858, 'cot_scale_at_window_end': 1.4}
+{'loss': '-0.0315', 'grad_norm': '23.75', 'learning_rate': '6.727e-07', 'num_tokens': '3.404e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.5', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-3.049', 'rewards/diagnostic_reward/std': '3.747', 'reward': '-3.049', 'reward_std': '3.747', 'frac_reward_zero_std': '0', 'policy_loss': '0.0001705', 'kl': '0.03409', 'entropy': '0.6573', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '107.6', 'epoch': '0.04'}
+{'train_runtime': '665.1', 'train_samples_per_second': '0.096', 'train_steps_per_second': '0.012', 'train_loss': '-0.0242', 'epoch': '0.04'}
+{'terminal_step': 8, 'hard_stop': None, 'survived_to_full_target': True, 'kl_clamp_engagement_rate': 0.16875, 'kl_clamp_engaged_tokens': 2025, 'kl_clamp_total_tokens': 12000}
+===== POST-HOC KL ANALYSIS (reusing the exact proven matching + k3-formula logic) =====
+KL reconstruction self-consistency: {'all_close': True, 'n_steps_checked': 8, 'unmatched_microbatches': 0}
+{'max_unclamped_per_token_kl_this_run': 87376.58180453263, 'tokens_that_would_have_exceeded_clamp_value': 1916, 'total_tokens_scored': 12000}
+===== DECLARED/TASK ACCURACY REGRESSION CHECK (training-pool correctness, first vs last window) =====
+{'first_window_n': 16, 'first_window_accuracy': 0.4375, 'last_window_n': 16, 'last_window_accuracy': 0.5625, 'regression': 0.125}
+===== FINAL REPORT =====
+{
+  "terminal_step": 8,
+  "requested_steps": 8,
+  "dry_run": true,
+  "hard_stop": null,
+  "survived_to_full_target": true,
+  "entropy_clamp_value": 1.6983142857142859,
+  "kl_clamp_value": 0.1518003886715766,
+  "kl_clamp_d_max": 0.504718110048141,
+  "kl_clamp_engagement_rate": 0.16875,
+  "max_unclamped_per_token_kl_this_run": 87376.58180453263,
+  "tokens_that_would_have_exceeded_clamp_value": 1916,
+  "kl_reconstruction_all_close_to_trl_logged_metric": true,
+  "task_accuracy_first_window": 0.4375,
+  "task_accuracy_last_window": 0.5625,
+  "task_accuracy_regression": 0.125,
+  "milestone_direction_trajectory": [
+    {
+      "step": 4,
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    },
+    {
+      "step": 8,
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    }
+  ],
+  "milestone_r_signal_trajectory": [
+    {
+      "step": 4,
+      "n": 32,
+      "mean_r_signal": 0.06967905405405406,
+      "mean_signal_correlation_raw": 0.3972193347193347,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.28125,
+      "mean_p_cot": 0.074333461461835,
+      "cot_scale_at_window_end": 0.2
+    },
+    {
+      "step": 8,
+      "n": 32,
+      "mean_r_signal": 0.04903846153846154,
+      "mean_signal_correlation_raw": 0.31745337995337997,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.28125,
+      "mean_p_cot": 0.24053166264535858,
+      "cot_scale_at_window_end": 1.4
+    }
+  ],
+  "final_milestone": {
+    "step": 8,
+    "by_answer_direction": {
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    },
+    "training_rollout_window_stats": {
+      "n": 32,
+      "mean_r_signal": 0.04903846153846154,
+      "mean_signal_correlation_raw": 0.31745337995337997,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.28125,
+      "mean_p_cot": 0.24053166264535858,
+      "cot_scale_at_window_end": 1.4
+    }
+  }
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/grpo-stage07-signal-annealed-dryrun-v1/stage07_signal_annealed_reward.json
+Per-token instrumentation: /home/ubuntu/aisi_checkpoints/grpo-stage07-signal-annealed-dryrun-v1/per_token_instrumentation.json
+STAGE 07 RUN COMPLETE. Read-only interpretation follows offline -- no further training decisions made here.

@@ -1,0 +1,20 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260903, 'main_checkpoint_dir': '/home/ubuntu/aisi_checkpoints/stage9d-decode-back-main-v18/final_adapter', 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+{'eval_n': 21, 'clean21_sha256_verified': True}
+{'main_adapter_path': '/home/ubuntu/aisi_checkpoints/stage9d-decode-back-main-v18/final_adapter/adapter_model.safetensors', 'main_adapter_sha256': '3f693c1b6bde03eb55164065b64e236acca0c120158bdebe90a5670698aa30a4'}
+===== LOAD MAIN CHECKPOINT (inference only, no training) =====
+{'checkpoint_loaded': True, 'checkpoint_identity_sha256': '79f954b027853840e4bc1ede6339da64d3b8c20cba5864e42c2571a07762b14d'}
+===== STEP 1: NORMAL (untruncated) GENERATION on the full held-out-21 =====
+{'normal_accuracy_full_21': 0.9047619047619048, 'intermediate_tracking_accuracy_full_21': 0.9047619047619048}
+===== STEP 2: RESTRICT to scenarios where NORMAL generation is currently correct =====
+{'eligible_n': 19, 'excluded_n': 2}
+===== STEP 3: FORCED-TRUNCATION generation (decode-back line entirely removed, <answer> forced open) =====
+===== STEP 4: PER-DIRECTION SUMMARY (Heads-truth and Tails-truth, NOT pooled -- task requirement 5) =====
+{'HEADS_TRUTH_SUBSET': {'n': 13, 'normal_accuracy': 1.0, 'truncated_accuracy': 0.0, 'matches_normal_answer_rate': 0.0, 'no_parseable_answer_rate': 0.0}}
+{'TAILS_TRUTH_SUBSET': {'n': 6, 'normal_accuracy': 1.0, 'truncated_accuracy': 0.0, 'matches_normal_answer_rate': 0.0, 'no_parseable_answer_rate': 0.0}}
+{'pooled_for_reference_only_not_the_primary_result': {'n': 19, 'normal_accuracy': 1.0, 'truncated_accuracy': 0.0, 'matches_normal_answer_rate': 0.0, 'no_parseable_answer_rate': 0.0}}
+===== FINAL REPORT =====
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-truncation-diagnostic-v1/stage9d_truncation_diagnostic.json
+STAGE 9D TRUNCATION DIAGNOSTIC COMPLETE.

@@ -1,0 +1,492 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "run_seed": 20260901,
+    "rebalanced_checkpoint_adapter_sha256": "f19fe37eae12cef50dbeef012f5e50c9748b57e66d1bb101888ec80f0fafe673",
+    "source_evidence_sha256": "3d5ab4404464b04280aa18a7bcb1e6e91a0edc9d548b97edb30d0c2fa8eb603c",
+    "source_evidence_path": "experiments/09c_sft_diagnostic/aws_runs/stage9c-sft-rebalanced-v1/stage9c_sft_rebalanced.json",
+    "max_new_tokens_continuation": 40
+  },
+  "diagnostic_1_corrupted_prefill": {
+    "heads_to_tails": {
+      "n": 14,
+      "outcome_counts": {
+        "tracks_corrupted_prefix": 14
+      },
+      "samples": [
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "different",
+            "same",
+            "different",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "different",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "different",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "same",
+            "different",
+            "different",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "different",
+            "same",
+            "same",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "same",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "tails",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "tracks_corrupted_prefix"
+        }
+      ]
+    },
+    "tails_to_heads": {
+      "n": 6,
+      "outcome_counts": {
+        "stays_at_original_answer": 6
+      },
+      "samples": [
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        },
+        {
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "different",
+            "different",
+            "same",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "same",
+            "same",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        },
+        {
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "different",
+            "same",
+            "different",
+            "same"
+          ],
+          "original_answer": "tails",
+          "corruption_direction": "heads",
+          "continuation_raw": "\n<answer>Tails</answer>",
+          "new_answer": "tails",
+          "outcome": "stays_at_original_answer"
+        }
+      ]
+    }
+  },
+  "diagnostic_2_base_model_logit_prior": {
+    "n_probes": 6,
+    "n_probes_favoring_tails": 0,
+    "n_probes_favoring_heads": 6,
+    "mean_logprob_gap_tails_minus_heads": -11.052020608966805,
+    "samples": [
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "true_final_state": "Heads",
+        "last_coded_token_in_prefix": "nib",
+        "heads_score": {
+          "total_logprob": -3.423842072408661,
+          "total_prob": 0.03258699252904164,
+          "first_token_logit": 22.75,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -14.376813396404032,
+          "total_prob": 5.704653552945378e-07,
+          "first_token_logit": 24.125,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -10.95297132399537
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "true_final_state": "Heads",
+        "last_coded_token_in_prefix": "nib",
+        "heads_score": {
+          "total_logprob": -8.756229043006726,
+          "total_prob": 0.00015747733056056413,
+          "first_token_logit": 19.5,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -19.461182117462158,
+          "total_prob": 3.532775135618156e-09,
+          "first_token_logit": 22.125,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -10.704953074455432
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "true_final_state": "Heads",
+        "last_coded_token_in_prefix": "nib",
+        "heads_score": {
+          "total_logprob": -3.9862630367006204,
+          "total_prob": 0.018568976206869568,
+          "first_token_logit": 22.25,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -14.381015978055075,
+          "total_prob": 5.680729587019788e-07,
+          "first_token_logit": 23.125,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -10.394752941354454
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "true_final_state": "Tails",
+        "last_coded_token_in_prefix": "nomo",
+        "heads_score": {
+          "total_logprob": -4.704448103896084,
+          "total_prob": 0.009054910208807571,
+          "first_token_logit": 20.0,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -17.02934966981411,
+          "total_prob": 4.0201976743193826e-08,
+          "first_token_logit": 19.5,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -12.324901565918026
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "true_final_state": "Tails",
+        "last_coded_token_in_prefix": "nomo",
+        "heads_score": {
+          "total_logprob": -9.321207760451216,
+          "total_prob": 8.950574359907404e-05,
+          "first_token_logit": 15.5,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -15.629991799592972,
+          "total_prob": 1.6292240383280395e-07,
+          "first_token_logit": 23.875,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -6.308784039141756
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "true_final_state": "Tails",
+        "last_coded_token_in_prefix": "nomo",
+        "heads_score": {
+          "total_logprob": -1.016245841979753,
+          "total_prob": 0.361951214801516,
+          "first_token_logit": 21.625,
+          "n_word_tokens": 2
+        },
+        "tails_score": {
+          "total_logprob": -16.64200655091554,
+          "total_prob": 5.921999783002685e-08,
+          "first_token_logit": 20.125,
+          "n_word_tokens": 2
+        },
+        "prior_favors": "Heads",
+        "logprob_gap_tails_minus_heads": -15.625760708935786
+      }
+    ]
+  }
+}

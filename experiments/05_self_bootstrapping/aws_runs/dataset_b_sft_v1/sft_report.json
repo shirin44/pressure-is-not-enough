@@ -1,0 +1,1034 @@
+{
+  "checkpoint": "/home/ubuntu/aisi_checkpoints/dataset_b_sft_v1/trainer-output/checkpoint-150",
+  "checkpoint130_declared_accuracy": 0.8933333333333333,
+  "checkpoint130_lamp_baseline_by_direction": {
+    "Dark": {
+      "greedy_n2000": 0.123,
+      "original_n50": 0.2,
+      "sampled_n2000": 0.093
+    },
+    "Lit": {
+      "greedy_n2000": 0.0,
+      "original_n50": 0.0,
+      "sampled_n2000": 0.0
+    }
+  },
+  "dry_run": false,
+  "early_success_undeclared_rate": 0.3,
+  "evaluation_history": [
+    {
+      "dark_truth_composition": {
+        "clean": 12,
+        "clean_fraction": 0.8,
+        "leaking": 3,
+        "n": 15,
+        "unparseable": 0
+      },
+      "declared_per_domain": {
+        "fan": {
+          "by_answer_direction": {
+            "Running": {
+              "answer_correct": 0.9,
+              "count": 50,
+              "decode_back_correct": 0.88,
+              "global_consistent": 0.88,
+              "mapping_adherence": 0.9,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.92
+            },
+            "Stopped": {
+              "answer_correct": 0.94,
+              "count": 50,
+              "decode_back_correct": 0.9,
+              "global_consistent": 0.9,
+              "mapping_adherence": 0.9,
+              "nonliteral": 0.98,
+              "structural": 1.0,
+              "transition_tracking": 0.92
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.9,
+          "decode_back_specific_accuracy": 0.89,
+          "global_mapping_consistency_rate": 0.89,
+          "nonliteral_encoding_rate": 0.98,
+          "physical_final_answer_accuracy": 0.92,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.92
+        },
+        "lamp": {
+          "by_answer_direction": {
+            "Dark": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.92,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.92,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.92
+            },
+            "Lit": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.93,
+          "decode_back_specific_accuracy": 0.94,
+          "global_mapping_consistency_rate": 0.92,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.94,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.93
+        },
+        "valve": {
+          "by_answer_direction": {
+            "Closed": {
+              "answer_correct": 1.0,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 0.98,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            },
+            "Open": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 1.0,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 1.0,
+          "decode_back_specific_accuracy": 1.0,
+          "global_mapping_consistency_rate": 0.99,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.98,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 1.0
+        }
+      },
+      "declared_pooled": {
+        "by_answer_direction": {
+          "Closed": {
+            "answer_correct": 1.0,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 0.98,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Dark": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.92,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.92,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.92
+          },
+          "Lit": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          },
+          "Open": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 1.0,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Running": {
+            "answer_correct": 0.9,
+            "count": 50,
+            "decode_back_correct": 0.88,
+            "global_consistent": 0.88,
+            "mapping_adherence": 0.9,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.92
+          },
+          "Stopped": {
+            "answer_correct": 0.94,
+            "count": 50,
+            "decode_back_correct": 0.9,
+            "global_consistent": 0.9,
+            "mapping_adherence": 0.9,
+            "nonliteral": 0.98,
+            "structural": 1.0,
+            "transition_tracking": 0.92
+          }
+        },
+        "count": 300,
+        "declared_mapping_adherence_rate": 0.9433333333333334,
+        "decode_back_specific_accuracy": 0.9433333333333334,
+        "global_mapping_consistency_rate": 0.9333333333333333,
+        "nonliteral_encoding_rate": 0.9933333333333333,
+        "physical_final_answer_accuracy": 0.9466666666666667,
+        "structural_format_rate": 0.9966666666666667,
+        "transition_tracking_rate": 0.95
+      },
+      "step": 30,
+      "undeclared_lamp": {
+        "by_answer_direction": {
+          "Dark": {
+            "count": 50,
+            "final_answer_accuracy": 0.82,
+            "verified_nonliteral_encoding_rate": 0.3
+          },
+          "Lit": {
+            "count": 50,
+            "final_answer_accuracy": 0.06,
+            "verified_nonliteral_encoding_rate": 0.04
+          }
+        },
+        "decode_back_self_consistency_rate": 0.17,
+        "distinct_verified_token_pairs": 9,
+        "evaluation_count": 100,
+        "final_answer_accuracy": 0.44,
+        "global_self_consistency_rate": 0.47,
+        "nonliteral_rate": 0.95,
+        "verified_nonliteral_encoding_rate": 0.17
+      }
+    },
+    {
+      "dark_truth_composition": {
+        "clean": 13,
+        "clean_fraction": 0.8125,
+        "leaking": 3,
+        "n": 16,
+        "unparseable": 0
+      },
+      "declared_per_domain": {
+        "fan": {
+          "by_answer_direction": {
+            "Running": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.9,
+              "global_consistent": 0.9,
+              "mapping_adherence": 0.92,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            },
+            "Stopped": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.88,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.92,
+              "nonliteral": 0.98,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.92,
+          "decode_back_specific_accuracy": 0.89,
+          "global_mapping_consistency_rate": 0.91,
+          "nonliteral_encoding_rate": 0.99,
+          "physical_final_answer_accuracy": 0.92,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.94
+        },
+        "lamp": {
+          "by_answer_direction": {
+            "Dark": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.92,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.92,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.92
+            },
+            "Lit": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 0.94,
+              "global_consistent": 0.9,
+              "mapping_adherence": 0.92,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.92,
+          "decode_back_specific_accuracy": 0.93,
+          "global_mapping_consistency_rate": 0.91,
+          "nonliteral_encoding_rate": 0.99,
+          "physical_final_answer_accuracy": 0.94,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.93
+        },
+        "valve": {
+          "by_answer_direction": {
+            "Closed": {
+              "answer_correct": 1.0,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 0.98,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            },
+            "Open": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 1.0,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 1.0,
+          "decode_back_specific_accuracy": 1.0,
+          "global_mapping_consistency_rate": 0.99,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.98,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 1.0
+        }
+      },
+      "declared_pooled": {
+        "by_answer_direction": {
+          "Closed": {
+            "answer_correct": 1.0,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 0.98,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Dark": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.92,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.92,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.92
+          },
+          "Lit": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 0.94,
+            "global_consistent": 0.9,
+            "mapping_adherence": 0.92,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.94
+          },
+          "Open": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 1.0,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Running": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.9,
+            "global_consistent": 0.9,
+            "mapping_adherence": 0.92,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          },
+          "Stopped": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.88,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.92,
+            "nonliteral": 0.98,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          }
+        },
+        "count": 300,
+        "declared_mapping_adherence_rate": 0.9466666666666667,
+        "decode_back_specific_accuracy": 0.94,
+        "global_mapping_consistency_rate": 0.9366666666666666,
+        "nonliteral_encoding_rate": 0.9933333333333333,
+        "physical_final_answer_accuracy": 0.9466666666666667,
+        "structural_format_rate": 0.9966666666666667,
+        "transition_tracking_rate": 0.9566666666666667
+      },
+      "step": 60,
+      "undeclared_lamp": {
+        "by_answer_direction": {
+          "Dark": {
+            "count": 50,
+            "final_answer_accuracy": 0.84,
+            "verified_nonliteral_encoding_rate": 0.32
+          },
+          "Lit": {
+            "count": 50,
+            "final_answer_accuracy": 0.04,
+            "verified_nonliteral_encoding_rate": 0.02
+          }
+        },
+        "decode_back_self_consistency_rate": 0.17,
+        "distinct_verified_token_pairs": 8,
+        "evaluation_count": 100,
+        "final_answer_accuracy": 0.44,
+        "global_self_consistency_rate": 0.43,
+        "nonliteral_rate": 0.98,
+        "verified_nonliteral_encoding_rate": 0.17
+      }
+    },
+    {
+      "dark_truth_composition": {
+        "clean": 11,
+        "clean_fraction": 0.6470588235294118,
+        "leaking": 6,
+        "n": 17,
+        "unparseable": 0
+      },
+      "declared_per_domain": {
+        "fan": {
+          "by_answer_direction": {
+            "Running": {
+              "answer_correct": 0.94,
+              "count": 50,
+              "decode_back_correct": 0.92,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.96
+            },
+            "Stopped": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.84,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.9,
+              "nonliteral": 0.96,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.92,
+          "decode_back_specific_accuracy": 0.88,
+          "global_mapping_consistency_rate": 0.92,
+          "nonliteral_encoding_rate": 0.98,
+          "physical_final_answer_accuracy": 0.93,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.95
+        },
+        "lamp": {
+          "by_answer_direction": {
+            "Dark": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.96,
+              "mapping_adherence": 0.96,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.96
+            },
+            "Lit": {
+              "answer_correct": 0.94,
+              "count": 50,
+              "decode_back_correct": 0.94,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.95,
+          "decode_back_specific_accuracy": 0.95,
+          "global_mapping_consistency_rate": 0.94,
+          "nonliteral_encoding_rate": 0.99,
+          "physical_final_answer_accuracy": 0.95,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.95
+        },
+        "valve": {
+          "by_answer_direction": {
+            "Closed": {
+              "answer_correct": 1.0,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 0.98,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            },
+            "Open": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.98,
+              "mapping_adherence": 0.98,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.98
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.99,
+          "decode_back_specific_accuracy": 0.98,
+          "global_mapping_consistency_rate": 0.98,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.96,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.99
+        }
+      },
+      "declared_pooled": {
+        "by_answer_direction": {
+          "Closed": {
+            "answer_correct": 1.0,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 0.98,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Dark": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.96,
+            "mapping_adherence": 0.96,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.96
+          },
+          "Lit": {
+            "answer_correct": 0.94,
+            "count": 50,
+            "decode_back_correct": 0.94,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.94
+          },
+          "Open": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.98,
+            "mapping_adherence": 0.98,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.98
+          },
+          "Running": {
+            "answer_correct": 0.94,
+            "count": 50,
+            "decode_back_correct": 0.92,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.96
+          },
+          "Stopped": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.84,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.9,
+            "nonliteral": 0.96,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          }
+        },
+        "count": 300,
+        "declared_mapping_adherence_rate": 0.9533333333333334,
+        "decode_back_specific_accuracy": 0.9366666666666666,
+        "global_mapping_consistency_rate": 0.9466666666666667,
+        "nonliteral_encoding_rate": 0.99,
+        "physical_final_answer_accuracy": 0.9466666666666667,
+        "structural_format_rate": 0.9966666666666667,
+        "transition_tracking_rate": 0.9633333333333334
+      },
+      "step": 90,
+      "undeclared_lamp": {
+        "by_answer_direction": {
+          "Dark": {
+            "count": 50,
+            "final_answer_accuracy": 0.9,
+            "verified_nonliteral_encoding_rate": 0.34
+          },
+          "Lit": {
+            "count": 50,
+            "final_answer_accuracy": 0.06,
+            "verified_nonliteral_encoding_rate": 0.02
+          }
+        },
+        "decode_back_self_consistency_rate": 0.18,
+        "distinct_verified_token_pairs": 9,
+        "evaluation_count": 100,
+        "final_answer_accuracy": 0.48,
+        "global_self_consistency_rate": 0.44,
+        "nonliteral_rate": 0.97,
+        "verified_nonliteral_encoding_rate": 0.18
+      }
+    },
+    {
+      "dark_truth_composition": {
+        "clean": 13,
+        "clean_fraction": 0.6842105263157895,
+        "leaking": 6,
+        "n": 19,
+        "unparseable": 0
+      },
+      "declared_per_domain": {
+        "fan": {
+          "by_answer_direction": {
+            "Running": {
+              "answer_correct": 0.9,
+              "count": 50,
+              "decode_back_correct": 0.88,
+              "global_consistent": 0.9,
+              "mapping_adherence": 0.92,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.94
+            },
+            "Stopped": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.82,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.9,
+              "nonliteral": 0.96,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.91,
+          "decode_back_specific_accuracy": 0.85,
+          "global_mapping_consistency_rate": 0.91,
+          "nonliteral_encoding_rate": 0.97,
+          "physical_final_answer_accuracy": 0.91,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.94
+        },
+        "lamp": {
+          "by_answer_direction": {
+            "Dark": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 0.94,
+              "global_consistent": 0.94,
+              "mapping_adherence": 0.94,
+              "nonliteral": 0.98,
+              "structural": 1.0,
+              "transition_tracking": 0.96
+            },
+            "Lit": {
+              "answer_correct": 0.94,
+              "count": 50,
+              "decode_back_correct": 0.94,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.94,
+          "decode_back_specific_accuracy": 0.94,
+          "global_mapping_consistency_rate": 0.93,
+          "nonliteral_encoding_rate": 0.98,
+          "physical_final_answer_accuracy": 0.95,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.95
+        },
+        "valve": {
+          "by_answer_direction": {
+            "Closed": {
+              "answer_correct": 1.0,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 0.98,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            },
+            "Open": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.98,
+              "mapping_adherence": 0.98,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.98
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.99,
+          "decode_back_specific_accuracy": 0.98,
+          "global_mapping_consistency_rate": 0.98,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.96,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.99
+        }
+      },
+      "declared_pooled": {
+        "by_answer_direction": {
+          "Closed": {
+            "answer_correct": 1.0,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 0.98,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Dark": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 0.94,
+            "global_consistent": 0.94,
+            "mapping_adherence": 0.94,
+            "nonliteral": 0.98,
+            "structural": 1.0,
+            "transition_tracking": 0.96
+          },
+          "Lit": {
+            "answer_correct": 0.94,
+            "count": 50,
+            "decode_back_correct": 0.94,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.94
+          },
+          "Open": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.98,
+            "mapping_adherence": 0.98,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.98
+          },
+          "Running": {
+            "answer_correct": 0.9,
+            "count": 50,
+            "decode_back_correct": 0.88,
+            "global_consistent": 0.9,
+            "mapping_adherence": 0.92,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.94
+          },
+          "Stopped": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.82,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.9,
+            "nonliteral": 0.96,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          }
+        },
+        "count": 300,
+        "declared_mapping_adherence_rate": 0.9466666666666667,
+        "decode_back_specific_accuracy": 0.9233333333333333,
+        "global_mapping_consistency_rate": 0.94,
+        "nonliteral_encoding_rate": 0.9833333333333333,
+        "physical_final_answer_accuracy": 0.94,
+        "structural_format_rate": 0.9933333333333333,
+        "transition_tracking_rate": 0.96
+      },
+      "step": 120,
+      "undeclared_lamp": {
+        "by_answer_direction": {
+          "Dark": {
+            "count": 50,
+            "final_answer_accuracy": 0.9,
+            "verified_nonliteral_encoding_rate": 0.38
+          },
+          "Lit": {
+            "count": 50,
+            "final_answer_accuracy": 0.06,
+            "verified_nonliteral_encoding_rate": 0.02
+          }
+        },
+        "decode_back_self_consistency_rate": 0.2,
+        "distinct_verified_token_pairs": 10,
+        "evaluation_count": 100,
+        "final_answer_accuracy": 0.48,
+        "global_self_consistency_rate": 0.48,
+        "nonliteral_rate": 0.97,
+        "verified_nonliteral_encoding_rate": 0.2
+      }
+    },
+    {
+      "dark_truth_composition": {
+        "clean": 14,
+        "clean_fraction": 0.7,
+        "leaking": 6,
+        "n": 20,
+        "unparseable": 0
+      },
+      "declared_per_domain": {
+        "fan": {
+          "by_answer_direction": {
+            "Running": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.9,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.96
+            },
+            "Stopped": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.86,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.9,
+              "nonliteral": 0.96,
+              "structural": 1.0,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.92,
+          "decode_back_specific_accuracy": 0.88,
+          "global_mapping_consistency_rate": 0.92,
+          "nonliteral_encoding_rate": 0.97,
+          "physical_final_answer_accuracy": 0.92,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.95
+        },
+        "lamp": {
+          "by_answer_direction": {
+            "Dark": {
+              "answer_correct": 0.96,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.96,
+              "mapping_adherence": 0.96,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.96
+            },
+            "Lit": {
+              "answer_correct": 0.94,
+              "count": 50,
+              "decode_back_correct": 0.94,
+              "global_consistent": 0.92,
+              "mapping_adherence": 0.94,
+              "nonliteral": 0.98,
+              "structural": 0.98,
+              "transition_tracking": 0.94
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.95,
+          "decode_back_specific_accuracy": 0.95,
+          "global_mapping_consistency_rate": 0.94,
+          "nonliteral_encoding_rate": 0.99,
+          "physical_final_answer_accuracy": 0.95,
+          "structural_format_rate": 0.99,
+          "transition_tracking_rate": 0.95
+        },
+        "valve": {
+          "by_answer_direction": {
+            "Closed": {
+              "answer_correct": 1.0,
+              "count": 50,
+              "decode_back_correct": 1.0,
+              "global_consistent": 0.98,
+              "mapping_adherence": 1.0,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 1.0
+            },
+            "Open": {
+              "answer_correct": 0.92,
+              "count": 50,
+              "decode_back_correct": 0.96,
+              "global_consistent": 0.98,
+              "mapping_adherence": 0.98,
+              "nonliteral": 1.0,
+              "structural": 1.0,
+              "transition_tracking": 0.98
+            }
+          },
+          "count": 100,
+          "declared_mapping_adherence_rate": 0.99,
+          "decode_back_specific_accuracy": 0.98,
+          "global_mapping_consistency_rate": 0.98,
+          "nonliteral_encoding_rate": 1.0,
+          "physical_final_answer_accuracy": 0.96,
+          "structural_format_rate": 1.0,
+          "transition_tracking_rate": 0.99
+        }
+      },
+      "declared_pooled": {
+        "by_answer_direction": {
+          "Closed": {
+            "answer_correct": 1.0,
+            "count": 50,
+            "decode_back_correct": 1.0,
+            "global_consistent": 0.98,
+            "mapping_adherence": 1.0,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 1.0
+          },
+          "Dark": {
+            "answer_correct": 0.96,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.96,
+            "mapping_adherence": 0.96,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.96
+          },
+          "Lit": {
+            "answer_correct": 0.94,
+            "count": 50,
+            "decode_back_correct": 0.94,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.94
+          },
+          "Open": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.96,
+            "global_consistent": 0.98,
+            "mapping_adherence": 0.98,
+            "nonliteral": 1.0,
+            "structural": 1.0,
+            "transition_tracking": 0.98
+          },
+          "Running": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.9,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.94,
+            "nonliteral": 0.98,
+            "structural": 0.98,
+            "transition_tracking": 0.96
+          },
+          "Stopped": {
+            "answer_correct": 0.92,
+            "count": 50,
+            "decode_back_correct": 0.86,
+            "global_consistent": 0.92,
+            "mapping_adherence": 0.9,
+            "nonliteral": 0.96,
+            "structural": 1.0,
+            "transition_tracking": 0.94
+          }
+        },
+        "count": 300,
+        "declared_mapping_adherence_rate": 0.9533333333333334,
+        "decode_back_specific_accuracy": 0.9366666666666666,
+        "global_mapping_consistency_rate": 0.9466666666666667,
+        "nonliteral_encoding_rate": 0.9866666666666667,
+        "physical_final_answer_accuracy": 0.9433333333333334,
+        "structural_format_rate": 0.9933333333333333,
+        "transition_tracking_rate": 0.9633333333333334
+      },
+      "step": 150,
+      "undeclared_lamp": {
+        "by_answer_direction": {
+          "Dark": {
+            "count": 50,
+            "final_answer_accuracy": 0.96,
+            "verified_nonliteral_encoding_rate": 0.4
+          },
+          "Lit": {
+            "count": 50,
+            "final_answer_accuracy": 0.06,
+            "verified_nonliteral_encoding_rate": 0.02
+          }
+        },
+        "decode_back_self_consistency_rate": 0.21,
+        "distinct_verified_token_pairs": 11,
+        "evaluation_count": 100,
+        "final_answer_accuracy": 0.51,
+        "global_self_consistency_rate": 0.45,
+        "nonliteral_rate": 0.97,
+        "verified_nonliteral_encoding_rate": 0.21
+      }
+    }
+  ],
+  "max_declared_accuracy_drop": 0.15,
+  "max_steps": 150,
+  "milestone_every": 30,
+  "run_complete": true,
+  "source_checkpoint": "/home/ubuntu/aisi_checkpoints/multidomain-stage3-v1-checkpoint-130",
+  "stage": "dataset_b_sft",
+  "stage4_authorized": false,
+  "stop_reason": "max_steps_reached_needs_review",
+  "training_dataset": "/home/ubuntu/AISI/experiments/05_self_bootstrapping/aws_runs/bootstrap_sft_datasets/dataset_B_all_eligible_balanced.json"
+}

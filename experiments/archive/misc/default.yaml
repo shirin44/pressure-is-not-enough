@@ -1,0 +1,27 @@
+experiment_name: baseline
+
+model:
+  name: null            # base model checkpoint / HF id
+  adversarial_checkpoint: null  # path to adversarially-trained (stego) model, if applicable
+
+data:
+  dataset: null          # CoT dataset source
+  num_samples: 1000
+  split: train
+
+sae:
+  d_in: null             # activation dimension (matches model hidden size)
+  d_hidden: null          # expansion factor * d_in
+  l1_coefficient: 1e-3
+  lr: 1e-4
+  batch_size: 256
+  num_epochs: 10
+
+eval:
+  metrics: [reconstruction_loss, sparsity, detection_auc]
+  probe_layers: []
+
+logging:
+  out_dir: results/
+  log_dir: logs/
+  seed: 42

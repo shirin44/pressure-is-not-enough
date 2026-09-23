@@ -1,0 +1,371 @@
+{
+  "config": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "max_new_tokens": 256,
+    "n_scenarios": 16
+  },
+  "results": [
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "heads",
+        "heads",
+        "heads",
+        "heads",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "different",
+        "different",
+        "different",
+        "different",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Step 1: Different from previous, State: Heads\nStep 2: Different from previous, State: Tails\nStep 3: Different from previous, State: Heads\nStep 4: Different from previous, State: Tails\nStep 5: Different from previous, State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "heads",
+        "tails",
+        "heads",
+        "tails",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "different",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Here are the steps:\n\nStep 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "heads",
+        "tails",
+        "tails",
+        "heads",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Step 1: different from previous. State: Heads\nStep 2: same as previous. State: Heads\nStep 3: different from previous. State: Tails\nStep 4: same as previous. State: Tails\nStep 5: different from previous. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "heads",
+        "heads",
+        "tails",
+        "tails",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Here are the steps:\n\nStep 1: different from previous. State: Tails\nStep 2: different from previous. State: Heads\nStep 3: same as previous. State: Heads\nStep 4: same as previous. State: Heads\nStep 5: different from previous. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "tails",
+        "heads",
+        "heads",
+        "heads",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "same",
+        "different",
+        "different",
+        "same",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Step 1: same as previous. State: Tails\nStep 2: different from previous. State: Heads\nStep 3: different from previous. State: Tails\nStep 4: same as previous. State: Tails\nStep 5: same as previous. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "tails",
+        "heads",
+        "tails",
+        "tails",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "different",
+        "same",
+        "same",
+        "different",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Here are the steps:\n\nStep 1: different from previous. State: Tails\nStep 2: same as previous. State: Tails\nStep 3: same as previous. State: Tails\nStep 4: different from previous. State: Heads\nStep 5: different from previous. State: Tails\n\n<answer>Different</answer>",
+      "extracted_answer": "different",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "tails",
+        "tails",
+        "tails",
+        "heads",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "different",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state remains unchanged. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "tails",
+        "tails",
+        "heads",
+        "tails",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state remains unchanged. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "tails",
+        "tails",
+        "tails",
+        "tails",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "different",
+        "different",
+        "different",
+        "different",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state flips. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "tails",
+        "heads",
+        "tails",
+        "heads",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "different",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Step 1: same as previous. State: Tails\nStep 2: different from previous. State: Heads\nStep 3: same as previous. State: Heads\nStep 4: different from previous. State: Tails\nStep 5: same as previous. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "tails",
+        "heads",
+        "heads",
+        "tails",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Here are the steps:\n\nStep 1: The state remains unchanged. State: Heads\nStep 2: different from previous, so the state flips. State: Tails\nStep 3: different from previous, so the state flips. State: Heads\nStep 4: same as previous, so the state does not change. State: Heads\nStep 5: different from previous, so the state flips. State: Tails\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "heads",
+        "tails",
+        "heads",
+        "heads",
+        "tails"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Step 1: different from previous, State: Heads\nStep 2: different from previous, State: Tails\nStep 3: same as previous, State: Tails\nStep 4: same as previous, State: Tails\nStep 5: different from previous, State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "heads",
+        "tails",
+        "tails",
+        "tails",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "same",
+        "different",
+        "different",
+        "same",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Here are the steps:\n\nStep 1: The state remains unchanged. State: Heads\nStep 2: different from previous, so the state flips. State: Tails\nStep 3: different from previous, so the state flips. State: Heads\nStep 4: same as previous, so the state does NOT change. State: Heads\nStep 5: same as previous, so the state does NOT change. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "heads",
+        "tails",
+        "heads",
+        "heads",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Tails",
+      "operations": [
+        "different",
+        "same",
+        "same",
+        "different",
+        "different"
+      ],
+      "truth": "Different",
+      "completion": "Step 1: different from previous. State: Heads\nStep 2: same as previous. State: Heads\nStep 3: same as previous. State: Heads\nStep 4: different from previous. State: Tails\nStep 5: different from previous. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": false,
+      "intermediate_tokens": [
+        "heads",
+        "heads",
+        "heads",
+        "tails",
+        "heads"
+      ]
+    },
+    {
+      "starting_state": "Heads",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "different",
+        "same"
+      ],
+      "truth": "Same",
+      "completion": "Here are the steps:\n\nStep 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n\n<answer>Same</answer>",
+      "extracted_answer": "same",
+      "format_valid": true,
+      "correct": true,
+      "intermediate_tokens": [
+        "heads",
+        "heads",
+        "tails",
+        "heads",
+        "heads"
+      ]
+    }
+  ],
+  "analysis": {
+    "n": 16,
+    "n_correct": 9,
+    "accuracy": 0.5625,
+    "n_format_valid": 16,
+    "format_valid_rate": 1.0,
+    "same_truth_accuracy": 1.0,
+    "different_truth_accuracy": 0.125,
+    "near_chance_flag": true
+  }
+}

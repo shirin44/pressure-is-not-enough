@@ -1,0 +1,50 @@
+{
+  "stage": "02_demonstration_seeding_single_domain",
+  "question": "Can SFT-seeding on an unrelated toy domain (door latch, Locked/Unlocked) teach the general strategy of tracking a hidden binary state via a consistent substitute token?",
+  "result": "accepted_with_threshold_exception_on_own_domain; zero_cross_domain_transfer",
+  "accepted_checkpoint": {
+    "path": "latch-seed-stage3-decode-back-sft-v3/trainer-output/checkpoint-130",
+    "logical_step": 130,
+    "decision": "accepted_with_registered_threshold_exception",
+    "registered_threshold": 0.95,
+    "all_metrics_cleared_registered_threshold": false,
+    "metrics": {
+      "final_answer_accuracy": 0.925,
+      "structural_compliance": 1.0,
+      "internal_transition_tracking": 0.905,
+      "global_mapping_consistency": 0.89,
+      "declared_mapping_adherence": 0.895,
+      "decode_back_accuracy": 0.92,
+      "nonliteral_token_use": 1.0
+    },
+    "rationale": [
+      "Diagnosed consistent declared-mapping-swap failure eliminated: 8/11 mapping errors at step 100 became 0/2 at step 130.",
+      "Structural compliance and nonliteral token use both reached 100%.",
+      "Remaining gap was diffuse per-step transition noise, not a systematic mapping-orientation or formatting defect."
+    ],
+    "source": "experiments/02_demonstration_seeding_single_domain/stage3_checkpoint130_acceptance.json"
+  },
+  "rejected_checkpoint": {
+    "path": "latch-seed-stage3-decode-back-sft-v3/trainer-output/checkpoint-140",
+    "reason": "Explicit-transition diagnostic reduced pure transition errors (19→14) but reintroduced 25 consistent mapping swaps and dropped final-answer accuracy to 79%.",
+    "source": "experiments/02_demonstration_seeding_single_domain/README.md"
+  },
+  "zero_shot_generalization": {
+    "description": "Stage 3.5 single-domain zero-shot test on an unrelated third domain (fan), checkpoint 130, no mapping supplied.",
+    "checkpoint130_global_consistency": 0.0,
+    "checkpoint130_accuracy": 0.03,
+    "matched_base_control": {
+      "description": "Unadapted base model, same declared-mapping control task, ruling out 'latch SFT damaged a pre-existing capability'.",
+      "declared_mapping_adherence": 0.03,
+      "checkpoint130_declared_mapping_adherence_for_comparison": 0.05
+    },
+    "conclusion": "Base and checkpoint-130 adherence are comparably low; the task is intrinsically hard zero-shot at this model scale from a single seeding domain, not a capability the latch SFT destroyed."
+  },
+  "conclusion": "A single seeding domain teaches domain-specific surface behavior, not the abstract strategy. Retrain from scratch across multiple simultaneous training domains — see 03_demonstration_seeding_multi_domain.",
+  "naming_collision_warning": "This stage's checkpoint 130 (latch-seed-stage3-decode-back-sft-v3) is a completely different, unrelated training lineage from 03_demonstration_seeding_multi_domain's checkpoint 130 (multidomain-stage3-v1). Same number, do not confuse.",
+  "sources": [
+    "experiments/02_demonstration_seeding_single_domain/README.md",
+    "experiments/02_demonstration_seeding_single_domain/stage3_checkpoint130_acceptance.json",
+    "logs/development_log.md"
+  ]
+}

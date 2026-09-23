@@ -1,0 +1,22 @@
+--- experiments/09e_same_different_llama/llama_code_word_rl.py	2026-09-07 19:27:52
++++ analysis_paper_audit/proposed_diff/llama_code_word_rl.py.proposed	2026-09-21 23:18:11
+@@ -170,7 +170,9 @@
+     v = verify_code_word_trajectory(meta['starting_state'], meta['operations'])
+     if not v['all_verified']:
+         raise RuntimeError(f'Unverified trajectory in the bank: {meta} -> {v}')
+-TRAIN_POOL = [{'prompt': build_code_word_prompt(m['starting_state'], m['operations']),
++# Conversational prompt: TRL applies the tokenizer's chat template (add_generation_prompt=True, single BOS), which is the format SFT trained on
++# (llama_sft_code_word_seeding.py:281-283) and the evals use. A plain string would be tokenised raw (trl grpo_trainer.py:1780, is_conversational -> False).
++TRAIN_POOL = [{'prompt': [{'role': 'user', 'content': build_code_word_prompt(m['starting_state'], m['operations'])}],
+                'ground_truth': m['final_answer_code']} for m in train_meta]
+ random.Random(RUN_SEED).shuffle(TRAIN_POOL)
+ train_dataset = Dataset.from_list(TRAIN_POOL)
+@@ -227,7 +229,7 @@
+     out = []
+     for start in range(0, len(prompts_texts), batch_size):
+         chunk = prompts_texts[start:start + batch_size]
+-        batch = tokenizer(chunk, return_tensors='pt', padding=True).to(next(model.parameters()).device)
++        batch = tokenizer(chunk, return_tensors='pt', padding=True, add_special_tokens=False).to(next(model.parameters()).device)  # template text already carries BOS
+         with torch.inference_mode():
+             output = model.generate(**batch, max_new_tokens=max_new_tokens, do_sample=do_sample,
+                 pad_token_id=tokenizer.pad_token_id, eos_token_id=tokenizer.eos_token_id)

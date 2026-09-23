@@ -1,0 +1,54 @@
+{'gpu': 'NVIDIA A10G', 'prompt_seed': 20260819, 'batch_size': 64, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== CLASSIFIER REPRODUCTION GATE: must reproduce the known 10% result before trusting new data =====
+{'n': 100, 'reproduced_verified_rate': 0.1, 'known_rate': 0.1, 'per_row_mismatches': 0}
+PASSED: classifier reproduces every original row exactly (per-field, not just the aggregate rate). Trusted for new data.
+===== REGENERATE THE BOOTSTRAP PROMPT POOL (same seed as generate_bootstrap_undeclared_prompts.py) =====
+{'total': 8160, 'unique': True, 'leakage': False, 'by_domain': {'fan': 4080, 'valve': 4080}}
+===== LOAD CHECKPOINT 130 (multi-domain) =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'adapter_sha256': {'adapter_model.safetensors': 'f5039c13adfa4b0ff9771f7dc0d71cdcea9839c91fc1a03217c5cb63716fe77b'}, 'trainable_parameters': 0, 'mode': 'eval, greedy decoding only'}
+===== GREEDY GENERATION: 8160 PROMPTS, do_sample=False (matches the original Stage 3.5 methodology) =====
+Resuming: 400/8160 already completed.
+SAVED: 448/8160
+SAVED: 640/8160
+SAVED: 832/8160
+SAVED: 1024/8160
+SAVED: 1216/8160
+SAVED: 1408/8160
+SAVED: 1600/8160
+SAVED: 1856/8160
+SAVED: 2048/8160
+SAVED: 2240/8160
+SAVED: 2432/8160
+SAVED: 2624/8160
+SAVED: 2816/8160
+SAVED: 3008/8160
+SAVED: 3200/8160
+SAVED: 3456/8160
+SAVED: 3648/8160
+SAVED: 3840/8160
+SAVED: 4032/8160
+SAVED: 4224/8160
+SAVED: 4416/8160
+SAVED: 4608/8160
+SAVED: 4800/8160
+SAVED: 5056/8160
+SAVED: 5248/8160
+SAVED: 5440/8160
+SAVED: 5632/8160
+SAVED: 5824/8160
+SAVED: 6016/8160
+SAVED: 6208/8160
+SAVED: 6400/8160
+SAVED: 6656/8160
+SAVED: 6848/8160
+SAVED: 7040/8160
+SAVED: 7232/8160
+SAVED: 7424/8160
+SAVED: 7616/8160
+SAVED: 7808/8160
+SAVED: 8000/8160
+SAVED: 8160/8160
+
+DONE: 8160 raw completions saved to /home/ubuntu/aisi_checkpoints/option1-bootstrap-generation-v1/raw_completions.json
+GENERATION COMPLETE.

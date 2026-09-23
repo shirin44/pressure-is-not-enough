@@ -1,0 +1,34 @@
+{
+  "stage": "07_positive_signal_annealed_reward",
+  "question": "Does a positive-signaling reward (r_signal, continuous partial credit for state-correlated token variation) combined with a continuously annealed p_CoT weight (replacing the 3-tier discrete curriculum) surface genuine non-literal invention on Coin Flip from checkpoint 500, where reward pressure alone previously found none?",
+  "reward_design": {
+    "formula": "r = r_task - p_cot(annealed) - p_length - p_structure - p_state_variation + r_consistency + r_signal",
+    "r_signal": "Adjusted Rand Index between invented state-slot tokens and true physical state, magnitude 0.15, content-agnostic (verified via relabeling-invariance unit tests)",
+    "annealed_p_cot": "piecewise-linear weight 0.2 (steps<5) -> 2.0 (by total_steps), full literal/near-literal pattern set active from step 0, replacing the old 3-tier discrete banned-pattern curriculum",
+    "invariant_margins": {"margin_correct_over_wrong": 0.70, "margin_wrong_over_malformed": 0.70},
+    "unit_tests": 22
+  },
+  "runs": {
+    "dry_run_8_steps": {"entropy_coef": 0.05, "hard_stop": null, "substituted_rollouts": 0, "accepted_rollouts": 64},
+    "full_run_150_steps": {"entropy_coef": 0.05, "hard_stop": null, "survived_to_full_target": true,
+      "task_accuracy_first_window": 0.6047297297297297, "task_accuracy_last_window": 0.5641891891891891,
+      "substituted_rollouts_at_every_milestone": 0, "accepted_rollouts": 960,
+      "r_signal_at_final_milestone_entirely_overt_attributable": true},
+    "entropy_coef_test_dry_run_8_steps": {"entropy_coef": 0.18, "note": "3.6x the only prior value tested",
+      "hard_stop": null, "substituted_rollouts": 0, "accepted_rollouts": 64}
+  },
+  "cross_checked_prior_runs": {
+    "kl_clamp_mitigation_v1": {"accepted_rollouts": 112, "substituted": 0},
+    "kl_clamp_mitigation_v2": {"accepted_rollouts": 400, "substituted": 0},
+    "per_token_kl_instrumentation_v1": {"accepted_rollouts": 120, "substituted": 0}
+  },
+  "result": "mechanism_verified_working_but_never_had_a_nonliteral_rollout_to_act_on",
+  "conclusion": "r_signal and the annealed p_CoT curriculum both function exactly as designed (unit-tested in isolation, confirmed live during training: p_cot ramps correctly, r_signal computes nonzero partial correlation for overt completions). But across 1,656 rollouts directly reclassified with one consistent method (this stage's 1,024 plus 632 from three prior checkpoint-500 diagnostics under the original reward design), spanning two entropy_coef values (0.05, 0.18) and two reward-function designs, zero non-literal token attempts occurred. This is a clean negative result on applicability, not a mechanism failure -- reward-shaping-after-the-fact cannot help when the precondition (an attempted non-literal token) never occurs.",
+  "next_step": "Two follow-ups launched from this finding: Experiment 1 (does the task actually require encoded state at the lengths this project uses, ruling out a non-load-bearing regime as the explanation -- see 08_direct_indomain_synthetic_bridge) and Experiment 2 (does higher-temperature generation-only sampling, no training, ever produce a non-literal attempt -- same location). Both motivated Experiment 3's design: a lever acting before the attempt (demonstrated synthetic trajectories via an auxiliary loss) rather than after it (reward shaping).",
+  "sources": [
+    "experiments/07_positive_signal_annealed_reward/reward_v3.py",
+    "experiments/07_positive_signal_annealed_reward/test_reward_v3.py",
+    "experiments/06_stage4_coinflip_merge/",
+    "logs/development_log.md"
+  ]
+}

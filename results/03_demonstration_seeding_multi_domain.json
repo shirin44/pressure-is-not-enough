@@ -1,0 +1,65 @@
+{
+  "stage": "03_demonstration_seeding_multi_domain",
+  "question": "Does training across two domains simultaneously (fan, valve; declared mapping), with a third domain (lamp) held out entirely, force the substitute-encoding strategy to generalize as an abstraction rather than domain-specific surface form?",
+  "result": "executes_supplied_code_well; does_not_reliably_invent_undeclared_code",
+  "training_trajectory": {
+    "description": "Pooled accuracy across fan+valve+lamp at each checkpoint step, declared mapping supplied.",
+    "unit": "final_answer_accuracy",
+    "steps": [
+      {"step": 20, "pooled_accuracy": 0.463},
+      {"step": 40, "pooled_accuracy": 0.707},
+      {"step": 60, "pooled_accuracy": 0.823},
+      {"step": 80, "pooled_accuracy": 0.883, "note": "fan lagging: 78% tracking vs. valve 95%; trajectory rule flagged fan for a wording fix"},
+      {"step": 100, "pooled_accuracy": 0.887, "note": "fan wording fix applied: tracking 82% (+4pts, below the +8pt bar that would confirm wording was the bottleneck); lamp drifted down 4-5pts"},
+      {"step": 130, "pooled_accuracy": 0.893, "note": "continued from 100 without a recorded review in between (process gap, noted not repeated); fan tracking 85%; fan/valve gap 13pts and fan/lamp gap 4pts, both within the 15pt threshold; full 95% gate still not met"}
+    ],
+    "source": "experiments/03_demonstration_seeding_multi_domain/README.md"
+  },
+  "undeclared_zero_shot_test": {
+    "description": "Stage 3.5 undeclared/self-invented-mapping test, checkpoint 130, held-out lamp domain, no mapping supplied, self-consistency scoring only.",
+    "checkpoint": "multidomain-stage3-v1/trainer-output/checkpoint-130",
+    "evaluation_count": 100,
+    "nonliteral_encoding_rate": 0.10,
+    "final_answer_accuracy": 0.49,
+    "passed": false,
+    "correction_2026_08_24": "This 10% figure is NOT a flat rate across the task -- see 05_self_bootstrapping.json's 'lamp_dark_lit_asymmetry_finding' entry. All 10 verified successes are Dark-truth (20% rate on the 50 Dark-truth prompts); the 50 Lit-truth prompts in this same set scored 0%. Confirmed structural and persistent across 4,050 total attempts (this original set plus two independent fresh diagnostics under both greedy and sampled decoding), not a fluke of this one batch.",
+    "source": "experiments/03_demonstration_seeding_multi_domain/notebooks/stage35_third_domain_zero_shot.ipynb (reconstructed output, cross-checked against logs/development_log.md and multidomain_stage3_plan.json)"
+  },
+  "matched_declared_lamp_baseline": {
+    "description": "Same checkpoint 130, lamp domain, mapping supplied (not undeclared) -- rules out lamp being an inherently harder domain.",
+    "accuracy": 0.86,
+    "comparison": "close to pooled step-130 accuracy (89.3%) and fan accuracy (85%) at that checkpoint",
+    "conclusion": "49%/10% undeclared collapse is attributable to invention failure, not domain difficulty.",
+    "resolved_2026_08_24": "Checked and confirmed clean: recovered per-example ground truth by regenerating the deterministic lamp eval set (same seed 20260812) and joining on example_id against the saved step130_eval_progress.json (272KB, pulled from Drive: multidomain-stage3-v1/step130_eval_progress.json) -- sanity-checked to reproduce 86/100 exactly before trusting the split. Dark-truth answer_correct 42/50 (84.0%), Lit-truth 44/50 (88.0%) -- essentially balanced, slightly favoring Lit if anything. Does NOT carry the severe undeclared-test asymmetry. The bias is specific to the undeclared/self-invention condition (inventing a code AND committing to a final answer with no externally-anchored mapping), not a general lamp-domain answer-generation bias -- when the mapping is supplied, direction doesn't matter."
+  },
+  "base_control": {
+    "description": "Unadapted Qwen2.5-3B-Instruct, declared-mapping control, 100 prompts.",
+    "evaluation_count": 100,
+    "declared_mapping_adherence_rate": 0.03,
+    "final_answer_accuracy": 0.03,
+    "structural_rate": 0.83,
+    "global_mapping_consistency_rate": 0.07,
+    "nonliteral_encoding_rate": 0.83,
+    "answer_is_code_word_rate": 0.85,
+    "answer_is_code_word_fraction_of_failures": 0.8762886597938144,
+    "source": "experiments/03_demonstration_seeding_multi_domain/notebooks/stage35_base_declared_mapping_control.ipynb (verified against actual executed output)"
+  },
+  "checkpoint130_comparison": {
+    "description": "Checkpoint 130 (latch multi-domain), same declared-mapping control task, for comparison against the base control above. No answer_is_code_word_rate value: the notebook that would have computed it (stage35_declared_mapping_control.ipynb) was built but never executed.",
+    "declared_mapping_adherence_rate": 0.05,
+    "final_answer_accuracy": 0.01,
+    "structural_rate": 0.88,
+    "global_mapping_consistency_rate": 0.11,
+    "nonliteral_encoding_rate": 0.88,
+    "answer_is_code_word_rate": null,
+    "source": "experiments/03_demonstration_seeding_multi_domain/multidomain_stage3_plan.json: untrained_base_control.checkpoint130_comparison"
+  },
+  "conclusion": "Base and latch-adapted checkpoint 130 are similarly poor across all four jointly-measured metrics (adherence, accuracy, structure, global consistency). The latch adapter did not erase a strong pre-existing transfer capability; multi-domain training design is supported. Two threads opened: checkpoint-500 stability (04_stability_investigation) and directly amplifying the model's rare invention successes via SFT (05_self_bootstrapping).",
+  "notebook_reconstruction_note": "stage35_third_domain_zero_shot.ipynb's output cells were accidentally overwritten by a rebuild-script verification pass during the 2026-08-22 reorganization and have been conservatively reconstructed from the conversation record; the numbers here are cross-checked against logs/development_log.md and multidomain_stage3_plan.json, neither of which was affected.",
+  "sources": [
+    "experiments/03_demonstration_seeding_multi_domain/README.md",
+    "experiments/03_demonstration_seeding_multi_domain/multidomain_stage3_plan.json",
+    "experiments/03_demonstration_seeding_multi_domain/notebooks/stage35_base_declared_mapping_control.ipynb",
+    "logs/development_log.md"
+  ]
+}

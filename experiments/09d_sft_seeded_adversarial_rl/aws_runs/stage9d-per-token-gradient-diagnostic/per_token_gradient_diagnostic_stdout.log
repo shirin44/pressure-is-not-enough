@@ -1,0 +1,53 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260830, 'n_steps': 8, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+{'train_pool_n': 43}
+===== LOAD 3B BASE + STAGE 9C CHECKPOINT (fresh, independent load) =====
+{'stage9c_adapter_sha256': 'c84afe0389487766463b74aba3559940b2e92d69c4915d32a5dee1c5ccc7609c', 'adapter_composition': ['default']}
+===== PATCH: retain_grad() on the per-token POLICY logprob tensor, per micro-batch =====
+Patches installed: per-token policy logps now retain_grad()-enabled, one capture per micro-batch.
+===== MINIMAL REPRO: UP TO 8 STEPS, STOP AT FIRST BREAKER =====
+STEP 1 GRADIENT ANALYSIS: token_share_code=0.0712890625 grad_share_code=0.10119358116673183 disproportionality_ratio=1.419482563215526
+{'loss': '-0.05719', 'grad_norm': '48.75', 'learning_rate': '1e-07', 'num_tokens': '3352', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-1.062', 'rewards/diagnostic_reward/std': '3.812', 'reward': '-1.062', 'reward_std': '3.812', 'frac_reward_zero_std': '0', 'policy_loss': '4.657e-10', 'kl': '0', 'entropy': '1.144', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.97', 'epoch': '0.02326'}
+  telemetry: step=1 grad_norm=48.75 kl=0.0
+STEP 2 GRADIENT ANALYSIS: token_share_code=0.0634765625 grad_share_code=0.08113555608835846 disproportionality_ratio=1.2781970682227548
+{'loss': '-0.04348', 'grad_norm': '29', 'learning_rate': '3.25e-07', 'num_tokens': '6696', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.312', 'rewards/diagnostic_reward/std': '3.565', 'reward': '1.312', 'reward_std': '3.565', 'frac_reward_zero_std': '0', 'policy_loss': '0.001037', 'kl': '0.2074', 'entropy': '1.036', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.16', 'epoch': '0.04651'}
+  telemetry: step=2 grad_norm=29.0 kl=0.20738239586353302
+STEP 3 GRADIENT ANALYSIS: token_share_code=0.0458984375 grad_share_code=0.0679712206078898 disproportionality_ratio=1.48090489154211
+{'loss': '-0.04739', 'grad_norm': '65.5', 'learning_rate': '5.5e-07', 'num_tokens': '1.002e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-2.188', 'rewards/diagnostic_reward/std': '2.137', 'reward': '-2.188', 'reward_std': '2.137', 'frac_reward_zero_std': '0', 'policy_loss': '0.001151', 'kl': '0.2303', 'entropy': '1.132', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.55', 'epoch': '0.06977'}
+  telemetry: step=3 grad_norm=65.5 kl=0.23026612133253366
+{'train_runtime': '169.5', 'train_samples_per_second': '0.378', 'train_steps_per_second': '0.047', 'train_loss': '-0.04936', 'epoch': '0.06977'}
+  telemetry: step=3 grad_norm=0.0 kl=0.0
+{'terminal_step': 3, 'hard_stop': {'step': 3, 'grad_norm': 65.5, 'kl': 0.23026612133253366}}
+===== FINAL REPORT =====
+{
+  "terminal_step": 3,
+  "hard_stop": {
+    "step": 3,
+    "grad_norm": 65.5,
+    "kl": 0.23026612133253366
+  },
+  "step_summaries": [
+    {
+      "step": 1,
+      "token_share_code": 0.0712890625,
+      "grad_share_code": 0.10119358116673183,
+      "disproportionality_ratio": 1.419482563215526
+    },
+    {
+      "step": 2,
+      "token_share_code": 0.0634765625,
+      "grad_share_code": 0.08113555608835846,
+      "disproportionality_ratio": 1.2781970682227548
+    },
+    {
+      "step": 3,
+      "token_share_code": 0.0458984375,
+      "grad_share_code": 0.0679712206078898,
+      "disproportionality_ratio": 1.48090489154211
+    }
+  ]
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-per-token-gradient-diagnostic/per_token_gradient_diagnostic_result.json
+PER-TOKEN GRADIENT DIAGNOSTIC COMPLETE.

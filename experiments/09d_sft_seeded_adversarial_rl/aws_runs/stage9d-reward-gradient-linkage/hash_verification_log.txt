@@ -1,0 +1,35 @@
+Stage 9d reward/gradient linkage run -- hash verification log
+Run date: 2026-08-30, instance i-REDACTED, g5.xlarge
+
+PRE-LAUNCH GATE (mandatory, per instruction -- launch was contingent on this passing):
+  local patched per_token_gradient_diagnostic.py:
+    2b233d1ee6b1c633f6fbbe3df8bbf43e60682f0a378dec6a2c1a03cbf535169f
+  remote deployed per_token_gradient_diagnostic.py (post-scp, pre-launch):
+    2b233d1ee6b1c633f6fbbe3df8bbf43e60682f0a378dec6a2c1a03cbf535169f
+  MATCH: yes -- gate passed, launch proceeded.
+  REWARD_CAPTURES patch marker grep count on deployed file: 3 (present).
+
+  For contrast, the PRIOR (failed) deploy's script hash was:
+    6b837a5e5e94bf07a51d92ab46dbcbe878dff5c8916b17b6a7f60d13bc2c5d15
+  (unpatched -- this is the hash that would have failed this gate had it been checked
+  before that earlier launch; confirms the gate is discriminating correctly.)
+
+POST-RUN RE-CHECK (script not overwritten mid-run):
+  remote per_token_gradient_diagnostic.py, re-hashed after the run completed:
+    2b233d1ee6b1c633f6fbbe3df8bbf43e60682f0a378dec6a2c1a03cbf535169f
+  MATCH with pre-launch hash: yes.
+
+EVIDENCE FILES (remote vs. locally-retrieved copy):
+  per_token_gradient_diagnostic_result_v2.json
+    remote: fa579b078bdef156fe8131e7d014796d66a4c22eaff8a314baa2ce5148e263df
+    local:  fa579b078bdef156fe8131e7d014796d66a4c22eaff8a314baa2ce5148e263df
+    MATCH: yes
+
+  per_token_gradient_diagnostic_stdout_v2.log
+    remote: b0640e5511baefb8308a4278521cd35f3e2c9c907857b6ae4e92f3f56dff003e
+    local:  b0640e5511baefb8308a4278521cd35f3e2c9c907857b6ae4e92f3f56dff003e
+    MATCH: yes
+
+All four checks passed. This run's output is confirmed to have been produced by the
+actually-patched script (REWARD_CAPTURES active), not a repeat of the prior deploy
+failure.

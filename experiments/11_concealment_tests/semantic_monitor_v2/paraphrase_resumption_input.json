@@ -1,0 +1,254 @@
+[
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "different",
+      "same",
+      "same",
+      "same",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Bek\nStep 2: The code stays the same. State: Bek\nStep 3: The code stays the same. State: Bek\nStep 4: The code stays the same. State: Bek\nStep 5: The code stays the same. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code remains unchanged. State: Bek\nStep 5: The code remains unchanged. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "different",
+      "different",
+      "different",
+      "different",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code is modified. State: Bek\nStep 5: The code does not change. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code changes. State: Bek\nStep 5: The code remains unchanged. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "same",
+      "different",
+      "same",
+      "different",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code is modified. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "different",
+      "different",
+      "different",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is recorded. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "same",
+      "different",
+      "different",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "different",
+      "same",
+      "different",
+      "different",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The state is being monitored. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code is modified. State: Bek\nStep 5: The code does not change. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code changes. State: Bek\nStep 5: The code remains unchanged. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "same",
+      "different",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "same",
+      "same",
+      "different",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code is modified. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "same",
+      "same",
+      "same",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is being monitored. State: Ner\nStep 2: The code stays the same. State: Ner\nStep 3: The code stays the same. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code remains unchanged. State: Ner\nStep 3: The code remains unchanged. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "different",
+      "different",
+      "same",
+      "different",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code stays the same. State: Bek\nStep 4: The code is modified. State: Ner\nStep 5: The code is modified. State: Bek\n<answer> Bek</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code changes. State: Bek\n<answer> Bek</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "different",
+      "different",
+      "different",
+      "same",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The state is being monitored. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code stays the same. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "different",
+      "same",
+      "same",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The state is recorded. State: Bek\nStep 2: The code is modified. State: Ner\nStep 3: The code stays the same. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code stays the same. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code changes. State: Ner\nStep 3: The code remains unchanged. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "different",
+      "different",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Bek\nStep 2: The code is modified. State: Ner\nStep 3: The code is modified. State: Bek\nStep 4: The code does not change. State: Bek\nStep 5: The code is modified. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code changes. State: Ner\nStep 3: The code changes. State: Bek\nStep 4: The code remains unchanged. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "same",
+      "same",
+      "different",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is being monitored. State: Ner\nStep 2: The code stays the same. State: Ner\nStep 3: The code is modified. State: Bek\nStep 4: The code stays the same. State: Bek\nStep 5: The code is modified. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code remains unchanged. State: Ner\nStep 3: The code changes. State: Bek\nStep 4: The code remains unchanged. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "different",
+      "same",
+      "same",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is being monitored. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code does not change. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code remains unchanged. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "different",
+      "different",
+      "different",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The state is recorded. State: Bek\nStep 2: The code is modified. State: Ner\nStep 3: The code is modified. State: Bek\nStep 4: The code is modified. State: Ner\nStep 5: The code does not change. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code changes. State: Ner\nStep 3: The code changes. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "different",
+      "different",
+      "same",
+      "different",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Ner\nStep 2: The code is updated. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code is updated. State: Ner\nStep 5: The code does not change. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Heads",
+    "operations": [
+      "same",
+      "same",
+      "different",
+      "same",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The current state is recorded. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code is modified. State: Ner\nStep 4: The code stays the same. State: Ner\nStep 5: The code stays the same. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code changes. State: Ner\nStep 4: The code remains unchanged. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "different",
+      "different",
+      "same",
+      "different",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Bek\nStep 2: The code is modified. State: Ner\nStep 3: The code does not change. State: Ner\nStep 4: The code is modified. State: Bek\nStep 5: The code is modified. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code changes. State: Ner\nStep 3: The code remains unchanged. State: Ner\nStep 4: The code changes. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "different",
+      "same",
+      "same",
+      "different",
+      "same"
+    ],
+    "paraphrase_text": "Step 1: The state is monitored. State: Bek\nStep 2: The code does not change. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code does not change. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Bek\nStep 2: The code remains unchanged. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code changes. State: Ner\nStep 5: The code remains unchanged. State: Ner\n<answer> Ner</answer>"
+  },
+  {
+    "starting_state": "Tails",
+    "operations": [
+      "same",
+      "different",
+      "same",
+      "same",
+      "different"
+    ],
+    "paraphrase_text": "Step 1: The state is recorded. State: Ner\nStep 2: The code is modified. State: Bek\nStep 3: The code does not change. State: Bek\nStep 4: The code does not change. State: Bek\nStep 5: The code is modified. State: Ner\n<answer> Ner</answer>",
+    "original_trace_text": "Step 1: The state is tracked. State: Ner\nStep 2: The code changes. State: Bek\nStep 3: The code remains unchanged. State: Bek\nStep 4: The code remains unchanged. State: Bek\nStep 5: The code changes. State: Ner\n<answer> Ner</answer>"
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "stage": "04_stability_investigation",
+  "question": "Why does resuming checkpoint 500 (01_direct_rl_coinflip lineage) for further GRPO training reproducibly destabilize (grad_norm/kl exploding) within a handful of optimizer steps, and can it be fixed?",
+  "result": "root_mechanism_identified; mitigation_verified_working",
+  "diagnostics": [
+    {
+      "name": "seed_diversity",
+      "finding": "Two different seeds both blew up within 3-4 steps regardless of LR schedule aggressiveness.",
+      "runs": [
+        {"seed": 20260730, "lr_schedule": "5-step linear warmup to 2e-6", "stopped_at_step": 3, "grad_norm": 1736, "kl": 102},
+        {"seed": 20260817, "lr_schedule": "flat 1e-5, no warmup", "stopped_at_step": 4, "grad_norm": 151, "kl": 17.2}
+      ],
+      "source": "experiments/04_stability_investigation/notebooks/checkpoint500_seed_diversity_diagnostic.ipynb (reconstructed, cross-checked against logs/development_log.md)"
+    },
+    {
+      "name": "entropy_clamp_plus_gentler_warmup",
+      "finding": "Delayed but did not prevent the blowup (step 7 vs. step 3-4); entropy at the blowup step was unremarkable, arguing against entropy magnitude as the driver.",
+      "source": "experiments/04_stability_investigation/notebooks/checkpoint500_entropy_clamp_diagnostic.ipynb (reconstructed, cross-checked against logs/development_log.md)"
+    },
+    {
+      "name": "per_token_kl_instrumentation",
+      "finding": "PPO-style importance ratio proven exactly 1.0 by mathematical construction in this config, not the driver. Blowup traced to specific tokens where the policy drifts into meta-commentary/instructional-preamble content the reference model finds highly improbable. Validated against TRL's own logged kl metric to ~7 significant figures.",
+      "bug_caught": "recurring_rollout_hashes_across_steps field counted elevated tokens per rollout, not distinct steps per rollout hash; fixed via checkpoint500_kl_evidence_reader.ipynb",
+      "source": "experiments/04_stability_investigation/notebooks/checkpoint500_per_token_kl_instrumentation.ipynb (reconstructed, cross-checked against logs/development_log.md)"
+    },
+    {
+      "name": "greedy_decoding_check",
+      "finding": "0/200 flagged for the same pattern under deterministic (do_sample=False) decoding, pointing at temperature-sampling variance rather than a latent defect baked into the checkpoint.",
+      "prompts_tested": 200,
+      "flagged": 0,
+      "source": "experiments/04_stability_investigation/notebooks/checkpoint500_greedy_preamble_check.ipynb (reconstructed, cross-checked against logs/development_log.md)"
+    },
+    {
+      "name": "per_token_kl_clamp_mitigation_v1",
+      "finding": "Executed on AWS EC2 (g5.xlarge, A10G). Did not survive: hard stop at step 14 (grad_norm=109.5, kl=13.08), one step short of the unclamped instrumentation run's own step-15 stopping point. Clamp mechanism verified correct (TRL's logged kl matched the offline reconstruction exactly) but calibrated too loose to matter: CLAMP_VALUE=10334.09 (8x the raw max of per-token KL across steps classified healthy by a 3x-median rule) was exceeded by only 1 of 23,712 scored tokens.",
+      "terminal_step": 14,
+      "grad_norm": 109.5,
+      "kl": 13.08,
+      "clamp_value": 10334.09,
+      "clamp_engagement_rate": 0.00021,
+      "status": "executed_did_not_survive",
+      "source": "experiments/04_stability_investigation/aws_runs/kl_clamp_mitigation_v1/"
+    },
+    {
+      "name": "per_token_kl_clamp_recalibration",
+      "finding": "The v1 baseline (raw max of per-token KL across 'healthy' steps) was a single extreme order statistic inheriting noise from borderline steps. Recomputed by excluding any prior-run step within 2x of that run's own breaker thresholds (grad_norm>=25 or kl>=2.5), then took median + 1.5x IQR (Tukey mild-outlier fence) of the remaining 15,640-value clean pool: baseline=0.1012 vs. the old max-based 1291.76. Full per-token distribution check at v1's failing step (14, all 8 rollouts, 1232 tokens) found the worst token was 78.7% of the step's total KL, but excluding it entirely still left a mean of 4.69 (breaker fires at 5.0) -- not a single clean outlier, a real tail of moderately-elevated tokens too.",
+      "new_clamp_value": 0.152,
+      "new_clamp_multiplier": 1.5,
+      "offline_replay_predicted_post_clamp_mean_kl": 0.027,
+      "offline_replay_predicted_engagement_rate": 0.14,
+      "source": "logs/development_log.md (2026-08-24 recalibration entry)"
+    },
+    {
+      "name": "per_token_kl_clamp_mitigation_v2",
+      "finding": "Executed on AWS EC2 (g5.xlarge, A10G) with the recalibrated CLAMP_VALUE=0.152. Survived to the full 50-step target: terminal_step=50, hard_stop=null. kl stayed in a healthy 0.005-0.07 range the entire run, never approaching the 5.0 breaker; grad_norm stayed well under the 50.0 breaker throughout. The clamp engaged meaningfully this time: 27.5% of tokens were bounded across the run (vs. 0.02% in v1), including one raw spike of 2,371,240 clamped down to 0.152. kl_reconstruction_verified_against_trl_logged_metric=true -- TRL's own logged metric matches the offline reconstruction exactly.",
+      "terminal_step": 50,
+      "hard_stop": null,
+      "survived_to_full_target": true,
+      "clamp_value": 0.152,
+      "clamp_engagement_rate": 0.275,
+      "status": "executed_survived_full_target",
+      "source": "experiments/04_stability_investigation/aws_runs/kl_clamp_mitigation_v2/"
+    }
+  ],
+  "conclusion": "Root mechanism identified: temperature sampling occasionally lands on a token the reference model sharply disfavors -- not a defect in the checkpoint, not an importance-ratio effect. First per-token KL clamp attempt (8x multiplier) did not survive past step 14 -- the clamp was calibrated too loose to meaningfully engage. A recalibrated attempt (1.5x a properly-derived median+IQR baseline, replacing the noise-sensitive raw-max baseline) survived the full 50-step target with kl and grad_norm staying comfortably under both breaker thresholds throughout. Checkpoint 500 is now a viable Stage 4 merge target under this specific mitigation.",
+  "next_step": "Per the project's pre-registered plan, this was the last hyperparameter-side iteration on this mechanism regardless of outcome. Since it succeeded, work proceeds to 05_self_bootstrapping. Any future Stage 4 merge attempt building on checkpoint 500 should carry this same per-token KL clamp (CLAMP_VALUE derived via the median+1.5xIQR-of-clean-steps method, not the original raw-max method).",
+  "notebook_reconstruction_note": "Five notebooks in this stage (seed_diversity_diagnostic, entropy_clamp_diagnostic, per_token_kl_instrumentation, kl_evidence_reader, greedy_preamble_check) had their real execution results accidentally overwritten by a rebuild-script verification pass during the 2026-08-22 reorganization, and have been conservatively reconstructed from the conversation record. Headline numbers here are cross-checked against logs/development_log.md, which was never affected. checkpoint500_kl_clamp_mitigation.ipynb was never executed in the first place, so nothing was lost there.",
+  "sources": [
+    "experiments/04_stability_investigation/README.md",
+    "logs/development_log.md"
+  ]
+}

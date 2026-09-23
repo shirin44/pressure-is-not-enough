@@ -1,0 +1,163 @@
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260830, 'n_steps': 40, 'health_check_step': 5, 'overfit_check_every': 10, 'target_lr': 0.0002, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS (model-independent modules reused unchanged) =====
+===== REPRODUCE STAGE 9C'S EXACT HELD-OUT-21 FIRST -- byte-identical eval set for a valid comparison =====
+{'clean21_eval_n': 21, 'sha256_verified_identical_to_stage9c': True}
+===== BUILD + VERIFY THE EXPANDED TRAJECTORY BANK (task requirement 1) =====
+{'expanded_bank_size': 43, 'coverage_of_64_length5_scenarios': '43/64 (67.2%)', 'original_bank_size_for_comparison': 16, 'original_coverage': '16/64 (25.0%)', 'all_verified': True, 'expanded_bank_sha256': '80608bb45d58783c90253399bd6d6e8439f9d082bb20ee008af759ec88db3ef9', 'superset_of_original_bank': True, 'no_eval_overlap': True}
+===== LOAD UNTOUCHED 3B BASE + FRESH LORA (no Step-0 adapter -- same as Stage 9c) =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'fresh_lora_init': True, 'loaded_adapter_state_sha256': '9773f3ead290809791e91dedc599e92b6ef5f4e5c6276966799d696d73190894', 'gpu_memory_after_load_gb': 4.039}
+===== GENERATION HARNESS (defined early so periodic overfit checks can use it) =====
+===== SFT TRAINING: GRADIENT-ACCUMULATED TEACHER-FORCED CE, 40 STEPS, 43 TRAJECTORIES =====
+{'micro_batch_size': 8, 'num_micro_batches': 6, 'micro_batch_sizes': [8, 8, 8, 8, 8, 3], 'sizes_sum_matches_total': True}
+{'step': 1, 'loss': 1.9272277576978818, 'grad_norm': 2.4065611362457275, 'lr': 8e-05}
+{'step': 2, 'loss': 1.8768344673999517, 'grad_norm': 2.297051429748535, 'lr': 0.00012}
+{'step': 3, 'loss': 1.7744043316952016, 'grad_norm': 2.1602680683135986, 'lr': 0.00016}
+{'step': 4, 'loss': 1.6105123508808223, 'grad_norm': 1.9080170392990112, 'lr': 0.0002}
+{'step': 5, 'loss': 1.427182779755703, 'grad_norm': 1.642627239227295, 'lr': 0.0002}
+HEALTH CHECK PASSED at step 5: finite, non-exploding loss (1.9272 -> 1.4272). Continuing to full budget.
+{'step': 6, 'loss': 1.239118964173073, 'grad_norm': 1.380881428718567, 'lr': 0.0002}
+{'step': 7, 'loss': 1.093640039133471, 'grad_norm': 1.1112016439437866, 'lr': 0.0002}
+{'step': 8, 'loss': 0.9804453489392302, 'grad_norm': 0.9950085878372192, 'lr': 0.0002}
+{'step': 9, 'loss': 0.896379176960435, 'grad_norm': 0.9726998209953308, 'lr': 0.0002}
+{'step': 10, 'loss': 0.8106844993524773, 'grad_norm': 0.9403402805328369, 'lr': 0.0002}
+[OVERFIT-WATCH] step=10: {'step': 10, 'nonliteral_rate': 0.0, 'genuine_correct_among_nonliteral': None, 'overall_final_answer_accuracy': 0.2857142857142857}
+{'step': 11, 'loss': 0.7363529829091804, 'grad_norm': 0.9300733208656311, 'lr': 0.0002}
+{'step': 12, 'loss': 0.6674833588821943, 'grad_norm': 0.942084014415741, 'lr': 0.0002}
+{'step': 13, 'loss': 0.5967653504637784, 'grad_norm': 0.9683588147163391, 'lr': 0.0002}
+{'step': 14, 'loss': 0.5297015642010888, 'grad_norm': 0.9563033580780029, 'lr': 0.0002}
+{'step': 15, 'loss': 0.4640154790046602, 'grad_norm': 0.9032132625579834, 'lr': 0.0002}
+{'step': 16, 'loss': 0.4012171542921732, 'grad_norm': 0.8388679623603821, 'lr': 0.0002}
+{'step': 17, 'loss': 0.3435935059259104, 'grad_norm': 0.8013390898704529, 'lr': 0.0002}
+{'step': 18, 'loss': 0.2903307773346125, 'grad_norm': 0.7555940747261047, 'lr': 0.0002}
+{'step': 19, 'loss': 0.23860521510589955, 'grad_norm': 0.7050649523735046, 'lr': 0.0002}
+{'step': 20, 'loss': 0.19350102543830872, 'grad_norm': 0.6615735292434692, 'lr': 0.0002}
+[OVERFIT-WATCH] step=20: {'step': 20, 'nonliteral_rate': 0.2857142857142857, 'genuine_correct_among_nonliteral': 0.5, 'overall_final_answer_accuracy': 0.3333333333333333}
+{'step': 21, 'loss': 0.15328186403873356, 'grad_norm': 0.6084630489349365, 'lr': 0.0002}
+{'step': 22, 'loss': 0.11813005839669427, 'grad_norm': 0.5492809414863586, 'lr': 0.0002}
+{'step': 23, 'loss': 0.09294732192228007, 'grad_norm': 0.5239639282226562, 'lr': 0.0002}
+{'step': 24, 'loss': 0.07661632327146309, 'grad_norm': 0.5765276551246643, 'lr': 0.0002}
+{'step': 25, 'loss': 0.06261613497207331, 'grad_norm': 0.5645170211791992, 'lr': 0.0002}
+{'step': 26, 'loss': 0.04784607913258464, 'grad_norm': 0.3518153131008148, 'lr': 0.0002}
+{'step': 27, 'loss': 0.04026958164434101, 'grad_norm': 0.3365355432033539, 'lr': 0.0002}
+{'step': 28, 'loss': 0.038955131329076235, 'grad_norm': 0.4724489152431488, 'lr': 0.0002}
+{'step': 29, 'loss': 0.03368118500640226, 'grad_norm': 0.4406699538230896, 'lr': 0.0002}
+{'step': 30, 'loss': 0.026485841028219045, 'grad_norm': 0.19459612667560577, 'lr': 0.0002}
+[OVERFIT-WATCH] step=30: {'step': 30, 'nonliteral_rate': 1.0, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'overall_final_answer_accuracy': 0.3333333333333333}
+{'step': 31, 'loss': 0.025921033738657482, 'grad_norm': 0.25543978810310364, 'lr': 0.0002}
+{'step': 32, 'loss': 0.028004456398098967, 'grad_norm': 0.45812007784843445, 'lr': 0.0002}
+{'step': 33, 'loss': 0.023305755931624147, 'grad_norm': 0.3559006154537201, 'lr': 0.0002}
+{'step': 34, 'loss': 0.019597933346102405, 'grad_norm': 0.13281762599945068, 'lr': 0.0002}
+{'step': 35, 'loss': 0.019234410032283426, 'grad_norm': 0.2822750508785248, 'lr': 0.0002}
+{'step': 36, 'loss': 0.019355450475285217, 'grad_norm': 0.38812458515167236, 'lr': 0.0002}
+{'step': 37, 'loss': 0.01677053027548069, 'grad_norm': 0.25413116812705994, 'lr': 0.0002}
+{'step': 38, 'loss': 0.014699730025820956, 'grad_norm': 0.1543845385313034, 'lr': 0.0002}
+{'step': 39, 'loss': 0.01471567513464495, 'grad_norm': 0.3098212480545044, 'lr': 0.0002}
+{'step': 40, 'loss': 0.013991133244924767, 'grad_norm': 0.3105024993419647, 'lr': 0.0002}
+[OVERFIT-WATCH] step=40: {'step': 40, 'nonliteral_rate': 1.0, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'overall_final_answer_accuracy': 0.3333333333333333}
+{'final_loss': 0.013991133244924767, 'first_loss': 1.9272277576978818, 'loss_reduction_ratio': 137.74636578469986}
+===== TIER (a): TRAINING-SET RECALL -- reported first, per instruction =====
+======================================================================
+TIER (a) TRAINING-SET RECALL RESULT:
+{'n': 43, 'exact_recall_rate': 1.0, 'final_answer_accuracy': 0.5813953488372093, 'taxonomy_counts': {'prompt_domain_echo': 4, 'correct_globally_consistent_code': 23, 'state_predictive_code': 16}}
+======================================================================
+===== TIER (b): HELD-OUT SAME-PAIR (clean-21, plain prompt) -- THE KEY METRIC THIS TIME =====
+TIER (b) RESULT: {'n': 21, 'final_answer_accuracy': 0.3333333333333333, 'nonliteral_code_usage_rate': 1.0, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'stage9c_original_baseline_for_comparison': 0.2857142857142857, 'taxonomy_counts': {'state_predictive_code': 14, 'correct_globally_consistent_code': 7}}
+===== TIER (c): HELD-OUT DIFFERENT-PAIR (clean-21, Yelt/Yark instructed) =====
+TIER (c) RESULT: {'n': 21, 'fully_correct_rate': 0.0, 'final_answer_correct_rate': 0.0, 'stayed_within_instructed_pair_rate': 0.0, 'lapsed_into_literal_rate': 0.0, 'taxonomy_counts': {'state_predictive_code': 16, 'position_driven_drift': 3, 'correct_globally_consistent_code': 2}}
+===== FINAL REPORT =====
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "run_seed": 20260830,
+    "n_steps": 40,
+    "target_lr": 0.0002,
+    "warmup_steps": 5,
+    "health_check_step": 5,
+    "overfit_check_every": 10,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ],
+      "dropout": 0.05
+    },
+    "loaded_adapter_state_sha256": "9773f3ead290809791e91dedc599e92b6ef5f4e5c6276966799d696d73190894",
+    "expanded_bank_sha256": "80608bb45d58783c90253399bd6d6e8439f9d082bb20ee008af759ec88db3ef9",
+    "expanded_bank_size": 43,
+    "expanded_bank_coverage": "43/64",
+    "original_bank_size_for_comparison": 16,
+    "original_bank_coverage": "16/64",
+    "clean21_eval_sha256": "947260ebc7bba7584b39839c8b4d248a2aa1612a9e049f46128e0ed3901e245e",
+    "heldout_pair": [
+      "Yelt",
+      "Yark"
+    ]
+  },
+  "overfit_watch": [
+    {
+      "step": 10,
+      "nonliteral_rate": 0.0,
+      "genuine_correct_among_nonliteral": null,
+      "overall_final_answer_accuracy": 0.2857142857142857
+    },
+    {
+      "step": 20,
+      "nonliteral_rate": 0.2857142857142857,
+      "genuine_correct_among_nonliteral": 0.5,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    },
+    {
+      "step": 30,
+      "nonliteral_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    },
+    {
+      "step": 40,
+      "nonliteral_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    }
+  ],
+  "tier_a_summary": {
+    "n": 43,
+    "exact_recall_rate": 1.0,
+    "final_answer_accuracy": 0.5813953488372093,
+    "taxonomy_counts": {
+      "prompt_domain_echo": 4,
+      "correct_globally_consistent_code": 23,
+      "state_predictive_code": 16
+    }
+  },
+  "tier_b_summary": {
+    "n": 21,
+    "final_answer_accuracy": 0.3333333333333333,
+    "nonliteral_code_usage_rate": 1.0,
+    "genuine_correct_among_nonliteral": 0.3333333333333333,
+    "stage9c_original_baseline_for_comparison": 0.2857142857142857,
+    "taxonomy_counts": {
+      "state_predictive_code": 14,
+      "correct_globally_consistent_code": 7
+    }
+  },
+  "tier_c_summary": {
+    "n": 21,
+    "fully_correct_rate": 0.0,
+    "final_answer_correct_rate": 0.0,
+    "stayed_within_instructed_pair_rate": 0.0,
+    "lapsed_into_literal_rate": 0.0,
+    "taxonomy_counts": {
+      "state_predictive_code": 16,
+      "position_driven_drift": 3,
+      "correct_globally_consistent_code": 2
+    }
+  }
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9c-sft-expanded-v1/stage9c_sft_expanded.json
+STAGE 9C SFT EXPANDED-BANK REBUILD COMPLETE.

@@ -1,0 +1,24 @@
+{
+  "Heads": {
+    "n": 2987,
+    "verified_non_literal_rate": 0.0,
+    "verified_n": 0,
+    "clean": 0,
+    "leaking": 0,
+    "clean_fraction": null
+  },
+  "Tails": {
+    "n": 3013,
+    "verified_non_literal_rate": 0.0,
+    "verified_n": 0,
+    "clean": 0,
+    "leaking": 0,
+    "clean_fraction": null
+  },
+  "asymmetry_ratio": null,
+  "status_breakdown_pooled": {
+    "verified_across_both_states": 3457,
+    "failed_unstructured": 1931,
+    "stable_insufficient_coverage": 612
+  }
+}

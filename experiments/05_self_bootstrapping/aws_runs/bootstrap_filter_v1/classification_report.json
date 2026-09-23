@@ -1,0 +1,27 @@
+{
+  "n_attempts": 8160,
+  "verified_count": 575,
+  "verified_rate": 0.0704656862745098,
+  "sft_eligible_count": 421,
+  "sft_eligible_rate": 0.05159313725490196,
+  "known_baseline_rate_lamp_n100": 0.1,
+  "ratio_to_baseline": 0.704656862745098,
+  "same_ballpark_as_baseline": true,
+  "same_ballpark_note": "verified_rate is between 0.5x and 2x the lamp baseline",
+  "by_domain": {
+    "fan": {
+      "n": 4080,
+      "verified": 265,
+      "sft_eligible": 124,
+      "verified_rate": 0.06495098039215687,
+      "sft_eligible_rate": 0.030392156862745098
+    },
+    "valve": {
+      "n": 4080,
+      "verified": 310,
+      "sft_eligible": 297,
+      "verified_rate": 0.07598039215686274,
+      "sft_eligible_rate": 0.07279411764705883
+    }
+  }
+}

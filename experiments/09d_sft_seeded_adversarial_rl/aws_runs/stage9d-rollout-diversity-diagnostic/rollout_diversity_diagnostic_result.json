@@ -1,0 +1,1361 @@
+{
+  "results": {
+    "step0_milestone12": {
+      "summary": {
+        "n_groups": 8,
+        "grand_mean_pairwise_similarity": 0.9256970442579932,
+        "grand_mean_baseline_reward_std": 0.6802844369247598,
+        "grand_mean_main_reward_std": 0.6975028799075761,
+        "grand_mean_baseline_max_abs_advantage": 1.2077915844168554,
+        "grand_mean_main_max_abs_advantage": 1.2074393804847634,
+        "n_groups_near_zero_variance_baseline": 4,
+        "n_groups_near_zero_variance_main": 4
+      },
+      "groups": [
+        {
+          "prompt_index": 0,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips to opposite. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips to opposite. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips to opposite. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips to opposite. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9871106337271751,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.9774436090225563,
+            "exact_identical_pairs": 12,
+            "exact_identical_pair_fraction": 0.42857142857142855,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 4.0,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195
+            ],
+            "reward_mean": 4.087457855758195,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 1,
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: Different from previous (the state flips). State: Tails\nStep 5: Different from previous (the state flips). State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: Different from previous (the state flips). State: Tails\nStep 5: Different from previous (the state flips). State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.8988403578996939,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.6715328467153284,
+            "exact_identical_pairs": 11,
+            "exact_identical_pair_fraction": 0.39285714285714285,
+            "n_distinct_completions": 3
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -1.0,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5625,
+            "reward_std": 0.16535945694153692,
+            "advantages": [
+              0.3777360397241218,
+              -2.6441522780688524,
+              0.3777360397241218,
+              0.3777360397241218,
+              0.3777360397241218,
+              0.3777360397241218,
+              0.3777360397241218,
+              0.3777360397241218
+            ],
+            "max_abs_advantage": 2.6441522780688524,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.4125421442418056,
+              -1.027926759626421,
+              -0.4125421442418056,
+              -0.4125421442418056,
+              -0.4125421442418056,
+              -0.4125421442418056,
+              -0.4125421442418056,
+              -0.4125421442418056
+            ],
+            "reward_mean": -0.4894652211648825,
+            "reward_std": 0.20351933162035313,
+            "advantages": [
+              0.377778849930121,
+              -2.6444519495108474,
+              0.377778849930121,
+              0.377778849930121,
+              0.377778849930121,
+              0.377778849930121,
+              0.377778849930121,
+              0.377778849930121
+            ],
+            "max_abs_advantage": 2.6444519495108474,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 2,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 1.0,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 1.0,
+            "exact_identical_pairs": 28,
+            "exact_identical_pair_fraction": 1.0,
+            "n_distinct_completions": 1
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 4.0,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195
+            ],
+            "reward_mean": 4.087457855758195,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 3,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips to different. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips to different. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips to different. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips to different. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9860627177700348,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.975609756097561,
+            "exact_identical_pairs": 12,
+            "exact_identical_pair_fraction": 0.42857142857142855,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 4.0,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195
+            ],
+            "reward_mean": 4.087457855758195,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 4,
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "different",
+            "same",
+            "different",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state does NOT change. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state does NOT change. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.790908466117555,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.35807860262008734,
+            "exact_identical_pairs": 11,
+            "exact_identical_pair_fraction": 0.39285714285714285,
+            "n_distinct_completions": 3
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -1.0,
+              4.0,
+              4.0,
+              4.0,
+              3.5,
+              -1.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 2.6875,
+            "reward_std": 2.1350863565673404,
+            "advantages": [
+              -1.7270155312945406,
+              0.6147004433421246,
+              0.6147004433421246,
+              0.6147004433421246,
+              0.3805288458784581,
+              -1.7270155312945406,
+              0.6147004433421246,
+              0.6147004433421246
+            ],
+            "max_abs_advantage": 1.7270155312945406,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              -1.0625421442418057,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              3.4374578557581943,
+              -1.0625421442418057,
+              4.087457855758195,
+              4.087457855758195
+            ],
+            "reward_mean": 2.7187078557581943,
+            "reward_std": 2.1931623144446015,
+            "advantages": [
+              -1.7240299872464289,
+              0.6240703590197819,
+              0.6240703590197819,
+              0.6240703590197819,
+              0.3277081793939493,
+              -1.7240299872464289,
+              0.6240703590197819,
+              0.6240703590197819
+            ],
+            "max_abs_advantage": 1.7240299872464289,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 5,
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9990939293264874,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.9978858350951374,
+            "exact_identical_pairs": 16,
+            "exact_identical_pair_fraction": 0.5714285714285714,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 4.0,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195,
+              4.087457855758195
+            ],
+            "reward_mean": 4.087457855758195,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 6,
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>\nHeads\n</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state remains unchanged. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9314767241194434,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.8270042194092827,
+            "exact_identical_pairs": 10,
+            "exact_identical_pair_fraction": 0.35714285714285715,
+            "n_distinct_completions": 4
+          },
+          "baseline_scoring": {
+            "rewards": [
+              3.5,
+              -1.0,
+              3.5,
+              3.5,
+              3.5,
+              3.5,
+              3.5,
+              3.5
+            ],
+            "reward_mean": 2.9375,
+            "reward_std": 1.4882351124738322,
+            "advantages": [
+              0.377939077890222,
+              -2.645573545231554,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222
+            ],
+            "max_abs_advantage": 2.645573545231554,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              3.4374578557581943,
+              -1.0625421442418057,
+              3.472073240373579,
+              3.4374578557581943,
+              3.4374578557581943,
+              3.4374578557581943,
+              3.4374578557581943,
+              3.4374578557581943
+            ],
+            "reward_mean": 2.8792847788351175,
+            "reward_std": 1.4899136197460354,
+            "advantages": [
+              0.37460937908622227,
+              -2.6454972430042525,
+              0.39784096848691813,
+              0.37460937908622227,
+              0.37460937908622227,
+              0.37460937908622227,
+              0.37460937908622227,
+              0.37460937908622227
+            ],
+            "max_abs_advantage": 2.6454972430042525,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 7,
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+            "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.8120835251035559,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.3884297520661157,
+            "exact_identical_pairs": 15,
+            "exact_identical_pair_fraction": 0.5357142857142857,
+            "n_distinct_completions": 3
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              4.0,
+              -1.0
+            ],
+            "reward_mean": -0.375,
+            "reward_std": 1.653594569415369,
+            "advantages": [
+              -0.37794161724855657,
+              -0.37794161724855657,
+              -0.37794161724855657,
+              -0.37794161724855657,
+              -0.37794161724855657,
+              -0.37794161724855657,
+              2.645591320739896,
+              -0.37794161724855657
+            ],
+            "max_abs_advantage": 2.645591320739896,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              -1.027926759626421,
+              -1.027926759626421,
+              -1.027926759626421,
+              -1.027926759626421,
+              -1.027926759626421,
+              -1.0625421442418057,
+              4.087457855758195,
+              -1.027926759626421
+            ],
+            "reward_mean": -0.39283060578026713,
+            "reward_std": 1.6934277734496186,
+            "advantages": [
+              -0.37501372212662304,
+              -0.37501372212662304,
+              -0.37501372212662304,
+              -0.37501372212662304,
+              -0.37501372212662304,
+              -0.39545353135684025,
+              2.6455358641165785,
+              -0.37501372212662304
+            ],
+            "max_abs_advantage": 2.6455358641165785,
+            "near_zero_variance": false
+          }
+        }
+      ]
+    },
+    "stage9c_sft": {
+      "summary": {
+        "n_groups": 8,
+        "grand_mean_pairwise_similarity": 0.9182683876272335,
+        "grand_mean_baseline_reward_std": 0.3991220719867218,
+        "grand_mean_main_reward_std": 0.4053674474947826,
+        "grand_mean_baseline_max_abs_advantage": 0.8777997834206962,
+        "grand_mean_main_max_abs_advantage": 0.8778185177338709,
+        "n_groups_near_zero_variance_baseline": 5,
+        "n_groups_near_zero_variance_main": 5
+      },
+      "groups": [
+        {
+          "prompt_index": 0,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9956178790534619,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.9897750511247444,
+            "exact_identical_pairs": 16,
+            "exact_identical_pair_fraction": 0.5714285714285714,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -1.0,
+              -1.0,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.625,
+            "reward_std": 0.21650635094610965,
+            "advantages": [
+              0.577083725634154,
+              0.577083725634154,
+              0.577083725634154,
+              0.577083725634154,
+              -1.7312511769024619,
+              -1.7312511769024619,
+              0.577083725634154,
+              0.577083725634154
+            ],
+            "max_abs_advantage": 1.7312511769024619,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.9653846153846154,
+              -0.9653846153846154,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.5038461538461538,
+            "reward_std": 0.26646935501059654,
+            "advantages": [
+              0.5771336838026195,
+              0.5771336838026195,
+              0.5771336838026195,
+              0.5771336838026195,
+              -1.7314010514078586,
+              -1.7314010514078586,
+              0.5771336838026195,
+              0.5771336838026195
+            ],
+            "max_abs_advantage": 1.7314010514078586,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 1,
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "same",
+            "same",
+            "different",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.8812090589761711,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.4197002141327623,
+            "exact_identical_pairs": 15,
+            "exact_identical_pair_fraction": 0.5357142857142857,
+            "n_distinct_completions": 3
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              -0.5,
+              4.0
+            ],
+            "reward_mean": 3.4375,
+            "reward_std": 1.4882351124738322,
+            "advantages": [
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              -2.645573545231554,
+              0.377939077890222
+            ],
+            "max_abs_advantage": 2.645573545231554,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              4.15,
+              4.15,
+              4.15,
+              4.15,
+              4.15,
+              4.15,
+              -0.35,
+              4.15
+            ],
+            "reward_mean": 3.5875000000000004,
+            "reward_std": 1.4882351124738322,
+            "advantages": [
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              -2.6455735452315543,
+              0.377939077890222
+            ],
+            "max_abs_advantage": 2.6455735452315543,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 2,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 1.0,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 1.0,
+            "exact_identical_pairs": 28,
+            "exact_identical_pair_fraction": 1.0,
+            "n_distinct_completions": 1
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.35,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 3,
+          "starting_state": "Tails",
+          "operations": [
+            "same",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 1.0,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 1.0,
+            "exact_identical_pairs": 28,
+            "exact_identical_pair_fraction": 1.0,
+            "n_distinct_completions": 1
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.35,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 4,
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "different",
+            "same",
+            "different",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9133448298950867,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.6167023554603854,
+            "exact_identical_pairs": 15,
+            "exact_identical_pair_fraction": 0.5357142857142857,
+            "n_distinct_completions": 3
+          },
+          "baseline_scoring": {
+            "rewards": [
+              4.0,
+              -0.5,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "reward_mean": 3.4375,
+            "reward_std": 1.4882351124738322,
+            "advantages": [
+              0.377939077890222,
+              -2.645573545231554,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222
+            ],
+            "max_abs_advantage": 2.645573545231554,
+            "near_zero_variance": false
+          },
+          "main_scoring": {
+            "rewards": [
+              4.15,
+              -0.35,
+              4.15,
+              4.15,
+              4.15,
+              4.15,
+              4.15,
+              4.15
+            ],
+            "reward_mean": 3.5875000000000004,
+            "reward_std": 1.4882351124738322,
+            "advantages": [
+              0.377939077890222,
+              -2.6455735452315543,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222,
+              0.377939077890222
+            ],
+            "max_abs_advantage": 2.6455735452315543,
+            "near_zero_variance": false
+          }
+        },
+        {
+          "prompt_index": 5,
+          "starting_state": "Heads",
+          "operations": [
+            "same",
+            "different",
+            "different",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.8618568232662193,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.44742729306487694,
+            "exact_identical_pairs": 21,
+            "exact_identical_pair_fraction": 0.75,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.35,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 6,
+          "starting_state": "Heads",
+          "operations": [
+            "different",
+            "same",
+            "different",
+            "same",
+            "same"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.9871663244353183,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.9486652977412731,
+            "exact_identical_pairs": 21,
+            "exact_identical_pair_fraction": 0.75,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.35,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        },
+        {
+          "prompt_index": 7,
+          "starting_state": "Tails",
+          "operations": [
+            "different",
+            "same",
+            "same",
+            "same",
+            "different"
+          ],
+          "completions": [
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+            "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>"
+          ],
+          "diversity": {
+            "n_pairs": 28,
+            "mean_pairwise_similarity": 0.7069521853916105,
+            "max_pairwise_similarity": 1.0,
+            "min_pairwise_similarity": 0.2587268993839836,
+            "exact_identical_pairs": 16,
+            "exact_identical_pair_fraction": 0.5714285714285714,
+            "n_distinct_completions": 2
+          },
+          "baseline_scoring": {
+            "rewards": [
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "reward_mean": -0.5,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          },
+          "main_scoring": {
+            "rewards": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35
+            ],
+            "reward_mean": -0.35,
+            "reward_std": 0.0,
+            "advantages": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max_abs_advantage": 0.0,
+            "near_zero_variance": true
+          }
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "step0_mean_pairwise_similarity": 0.9256970442579932,
+    "stage9c_mean_pairwise_similarity": 0.9182683876272335,
+    "similarity_ratio_stage9c_over_step0": 0.9919750671379596,
+    "step0_mean_baseline_reward_std": 0.6802844369247598,
+    "stage9c_mean_baseline_reward_std": 0.3991220719867218,
+    "step0_mean_main_reward_std": 0.6975028799075761,
+    "stage9c_mean_main_reward_std": 0.4053674474947826,
+    "step0_mean_baseline_max_abs_advantage": 1.2077915844168554,
+    "stage9c_mean_baseline_max_abs_advantage": 0.8777997834206962,
+    "step0_mean_main_max_abs_advantage": 1.2074393804847634,
+    "stage9c_mean_main_max_abs_advantage": 0.8778185177338709,
+    "step0_n_near_zero_variance_groups_baseline_of_8": 4,
+    "stage9c_n_near_zero_variance_groups_baseline_of_8": 5,
+    "step0_n_near_zero_variance_groups_main_of_8": 4,
+    "stage9c_n_near_zero_variance_groups_main_of_8": 5
+  }
+}

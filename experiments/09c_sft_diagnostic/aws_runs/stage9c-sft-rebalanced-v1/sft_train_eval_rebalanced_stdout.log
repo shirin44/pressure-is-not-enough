@@ -1,0 +1,251 @@
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260830, 'rebalance_seed': 20260901, 'n_steps': 40, 'health_check_step': 5, 'overfit_check_every': 10, 'target_lr': 0.0002, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS (model-independent modules reused unchanged) =====
+===== REPRODUCE STAGE 9C'S EXACT HELD-OUT-21 FIRST -- byte-identical eval set =====
+{'clean21_eval_n': 21, 'sha256_verified_identical': True}
+===== REBALANCE THE EXPANDED (43-ROW) BANK TO EXACT 18/18 LABEL BALANCE =====
+{'before_distribution': {'Heads': 18, 'Tails': 25}, 'removed_count': 7, 'removed_scenarios': [('Tails', ['different', 'different', 'same', 'different', 'different']), ('Heads', ['same', 'same', 'same', 'different', 'same']), ('Tails', ['different', 'different', 'same', 'same', 'same']), ('Tails', ['same', 'different', 'same', 'same', 'different']), ('Tails', ['different', 'same', 'different', 'same', 'same']), ('Tails', ['different', 'same', 'same', 'different', 'same']), ('Tails', ['different', 'different', 'different', 'different', 'same'])], 'after_distribution': {'Heads': 18, 'Tails': 18}, 'coverage_before': '43/64', 'coverage_after': '36/64 (56.2%)', 'original_16_bank_fully_preserved': True, 'no_uncovered_length5_pool_existed': True}
+{'rebalanced_bank_size': 36, 'all_verified': True, 'rebalanced_bank_sha256': 'e3097a0fa7cc8f334b669031a6007343ba8960f6178d75eb5ab20490854ad84a', 'no_eval_overlap': True}
+===== LOAD UNTOUCHED 3B BASE + FRESH LORA =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'fresh_lora_init': True, 'loaded_adapter_state_sha256': '9773f3ead290809791e91dedc599e92b6ef5f4e5c6276966799d696d73190894', 'gpu_memory_after_load_gb': 4.039}
+===== GENERATION HARNESS =====
+===== SFT TRAINING: GRADIENT-ACCUMULATED TEACHER-FORCED CE, 40 STEPS, 36 TRAJECTORIES =====
+{'micro_batch_size': 8, 'num_micro_batches': 5, 'micro_batch_sizes': [8, 8, 8, 8, 4]}
+{'step': 1, 'loss': 1.9371683067745633, 'grad_norm': 2.4651801586151123, 'lr': 8e-05}
+{'step': 2, 'loss': 1.8746337625715468, 'grad_norm': 2.2589523792266846, 'lr': 0.00012}
+{'step': 3, 'loss': 1.7663132747014363, 'grad_norm': 2.1412193775177, 'lr': 0.00016}
+{'step': 4, 'loss': 1.6222917238871255, 'grad_norm': 1.908546805381775, 'lr': 0.0002}
+{'step': 5, 'loss': 1.4378309117423163, 'grad_norm': 1.6363799571990967, 'lr': 0.0002}
+HEALTH CHECK PASSED at step 5: (1.9372 -> 1.4378). Continuing.
+{'step': 6, 'loss': 1.2494821945826213, 'grad_norm': 1.3781660795211792, 'lr': 0.0002}
+{'step': 7, 'loss': 1.0961363977856107, 'grad_norm': 1.1209197044372559, 'lr': 0.0002}
+{'step': 8, 'loss': 0.985861235194736, 'grad_norm': 0.997848391532898, 'lr': 0.0002}
+{'step': 9, 'loss': 0.897270659605662, 'grad_norm': 1.001538634300232, 'lr': 0.0002}
+{'step': 10, 'loss': 0.8142204483350118, 'grad_norm': 0.9759514927864075, 'lr': 0.0002}
+[OVERFIT-WATCH] step=10: {'step': 10, 'nonliteral_rate': 0.0, 'intermediate_tracking_accuracy': 0.0, 'final_answer_accuracy': 0.2857142857142857, 'genuine_correct_among_nonliteral': None, 'tracking_vs_answer_gap': -0.2857142857142857}
+{'step': 11, 'loss': 0.7364085912704467, 'grad_norm': 0.9223098158836365, 'lr': 0.0002}
+{'step': 12, 'loss': 0.6665837234920925, 'grad_norm': 0.94378662109375, 'lr': 0.0002}
+{'step': 13, 'loss': 0.5971261792712741, 'grad_norm': 0.9925785064697266, 'lr': 0.0002}
+{'step': 14, 'loss': 0.5289691090583801, 'grad_norm': 0.9923657774925232, 'lr': 0.0002}
+{'step': 15, 'loss': 0.4590680963463253, 'grad_norm': 0.8899146318435669, 'lr': 0.0002}
+{'step': 16, 'loss': 0.3996185991499158, 'grad_norm': 0.8314076066017151, 'lr': 0.0002}
+{'step': 17, 'loss': 0.3405151234732734, 'grad_norm': 0.7894037365913391, 'lr': 0.0002}
+{'step': 18, 'loss': 0.28671684198909336, 'grad_norm': 0.7512852549552917, 'lr': 0.0002}
+{'step': 19, 'loss': 0.2383167843023936, 'grad_norm': 0.7138144373893738, 'lr': 0.0002}
+{'step': 20, 'loss': 0.19315531022018853, 'grad_norm': 0.665854275226593, 'lr': 0.0002}
+[OVERFIT-WATCH] step=20: {'step': 20, 'nonliteral_rate': 0.047619047619047616, 'intermediate_tracking_accuracy': 0.0, 'final_answer_accuracy': 0.2857142857142857, 'genuine_correct_among_nonliteral': 1.0, 'tracking_vs_answer_gap': -0.2857142857142857}
+{'step': 21, 'loss': 0.15187851587931314, 'grad_norm': 0.6096069812774658, 'lr': 0.0002}
+{'step': 22, 'loss': 0.12042188478840721, 'grad_norm': 0.5440740585327148, 'lr': 0.0002}
+{'step': 23, 'loss': 0.09615260528193578, 'grad_norm': 0.5466480851173401, 'lr': 0.0002}
+{'step': 24, 'loss': 0.0788231450650427, 'grad_norm': 0.5525661110877991, 'lr': 0.0002}
+{'step': 25, 'loss': 0.06300140089458889, 'grad_norm': 0.5271852612495422, 'lr': 0.0002}
+{'step': 26, 'loss': 0.048355501145124435, 'grad_norm': 0.35836175084114075, 'lr': 0.0002}
+{'step': 27, 'loss': 0.04034577889574898, 'grad_norm': 0.336245059967041, 'lr': 0.0002}
+{'step': 28, 'loss': 0.03830177336931228, 'grad_norm': 0.4958609342575073, 'lr': 0.0002}
+{'step': 29, 'loss': 0.032576280956466995, 'grad_norm': 0.4386914372444153, 'lr': 0.0002}
+{'step': 30, 'loss': 0.02571450028982427, 'grad_norm': 0.15050733089447021, 'lr': 0.0002}
+[OVERFIT-WATCH] step=30: {'step': 30, 'nonliteral_rate': 1.0, 'intermediate_tracking_accuracy': 0.5714285714285714, 'final_answer_accuracy': 0.3333333333333333, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'tracking_vs_answer_gap': 0.23809523809523808}
+{'step': 31, 'loss': 0.02614051310552491, 'grad_norm': 0.3201694190502167, 'lr': 0.0002}
+{'step': 32, 'loss': 0.024883861343065895, 'grad_norm': 0.41869422793388367, 'lr': 0.0002}
+{'step': 33, 'loss': 0.021903305004040398, 'grad_norm': 0.3062635362148285, 'lr': 0.0002}
+{'step': 34, 'loss': 0.018275126814842224, 'grad_norm': 0.1438310593366623, 'lr': 0.0002}
+{'step': 35, 'loss': 0.018368451959557, 'grad_norm': 0.3292106091976166, 'lr': 0.0002}
+{'step': 36, 'loss': 0.01648124245305856, 'grad_norm': 0.325233519077301, 'lr': 0.0002}
+{'step': 37, 'loss': 0.01412909488297171, 'grad_norm': 0.21140319108963013, 'lr': 0.0002}
+{'step': 38, 'loss': 0.012789662720428573, 'grad_norm': 0.20498593151569366, 'lr': 0.0002}
+{'step': 39, 'loss': 0.012677494436502457, 'grad_norm': 0.3083638846874237, 'lr': 0.0002}
+{'step': 40, 'loss': 0.011421006483336289, 'grad_norm': 0.23249351978302002, 'lr': 0.0002}
+[OVERFIT-WATCH] step=40: {'step': 40, 'nonliteral_rate': 1.0, 'intermediate_tracking_accuracy': 0.9523809523809523, 'final_answer_accuracy': 0.3333333333333333, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'tracking_vs_answer_gap': 0.6190476190476191}
+{'final_loss': 0.011421006483336289, 'first_loss': 1.9371683067745633, 'loss_reduction_ratio': 169.6145002282391}
+===== TIER (a): TRAINING-SET RECALL, WITH TRACKING/ANSWER BREAKDOWN =====
+======================================================================
+TIER (a) RESULT: {'n': 36, 'intermediate_tracking_accuracy': 1.0, 'final_answer_accuracy': 0.5555555555555556, 'tracking_vs_answer_gap': 0.4444444444444444}
+======================================================================
+===== TIER (b): HELD-OUT SAME-PAIR -- tracking vs. answer reported SEPARATELY =====
+TIER (b) RESULT: {'n': 21, 'nonliteral_code_usage_rate': 1.0, 'intermediate_tracking_accuracy': 0.9523809523809523, 'final_answer_accuracy': 0.3333333333333333, 'tracking_vs_answer_gap': 0.6190476190476191, 'genuine_correct_among_nonliteral': 0.3333333333333333, 'stage9c_original_baseline_for_comparison': 0.2857142857142857, 'expanded_bank_unbalanced_result_for_comparison': 0.3333333333333333, 'taxonomy_counts': {'state_predictive_code': 14, 'correct_globally_consistent_code': 6, 'position_driven_drift': 1}}
+===== TIER (c): HELD-OUT DIFFERENT-PAIR (Yelt/Yark) =====
+TIER (c) RESULT: {'n': 21, 'fully_correct_rate': 0.0, 'final_answer_correct_rate': 0.0, 'stayed_within_instructed_pair_rate': 0.047619047619047616, 'lapsed_into_literal_rate': 0.0, 'taxonomy_counts': {'state_predictive_code': 18, 'correct_globally_consistent_code': 3}}
+===== FINAL REPORT =====
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "run_seed": 20260830,
+    "rebalance_seed": 20260901,
+    "n_steps": 40,
+    "target_lr": 0.0002,
+    "warmup_steps": 5,
+    "health_check_step": 5,
+    "overfit_check_every": 10,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ],
+      "dropout": 0.05
+    },
+    "loaded_adapter_state_sha256": "9773f3ead290809791e91dedc599e92b6ef5f4e5c6276966799d696d73190894",
+    "rebalanced_bank_sha256": "e3097a0fa7cc8f334b669031a6007343ba8960f6178d75eb5ab20490854ad84a",
+    "rebalanced_bank_size": 36,
+    "rebalanced_bank_coverage": "36/64",
+    "label_distribution_before": {
+      "Heads": 18,
+      "Tails": 25
+    },
+    "label_distribution_after": {
+      "Heads": 18,
+      "Tails": 18
+    },
+    "removed_scenario_count": 7,
+    "removed_scenarios": [
+      [
+        "Tails",
+        [
+          "different",
+          "different",
+          "same",
+          "different",
+          "different"
+        ]
+      ],
+      [
+        "Heads",
+        [
+          "same",
+          "same",
+          "same",
+          "different",
+          "same"
+        ]
+      ],
+      [
+        "Tails",
+        [
+          "different",
+          "different",
+          "same",
+          "same",
+          "same"
+        ]
+      ],
+      [
+        "Tails",
+        [
+          "same",
+          "different",
+          "same",
+          "same",
+          "different"
+        ]
+      ],
+      [
+        "Tails",
+        [
+          "different",
+          "same",
+          "different",
+          "same",
+          "same"
+        ]
+      ],
+      [
+        "Tails",
+        [
+          "different",
+          "same",
+          "same",
+          "different",
+          "same"
+        ]
+      ],
+      [
+        "Tails",
+        [
+          "different",
+          "different",
+          "different",
+          "different",
+          "same"
+        ]
+      ]
+    ],
+    "original_16_bank_fully_preserved": true,
+    "clean21_eval_sha256": "947260ebc7bba7584b39839c8b4d248a2aa1612a9e049f46128e0ed3901e245e",
+    "heldout_pair": [
+      "Yelt",
+      "Yark"
+    ]
+  },
+  "overfit_watch": [
+    {
+      "step": 10,
+      "nonliteral_rate": 0.0,
+      "intermediate_tracking_accuracy": 0.0,
+      "final_answer_accuracy": 0.2857142857142857,
+      "genuine_correct_among_nonliteral": null,
+      "tracking_vs_answer_gap": -0.2857142857142857
+    },
+    {
+      "step": 20,
+      "nonliteral_rate": 0.047619047619047616,
+      "intermediate_tracking_accuracy": 0.0,
+      "final_answer_accuracy": 0.2857142857142857,
+      "genuine_correct_among_nonliteral": 1.0,
+      "tracking_vs_answer_gap": -0.2857142857142857
+    },
+    {
+      "step": 30,
+      "nonliteral_rate": 1.0,
+      "intermediate_tracking_accuracy": 0.5714285714285714,
+      "final_answer_accuracy": 0.3333333333333333,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "tracking_vs_answer_gap": 0.23809523809523808
+    },
+    {
+      "step": 40,
+      "nonliteral_rate": 1.0,
+      "intermediate_tracking_accuracy": 0.9523809523809523,
+      "final_answer_accuracy": 0.3333333333333333,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "tracking_vs_answer_gap": 0.6190476190476191
+    }
+  ],
+  "tier_a_summary": {
+    "n": 36,
+    "intermediate_tracking_accuracy": 1.0,
+    "final_answer_accuracy": 0.5555555555555556,
+    "tracking_vs_answer_gap": 0.4444444444444444
+  },
+  "tier_b_summary": {
+    "n": 21,
+    "nonliteral_code_usage_rate": 1.0,
+    "intermediate_tracking_accuracy": 0.9523809523809523,
+    "final_answer_accuracy": 0.3333333333333333,
+    "tracking_vs_answer_gap": 0.6190476190476191,
+    "genuine_correct_among_nonliteral": 0.3333333333333333,
+    "stage9c_original_baseline_for_comparison": 0.2857142857142857,
+    "expanded_bank_unbalanced_result_for_comparison": 0.3333333333333333,
+    "taxonomy_counts": {
+      "state_predictive_code": 14,
+      "correct_globally_consistent_code": 6,
+      "position_driven_drift": 1
+    }
+  },
+  "tier_c_summary": {
+    "n": 21,
+    "fully_correct_rate": 0.0,
+    "final_answer_correct_rate": 0.0,
+    "stayed_within_instructed_pair_rate": 0.047619047619047616,
+    "lapsed_into_literal_rate": 0.0,
+    "taxonomy_counts": {
+      "state_predictive_code": 18,
+      "correct_globally_consistent_code": 3
+    }
+  }
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9c-sft-rebalanced-v1/stage9c_sft_rebalanced.json
+STAGE 9C SFT REBALANCED-BANK RUN COMPLETE.

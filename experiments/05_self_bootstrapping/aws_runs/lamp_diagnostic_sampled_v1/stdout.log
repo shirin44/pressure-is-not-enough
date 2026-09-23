@@ -1,0 +1,22 @@
+{'gpu': 'NVIDIA A10G', 'prompt_seed': 20260824, 'batch_size': 64, 'target_pool_size': 2000, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== BUILD LAMP UNDECLARED PROMPT POOL, DISJOINT FROM THE ORIGINAL 100-EXAMPLE EVAL SET =====
+original lamp eval signatures loaded for disjointness check: 100
+{'total': 2000, 'unique': True, 'leakage': False, 'disjoint_from_original_eval': True}
+===== LOAD CHECKPOINT 130 (multi-domain) =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'adapter_sha256': {'adapter_model.safetensors': 'f5039c13adfa4b0ff9771f7dc0d71cdcea9839c91fc1a03217c5cb63716fe77b'}, 'trainable_parameters': 0, 'mode': 'eval, greedy decoding only'}
+===== SAMPLED GENERATION: 2000 LAMP PROMPTS, do_sample=True temperature=0.8 top_p=0.95 (matching GRPO rollout precedent) =====
+Resuming: 0/2000 already completed.
+SAVED: 256/2000
+SAVED: 448/2000
+SAVED: 640/2000
+SAVED: 832/2000
+SAVED: 1024/2000
+SAVED: 1216/2000
+SAVED: 1408/2000
+SAVED: 1600/2000
+SAVED: 1856/2000
+SAVED: 2000/2000
+
+DONE: 2000 raw completions saved to /home/ubuntu/aisi_checkpoints/lamp-diagnostic-generation-sampled-v1/raw_completions.json
+LAMP SAMPLED DIAGNOSTIC GENERATION COMPLETE.

@@ -1,0 +1,373 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260817, 'n_steps': 50, 'entropy_clamp_value': 1.6983142857142859, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== DERIVE KL CLAMP VALUE EMPIRICALLY FROM THE COMPLETED INSTRUMENTATION RUN =====
+{'step_mean_kl': {1: 0.0, 2: 1.0486, 3: 0.2776, 4: 0.2812, 5: 2.9607, 6: 0.0797, 7: 0.356, 8: 2.6987, 9: 0.0594, 10: 2.6957, 11: 0.3577, 12: 0.8246, 13: 0.0158, 14: 0.3158, 15: 197.6719}, 'median_step_kl': 0.356, 'elevated_steps_3x_median_rule': [5, 8, 10, 15], 'healthy_steps': [1, 2, 3, 4, 6, 7, 9, 11, 12, 13, 14]}
+{'healthy_upper_end_per_token_kl': 1291.7614, 'clamp_multiplier': 8.0, 'CLAMP_VALUE': 10334.0913, 'D_MAX': 9.244194, 'newton_solver_round_trip_check': 10334.091296}
+===== PATCH 1/2: entropy_from_logits clamp (identical to the entropy-clamp diagnostic; kept active) =====
+PASSED: entropy clamp self-test (unchanged from the entropy-clamp diagnostic).
+===== PATCH 2/2: per-token KL clamp + instrumentation on GRPOTrainer (class-level, additive) =====
+Patches installed. KL clamp not yet enabled (KL_CLAMP_STATE["enabled"]=False until self-test passes).
+===== KL CLAMP MECHANISM SELF-TEST (against a stand-in for TRL's real, unmodified formula) =====
+PASSED: pathological token bounded exactly at CLAMP_VALUE; healthy tokens unaffected in value.
+PASSED: normal-range diffs pass through with zero distortion, matching the unmodified formula exactly.
+PASSED: gradient through the clamped path matches the analytically expected straight-through value.
+PASSED: unclamped-region gradient is bit-for-bit identical to the no-clamp-mechanism-at-all baseline.
+KL CLAMP ENABLED: CLAMP_VALUE=10334.0913, D_MAX=9.244194
+SOURCE SCHEDULER AUDIT: {'last_epoch': 430, 'recorded_lr': [0.0, 0.0], 'scheduler_state_present': True, 'optimizer_state_present': True}
+FRESH LR CURVE (12-STEP WARMUP TO 1E-6, SAMPLE POINTS): {501: 1e-07, 502: 1.818181818181818e-07, 503: 2.6363636363636366e-07, 548: 7.894736842105262e-08, 549: 5.2631578947368416e-08, 550: 2.6315789473684208e-08}
+===== EXPLORATION CLASSIFIER (same as every prior checkpoint-500 diagnostic) =====
+PASSED: classifier self-test.
+===== FINAL REWARD/PARSER PREFLIGHT =====
+PASSED: unchanged parser and full-reward invariant (0.85/0.85), same reward as every prior checkpoint-500 diagnostic.
+===== BUILD DETERMINISTIC DISJOINT DATA (RUN_SEED) =====
+{'train': 200, 'heldout': 25, 'disjoint': True, 'seed': 20260817}
+===== LOAD MODEL: CHECKPOINT-500 WEIGHTS ONLY =====
+{'answer_stop_token_ids': [522, 9217, 29], 'max_new_tokens': 256, 'meta_parameters': 0}
+===== BUILD FRESH TRAINER (entropy-clamped, KL-clamped, 12-step warmup) =====
+{'loss_type': 'dapo', 'beta': 0.04, 'ref_model': None, 'entropy_clamp_value': 1.6983142857142859, 'kl_clamp_value': 10334.091296262384, 'kl_clamp_d_max': 9.244194353279926, 'instrumentation_and_clamp_wired': True}
+{'fresh_optimizer': True, 'fresh_scheduler': True, 'run_seed': 20260817, 'n_steps': 50}
+===== INSTALL DYNAMIC SAMPLING + PERSISTENT EVIDENCE =====
+PASSED: circuit-breaker tests. Safety breakers active (unchanged thresholds); no accuracy/structure gate.
+===== KL-CLAMPED SURVIVAL ATTEMPT: UP TO 50 STEPS (success bar: well past step 15) =====
+{'loss': '-0.02068', 'grad_norm': '3.062', 'learning_rate': '1e-07', 'num_tokens': '2592', 'completions/mean_length': '140', 'completions/min_length': '140', 'completions/max_length': '140', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '140', 'completions/min_terminated_length': '140', 'completions/max_terminated_length': '140', 'rewards/diagnostic_reward/mean': '-1.015', 'rewards/diagnostic_reward/std': '2.287', 'reward': '-1.015', 'reward_std': '2.287', 'frac_reward_zero_std': '0', 'policy_loss': '-8.848e-09', 'kl': '0', 'entropy': '0.4137', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '33.35', 'epoch': '0.005'}
+{'loss': '0.03749', 'grad_norm': '21', 'learning_rate': '1.818e-07', 'num_tokens': '5856', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.718', 'rewards/diagnostic_reward/std': '3.362', 'reward': '1.718', 'reward_std': '3.362', 'frac_reward_zero_std': '0', 'policy_loss': '0.01053', 'kl': '2.106', 'entropy': '0.9352', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.17', 'epoch': '0.01'}
+{'loss': '-0.03344', 'grad_norm': '18.12', 'learning_rate': '2.636e-07', 'num_tokens': '1.069e+04', 'completions/mean_length': '162', 'completions/min_length': '162', 'completions/max_length': '162', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '162', 'completions/min_terminated_length': '162', 'completions/max_terminated_length': '162', 'rewards/diagnostic_reward/mean': '2.602', 'rewards/diagnostic_reward/std': '1.861', 'reward': '2.602', 'reward_std': '1.861', 'frac_reward_zero_std': '0', 'policy_loss': '0.00182', 'kl': '0.3639', 'entropy': '0.96', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '69.57', 'epoch': '0.015'}
+{'loss': '-0.0018', 'grad_norm': '0.09863', 'learning_rate': '3.455e-07', 'num_tokens': '1.572e+04', 'completions/mean_length': '58.67', 'completions/min_length': '58.67', 'completions/max_length': '58.67', 'completions/clipped_ratio': '0.5417', 'completions/mean_terminated_length': '39.33', 'completions/min_terminated_length': '39.33', 'completions/max_terminated_length': '39.33', 'rewards/diagnostic_reward/mean': '2.982', 'rewards/diagnostic_reward/std': '0', 'reward': '2.982', 'reward_std': '0', 'frac_reward_zero_std': '1', 'policy_loss': '0.0001296', 'kl': '0.02592', 'entropy': '0.05673', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '41.53', 'epoch': '0.02'}
+{'loss': '-0.008337', 'grad_norm': '13.88', 'learning_rate': '4.273e-07', 'num_tokens': '2.567e+04', 'completions/mean_length': '220.7', 'completions/min_length': '220.7', 'completions/max_length': '220.7', 'completions/clipped_ratio': '0.2083', 'completions/mean_terminated_length': '220.7', 'completions/min_terminated_length': '220.7', 'completions/max_terminated_length': '220.7', 'rewards/diagnostic_reward/mean': '-1.52', 'rewards/diagnostic_reward/std': '2.664', 'reward': '-1.52', 'reward_std': '2.664', 'frac_reward_zero_std': '0', 'policy_loss': '0.002469', 'kl': '0.4939', 'entropy': '0.5618', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '135.8', 'epoch': '0.025'}
+{'loss': '0.05494', 'grad_norm': '32.25', 'learning_rate': '5.091e-07', 'num_tokens': '2.912e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '0.9012', 'rewards/diagnostic_reward/std': '3.179', 'reward': '0.9012', 'reward_std': '3.179', 'frac_reward_zero_std': '0', 'policy_loss': '0.01151', 'kl': '2.302', 'entropy': '0.743', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '54.05', 'epoch': '0.03'}
+{'loss': '-0.01875', 'grad_norm': '17.25', 'learning_rate': '5.909e-07', 'num_tokens': '3.839e+04', 'completions/mean_length': '206.3', 'completions/min_length': '206.3', 'completions/max_length': '206.3', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '206.3', 'completions/min_terminated_length': '206.3', 'completions/max_terminated_length': '206.3', 'rewards/diagnostic_reward/mean': '2.169', 'rewards/diagnostic_reward/std': '1.454', 'reward': '2.169', 'reward_std': '1.454', 'frac_reward_zero_std': '0', 'policy_loss': '0.002023', 'kl': '0.4046', 'entropy': '0.6987', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '125.8', 'epoch': '0.035'}
+{'loss': '-0.02506', 'grad_norm': '17.38', 'learning_rate': '6.727e-07', 'num_tokens': '4.194e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-1.204', 'rewards/diagnostic_reward/std': '3.818', 'reward': '-1.204', 'reward_std': '3.818', 'frac_reward_zero_std': '0', 'policy_loss': '0.001103', 'kl': '0.2205', 'entropy': '0.6776', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.27', 'epoch': '0.04'}
+{'loss': '-0.02531', 'grad_norm': '2.406', 'learning_rate': '7.545e-07', 'num_tokens': '4.494e+04', 'completions/mean_length': '195', 'completions/min_length': '195', 'completions/max_length': '195', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '195', 'completions/min_terminated_length': '195', 'completions/max_terminated_length': '195', 'rewards/diagnostic_reward/mean': '2.183', 'rewards/diagnostic_reward/std': '1.626', 'reward': '2.183', 'reward_std': '1.626', 'frac_reward_zero_std': '0', 'policy_loss': '0.0008158', 'kl': '0.1632', 'entropy': '0.6366', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '43.58', 'epoch': '0.045'}
+{'loss': '-0.0142', 'grad_norm': '16.12', 'learning_rate': '8.364e-07', 'num_tokens': '4.811e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '0.1846', 'rewards/diagnostic_reward/std': '3.887', 'reward': '0.1846', 'reward_std': '3.887', 'frac_reward_zero_std': '0', 'policy_loss': '0.00257', 'kl': '0.5141', 'entropy': '0.6952', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.24', 'epoch': '0.05'}
+{'loss': '-0.02343', 'grad_norm': '15.88', 'learning_rate': '9.182e-07', 'num_tokens': '5.172e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.473', 'rewards/diagnostic_reward/std': '3.182', 'reward': '1.473', 'reward_std': '3.182', 'frac_reward_zero_std': '0', 'policy_loss': '0.001313', 'kl': '0.2626', 'entropy': '0.6786', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.87', 'epoch': '0.055'}
+{'loss': '-0.01084', 'grad_norm': '14.25', 'learning_rate': '1e-06', 'num_tokens': '5.511e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '0.7753', 'rewards/diagnostic_reward/std': '3.24', 'reward': '0.7753', 'reward_std': '3.24', 'frac_reward_zero_std': '0', 'policy_loss': '0.003084', 'kl': '0.6169', 'entropy': '0.7103', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '54.83', 'epoch': '0.06'}
+{'loss': '-0.0103', 'grad_norm': '2.969', 'learning_rate': '1e-06', 'num_tokens': '6.174e+04', 'completions/mean_length': '107.3', 'completions/min_length': '107.3', 'completions/max_length': '107.3', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '107.3', 'completions/min_terminated_length': '107.3', 'completions/max_terminated_length': '107.3', 'rewards/diagnostic_reward/mean': '-1.075', 'rewards/diagnostic_reward/std': '0.6035', 'reward': '-1.075', 'reward_std': '0.6035', 'frac_reward_zero_std': '0.3333', 'policy_loss': '0.001069', 'kl': '0.2138', 'entropy': '0.377', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '71.38', 'epoch': '0.065'}
+{'loss': '0.5063', 'grad_norm': '109.5', 'learning_rate': '9.737e-07', 'num_tokens': '6.45e+04', 'completions/mean_length': '154', 'completions/min_length': '154', 'completions/max_length': '154', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '154', 'completions/min_terminated_length': '154', 'completions/max_terminated_length': '154', 'rewards/diagnostic_reward/mean': '-0.6646', 'rewards/diagnostic_reward/std': '1.896', 'reward': '-0.6646', 'reward_std': '1.896', 'frac_reward_zero_std': '0', 'policy_loss': '0.0654', 'kl': '13.08', 'entropy': '0.3376', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '35.94', 'epoch': '0.07'}
+{'train_runtime': '890.6', 'train_samples_per_second': '0.449', 'train_steps_per_second': '0.056', 'train_loss': '0.02904', 'epoch': '0.07'}
+{'terminal_step': 14, 'hard_stop': {'step': 14, 'grad_norm': 109.5, 'kl': 13.079954309388995}, 'survived_past_step_15': False, 'survived_to_full_target': False, 'kl_clamp_engagement_rate': 0.00021086369770580298, 'kl_clamp_engaged_tokens': 5, 'kl_clamp_total_tokens': 23712}
+===== POST-HOC ANALYSIS (reusing the exact proven matching + k3-formula logic) =====
+===== KL RECONSTRUCTION SELF-CONSISTENCY CHECK (min(unclamped,CLAMP_VALUE) vs TRL logged kl) =====
+{
+  "1": {
+    "recovered_as_clamped": 0.0,
+    "logged": 0.0,
+    "close": true
+  },
+  "2": {
+    "recovered_as_clamped": 2.1076833986558006,
+    "logged": 2.1062770755961537,
+    "close": true
+  },
+  "3": {
+    "recovered_as_clamped": 0.3640120078743882,
+    "logged": 0.36390500515699387,
+    "close": true
+  },
+  "4": {
+    "recovered_as_clamped": 0.02591787028885773,
+    "logged": 0.025917871040292084,
+    "close": true
+  },
+  "5": {
+    "recovered_as_clamped": 0.4938669326372902,
+    "logged": 0.4938669402617961,
+    "close": true
+  },
+  "6": {
+    "recovered_as_clamped": 2.302417634496868,
+    "logged": 2.3024176619946957,
+    "close": true
+  },
+  "7": {
+    "recovered_as_clamped": 0.4055035984997574,
+    "logged": 0.4045684263110161,
+    "close": true
+  },
+  "8": {
+    "recovered_as_clamped": 0.2205136511884205,
+    "logged": 0.22051365196239203,
+    "close": true
+  },
+  "9": {
+    "recovered_as_clamped": 0.1631512791894004,
+    "logged": 0.16315127653069794,
+    "close": true
+  },
+  "10": {
+    "recovered_as_clamped": 0.5140741515326174,
+    "logged": 0.5140741616487503,
+    "close": true
+  },
+  "11": {
+    "recovered_as_clamped": 0.2625780993668638,
+    "logged": 0.2625781153328717,
+    "close": true
+  },
+  "12": {
+    "recovered_as_clamped": 0.6168677082407934,
+    "logged": 0.6168677024543285,
+    "close": true
+  },
+  "13": {
+    "recovered_as_clamped": 0.2138193663870127,
+    "logged": 0.2138193640857935,
+    "close": true
+  },
+  "14": {
+    "recovered_as_clamped": 13.07995666698736,
+    "logged": 13.079954309388995,
+    "close": true
+  }
+}
+unmatched microbatches: 0
+PASSED: min(unclamped_kl, CLAMP_VALUE) matches TRL's own logged kl at every step -- confirms the clamp is genuinely bounding the trained loss/metric, not just the offline reconstruction.
+{'max_unclamped_per_token_kl_this_run': 21399.71292124002, 'tokens_that_would_have_exceeded_clamp_value': 1, 'total_tokens_scored': 23712}
+===== FINAL REPORT =====
+{
+  "terminal_step": 14,
+  "requested_steps": 50,
+  "hard_stop": {
+    "step": 14,
+    "grad_norm": 109.5,
+    "kl": 13.079954309388995
+  },
+  "survived_past_step_15": false,
+  "survived_to_full_target": false,
+  "entropy_clamp_value": 1.6983142857142859,
+  "kl_clamp_value": 10334.091296262384,
+  "kl_clamp_d_max": 9.244194353279926,
+  "kl_clamp_derivation": {
+    "healthy_steps_3x_median_rule": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      11,
+      12,
+      13,
+      14
+    ],
+    "elevated_steps_excluded": [
+      5,
+      8,
+      10,
+      15
+    ],
+    "healthy_upper_end_per_token_kl": 1291.761412032798,
+    "multiplier": 8.0
+  },
+  "kl_clamp_engagement_rate": 0.00021086369770580298,
+  "max_unclamped_per_token_kl_this_run": 21399.71292124002,
+  "tokens_that_would_have_exceeded_clamp_value": 1,
+  "kl_reconstruction_verified_against_trl_logged_metric": true,
+  "recovered_kl_by_step": {
+    "1": 0.0,
+    "2": 2.1076833986558006,
+    "3": 0.3640120078743882,
+    "4": 0.02591787028885773,
+    "5": 0.4938669326372902,
+    "6": 2.302417634496868,
+    "7": 0.4055035984997574,
+    "8": 0.2205136511884205,
+    "9": 0.1631512791894004,
+    "10": 0.5140741515326174,
+    "11": 0.2625780993668638,
+    "12": 0.6168677082407934,
+    "13": 0.2138193663870127,
+    "14": 13.07995666698736
+  },
+  "logged_kl_by_step": {
+    "1": 0.0,
+    "2": 2.1062770755961537,
+    "3": 0.36390500515699387,
+    "4": 0.025917871040292084,
+    "5": 0.4938669402617961,
+    "6": 2.3024176619946957,
+    "7": 0.4045684263110161,
+    "8": 0.22051365196239203,
+    "9": 0.16315127653069794,
+    "10": 0.5140741616487503,
+    "11": 0.2625781153328717,
+    "12": 0.6168677024543285,
+    "13": 0.2138193640857935,
+    "14": 13.079954309388995
+  }
+}
+
+===== DID NOT REACH THE FULL 50-STEP TARGET: WORST ROLLOUT AT THE TERMINAL STEP (same format as before) =====
+{'step': 14, 'row_hash_prefix': '5424b84a9ebc', 'exploration_class': 'vacuous'}
+
+Full completion text:
+ Do not put any additional text before or after the <answer> tag. Do not include State: in the final answer state.
+Step 1: The state remains unchanged. State: Heads
+Step 2: The state flips. State: Tails
+Step 3: The state flips. State: Heads
+Step 4: The state flips. State: Tails
+Step 5: The state flips. State: Heads
+Step 6: The state flips. State: Tails
+Step 7: The state flips. State: Heads
+Step 8: The state remains unchanged. State: Heads
+<answer>Tails</answer>
+
+Per-token KL profile (position: unclamped_kl -> as_trained_clamped_kl):
+  pos   0: unclamped=0.7687 -> as_trained=0.7687
+  pos   1: unclamped=0.0000 -> as_trained=0.0000
+  pos   2: unclamped=0.0000 -> as_trained=0.0000
+  pos   3: unclamped=0.1172 -> as_trained=0.1172
+  pos   4: unclamped=0.0017 -> as_trained=0.0017
+  pos   5: unclamped=0.2011 -> as_trained=0.2011
+  pos   6: unclamped=21399.7129 -> as_trained=10334.0913
+  pos   7: unclamped=0.0000 -> as_trained=0.0000
+  pos   8: unclamped=0.0000 -> as_trained=0.0000
+  pos   9: unclamped=0.0946 -> as_trained=0.0946
+  pos  10: unclamped=0.0000 -> as_trained=0.0000
+  pos  11: unclamped=0.0000 -> as_trained=0.0000
+  pos  12: unclamped=0.0000 -> as_trained=0.0000
+  pos  13: unclamped=0.0275 -> as_trained=0.0275
+  pos  14: unclamped=0.0000 -> as_trained=0.0000
+  pos  15: unclamped=0.0002 -> as_trained=0.0002
+  pos  16: unclamped=0.0000 -> as_trained=0.0000
+  pos  17: unclamped=0.0338 -> as_trained=0.0338
+  pos  18: unclamped=1.4735 -> as_trained=1.4735
+  pos  19: unclamped=0.0000 -> as_trained=0.0000
+  pos  20: unclamped=0.0002 -> as_trained=0.0002
+  pos  21: unclamped=0.0772 -> as_trained=0.0772
+  pos  22: unclamped=0.0000 -> as_trained=0.0000
+  pos  23: unclamped=0.4861 -> as_trained=0.4861
+  pos  24: unclamped=75.8043 -> as_trained=75.8043
+  pos  25: unclamped=0.0357 -> as_trained=0.0357
+  pos  26: unclamped=0.0256 -> as_trained=0.0256
+  pos  27: unclamped=0.0000 -> as_trained=0.0000
+  pos  28: unclamped=0.0000 -> as_trained=0.0000
+  pos  29: unclamped=0.0000 -> as_trained=0.0000
+  pos  30: unclamped=0.0000 -> as_trained=0.0000
+  pos  31: unclamped=0.0000 -> as_trained=0.0000
+  pos  32: unclamped=0.0000 -> as_trained=0.0000
+  pos  33: unclamped=0.0000 -> as_trained=0.0000
+  pos  34: unclamped=0.0000 -> as_trained=0.0000
+  pos  35: unclamped=0.0000 -> as_trained=0.0000
+  pos  36: unclamped=0.0000 -> as_trained=0.0000
+  pos  37: unclamped=0.0000 -> as_trained=0.0000
+  pos  38: unclamped=0.0000 -> as_trained=0.0000
+  pos  39: unclamped=0.0000 -> as_trained=0.0000
+  pos  40: unclamped=0.0000 -> as_trained=0.0000
+  pos  41: unclamped=0.0000 -> as_trained=0.0000
+  pos  42: unclamped=0.0000 -> as_trained=0.0000
+  pos  43: unclamped=0.0000 -> as_trained=0.0000
+  pos  44: unclamped=0.0000 -> as_trained=0.0000
+  pos  45: unclamped=0.0001 -> as_trained=0.0001
+  pos  46: unclamped=0.0000 -> as_trained=0.0000
+  pos  47: unclamped=0.0000 -> as_trained=0.0000
+  pos  48: unclamped=0.0000 -> as_trained=0.0000
+  pos  49: unclamped=0.0000 -> as_trained=0.0000
+  pos  50: unclamped=0.0000 -> as_trained=0.0000
+  pos  51: unclamped=0.0000 -> as_trained=0.0000
+  pos  52: unclamped=0.0000 -> as_trained=0.0000
+  pos  53: unclamped=0.0000 -> as_trained=0.0000
+  pos  54: unclamped=0.0000 -> as_trained=0.0000
+  pos  55: unclamped=0.0000 -> as_trained=0.0000
+  pos  56: unclamped=0.0000 -> as_trained=0.0000
+  pos  57: unclamped=0.0000 -> as_trained=0.0000
+  pos  58: unclamped=0.0000 -> as_trained=0.0000
+  pos  59: unclamped=0.0000 -> as_trained=0.0000
+  pos  60: unclamped=0.0000 -> as_trained=0.0000
+  pos  61: unclamped=0.0000 -> as_trained=0.0000
+  pos  62: unclamped=0.0000 -> as_trained=0.0000
+  pos  63: unclamped=0.0000 -> as_trained=0.0000
+  pos  64: unclamped=0.0000 -> as_trained=0.0000
+  pos  65: unclamped=0.0000 -> as_trained=0.0000
+  pos  66: unclamped=0.0000 -> as_trained=0.0000
+  pos  67: unclamped=0.0000 -> as_trained=0.0000
+  pos  68: unclamped=0.0000 -> as_trained=0.0000
+  pos  69: unclamped=0.0000 -> as_trained=0.0000
+  pos  70: unclamped=0.0000 -> as_trained=0.0000
+  pos  71: unclamped=0.0000 -> as_trained=0.0000
+  pos  72: unclamped=0.0000 -> as_trained=0.0000
+  pos  73: unclamped=0.0000 -> as_trained=0.0000
+  pos  74: unclamped=0.0000 -> as_trained=0.0000
+  pos  75: unclamped=0.0000 -> as_trained=0.0000
+  pos  76: unclamped=0.0000 -> as_trained=0.0000
+  pos  77: unclamped=0.0000 -> as_trained=0.0000
+  pos  78: unclamped=0.0000 -> as_trained=0.0000
+  pos  79: unclamped=0.0000 -> as_trained=0.0000
+  pos  80: unclamped=0.0000 -> as_trained=0.0000
+  pos  81: unclamped=0.0000 -> as_trained=0.0000
+  pos  82: unclamped=0.0000 -> as_trained=0.0000
+  pos  83: unclamped=0.0000 -> as_trained=0.0000
+  pos  84: unclamped=0.0000 -> as_trained=0.0000
+  pos  85: unclamped=0.0000 -> as_trained=0.0000
+  pos  86: unclamped=0.0000 -> as_trained=0.0000
+  pos  87: unclamped=0.0000 -> as_trained=0.0000
+  pos  88: unclamped=0.0000 -> as_trained=0.0000
+  pos  89: unclamped=0.0000 -> as_trained=0.0000
+  pos  90: unclamped=0.0000 -> as_trained=0.0000
+  pos  91: unclamped=0.0000 -> as_trained=0.0000
+  pos  92: unclamped=0.0000 -> as_trained=0.0000
+  pos  93: unclamped=0.0000 -> as_trained=0.0000
+  pos  94: unclamped=0.0000 -> as_trained=0.0000
+  pos  95: unclamped=0.0000 -> as_trained=0.0000
+  pos  96: unclamped=0.0000 -> as_trained=0.0000
+  pos  97: unclamped=0.0000 -> as_trained=0.0000
+  pos  98: unclamped=0.0000 -> as_trained=0.0000
+  pos  99: unclamped=0.0000 -> as_trained=0.0000
+  pos 100: unclamped=0.0000 -> as_trained=0.0000
+  pos 101: unclamped=0.0000 -> as_trained=0.0000
+  pos 102: unclamped=0.0000 -> as_trained=0.0000
+  pos 103: unclamped=0.0000 -> as_trained=0.0000
+  pos 104: unclamped=0.0000 -> as_trained=0.0000
+  pos 105: unclamped=0.0000 -> as_trained=0.0000
+  pos 106: unclamped=0.0000 -> as_trained=0.0000
+  pos 107: unclamped=0.0000 -> as_trained=0.0000
+  pos 108: unclamped=0.0000 -> as_trained=0.0000
+  pos 109: unclamped=0.0000 -> as_trained=0.0000
+  pos 110: unclamped=0.0000 -> as_trained=0.0000
+  pos 111: unclamped=0.0000 -> as_trained=0.0000
+  pos 112: unclamped=0.0000 -> as_trained=0.0000
+  pos 113: unclamped=0.0000 -> as_trained=0.0000
+  pos 114: unclamped=0.0000 -> as_trained=0.0000
+  pos 115: unclamped=0.0000 -> as_trained=0.0000
+  pos 116: unclamped=0.0000 -> as_trained=0.0000
+  pos 117: unclamped=0.0000 -> as_trained=0.0000
+  pos 118: unclamped=0.0000 -> as_trained=0.0000
+  pos 119: unclamped=0.0000 -> as_trained=0.0000
+  pos 120: unclamped=0.0000 -> as_trained=0.0000
+  pos 121: unclamped=0.0000 -> as_trained=0.0000
+  pos 122: unclamped=0.0000 -> as_trained=0.0000
+  pos 123: unclamped=0.0000 -> as_trained=0.0000
+  pos 124: unclamped=0.0000 -> as_trained=0.0000
+  pos 125: unclamped=0.0000 -> as_trained=0.0000
+  pos 126: unclamped=0.0000 -> as_trained=0.0000
+  pos 127: unclamped=0.0000 -> as_trained=0.0000
+  pos 128: unclamped=0.0000 -> as_trained=0.0000
+  pos 129: unclamped=0.9195 -> as_trained=0.9195
+  pos 130: unclamped=0.0000 -> as_trained=0.0000
+  pos 131: unclamped=0.0000 -> as_trained=0.0000
+  pos 132: unclamped=0.0000 -> as_trained=0.0000
+  pos 133: unclamped=0.0000 -> as_trained=0.0000
+  pos 134: unclamped=0.0000 -> as_trained=0.0000
+  pos 135: unclamped=0.2112 -> as_trained=0.2112
+  pos 136: unclamped=0.3605 -> as_trained=0.3605
+  pos 137: unclamped=0.3869 -> as_trained=0.3869
+  pos 138: unclamped=0.1108 -> as_trained=0.1108
+  pos 139: unclamped=0.7009 -> as_trained=0.7009
+  pos 140: unclamped=0.0949 -> as_trained=0.0949
+  pos 141: unclamped=0.3336 -> as_trained=0.3336
+  pos 142: unclamped=0.5649 -> as_trained=0.5649
+  pos 143: unclamped=0.0018 -> as_trained=0.0018
+  pos 144: unclamped=0.7422 -> as_trained=0.7422
+  pos 145: unclamped=0.0337 -> as_trained=0.0337
+  pos 146: unclamped=0.1936 -> as_trained=0.1936
+  pos 147: unclamped=1.5100 -> as_trained=1.5100
+  pos 148: unclamped=1.9159 -> as_trained=1.9159
+  pos 149: unclamped=3.1460 -> as_trained=3.1460
+  pos 150: unclamped=0.0343 -> as_trained=0.0343
+  pos 151: unclamped=1.2862 -> as_trained=1.2862
+  pos 152: unclamped=0.0733 -> as_trained=0.0733
+  pos 153: unclamped=0.1125 -> as_trained=0.1125
+
+Evidence: /home/ubuntu/aisi_checkpoints/grpo-checkpoint500-kl-clamp-mitigation-v1/checkpoint500_kl_clamp_mitigation.json
+Per-token instrumentation: /home/ubuntu/aisi_checkpoints/grpo-checkpoint500-kl-clamp-mitigation-v1/per_token_instrumentation.json
+MITIGATION RUN COMPLETE. Read-only interpretation follows offline -- no further training decisions made here.

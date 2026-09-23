@@ -1,0 +1,14 @@
+# Exact versions observed in the verified Colab L4 run on 2026-08-05.
+# Colab supplied the CUDA 12.8 build of torch 2.11.0.
+torch==2.11.0
+transformers==5.13.1
+trl==1.9.2
+peft==0.19.1
+bitsandbytes==0.50.0
+datasets
+numpy
+scikit-learn
+matplotlib
+pyyaml
+tqdm
+einops

@@ -1,0 +1,240 @@
+===== STAGE 08 ENTROPY TEST: entropy_coef 0.05 -> 0.18 (3.6x), single-bit question: does ANY non-literal rollout appear? =====
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260825, 'dry_run': True, 'n_steps': 8, 'milestone_every': 4, 'entropy_coef': 0.18, 'entropy_clamp_value': 1.6983142857142859, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== DERIVE KL CLAMP VALUE EMPIRICALLY FROM THE COMPLETED INSTRUMENTATION RUN =====
+{'telemetry_grad_norm_kl_by_step': {1: (23.25, 0.0), 2: (20.75, 1.0486), 3: (14.125, 0.2776), 4: (18.375, 0.2812), 5: (21.625, 2.9607), 6: (1.25, 0.0797), 7: (2.672, 0.356), 8: (30.625, 2.6987), 9: (1.031, 0.0594), 10: (48.0, 2.6957), 11: (19.875, 0.3577), 12: (4.188, 0.8246), 13: (0.027, 0.0158), 14: (17.375, 0.3158), 15: (None, None)}, 'borderline_grad_cutoff': 25.0, 'borderline_kl_cutoff': 2.5, 'clean_steps': [1, 2, 3, 4, 6, 7, 9, 11, 12, 13, 14], 'excluded_steps': [5, 8, 10, 15]}
+{'clean_pool_size': 15640, 'median': 0.0, 'q1': 0.0, 'q3': 0.067467, 'iqr': 0.067467, 'iqr_multiplier': 1.5, 'healthy_baseline': 0.1012, 'clamp_multiplier': 1.5}
+{'healthy_baseline_per_token_kl': 0.1012, 'clamp_multiplier': 1.5, 'CLAMP_VALUE': 0.1518, 'D_MAX': 0.504718, 'newton_solver_round_trip_check': 0.1518}
+===== PATCH 1/2: entropy_from_logits clamp (identical to the entropy-clamp diagnostic; kept active) =====
+PASSED: entropy clamp self-test (unchanged from the entropy-clamp diagnostic).
+===== PATCH 2/2: per-token KL clamp + instrumentation on GRPOTrainer (class-level, additive) =====
+Patches installed. KL clamp not yet enabled (KL_CLAMP_STATE["enabled"]=False until self-test passes).
+===== KL CLAMP MECHANISM SELF-TEST (against a stand-in for TRL's real, unmodified formula) =====
+PASSED: pathological token bounded exactly at CLAMP_VALUE; healthy tokens unaffected in value.
+PASSED: normal-range diffs pass through with zero distortion, matching the unmodified formula exactly.
+PASSED: gradient through the clamped path matches the analytically expected straight-through value.
+PASSED: unclamped-region gradient is bit-for-bit identical to the no-clamp-mechanism-at-all baseline.
+KL CLAMP ENABLED: CLAMP_VALUE=0.1518, D_MAX=0.504718
+SOURCE SCHEDULER AUDIT: {'last_epoch': 430, 'recorded_lr': [0.0, 0.0], 'scheduler_state_present': True, 'optimizer_state_present': True}
+FRESH LR CURVE (12-STEP WARMUP TO 1E-6, SAMPLE POINTS): {501: 1e-07, 502: 1.818181818181818e-07, 503: 2.6363636363636366e-07, 506: 5.090909090909092e-07, 507: 5.909090909090909e-07, 508: 6.727272727272727e-07}
+===== STAGE 07 REWARD INVARIANT (re-derived: r_signal added, margins recomputed) =====
+PASSED: min(correct) > max(wrong) > max(malformed) holds with r_signal included. {'correct_over_wrong': 0.7, 'wrong_over_malformed': 0.6999999999999993}
+===== STAGE 08: CONFIRM entropy_coef DOES NOT INTERACT WITH THE REWARD INVARIANT =====
+CONFIRMED: entropy_coef (0.18) is not a parameter of, and is never referenced inside, score_completion -- it is a TRL/GRPOConfig loss-level hyperparameter applied entirely outside the reward function (it weights the policy entropy term added to the training loss, a completely separate computation from reward_fn/score_completion, which only ever sees completions, ground truths, and step/total_steps). The margins above (0.70/0.70) hold unchanged regardless of entropy_coef's value -- structurally, not just empirically.
+===== STAGE 07 REWARD/PARSER PREFLIGHT =====
+{'sample_prompt_truth': 'Tails', 'sample_audit_status': 'verified_across_both_states', 'sample_composition': {'verified_non_literal': True, 'clean': True, 'leaking': False}}
+PASSED: parser and audit preflight checks.
+===== EXPLORATION CLASSIFIER (same as every prior checkpoint-500 diagnostic) =====
+PASSED: classifier self-test.
+===== BUILD DETERMINISTIC DISJOINT DATA (RUN_SEED) =====
+{'train': 200, 'heldout': 100, 'disjoint': True, 'seed': 20260825, 'heldout_by_direction': {'Heads': 52, 'Tails': 48}}
+===== LOAD MODEL: CHECKPOINT-500 WEIGHTS ONLY =====
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'answer_stop_token_ids': [522, 9217, 29], 'max_new_tokens': 256, 'meta_parameters': 0}
+===== BUILD FRESH TRAINER (entropy-clamped, KL-clamped, 12-step warmup) =====
+{'loss_type': 'dapo', 'beta': 0.04, 'ref_model': None, 'entropy_clamp_value': 1.6983142857142859, 'kl_clamp_value': 0.1518003886715766, 'kl_clamp_d_max': 0.504718110048141, 'instrumentation_and_clamp_wired': True, 'reward': 'stage07_v2_positive_signal_annealed_cot', 'entropy_coef': 0.18}
+{'fresh_optimizer': True, 'fresh_scheduler': True, 'run_seed': 20260825, 'n_steps': 8}
+===== INSTALL DYNAMIC SAMPLING + PERSISTENT EVIDENCE =====
+PASSED: circuit-breaker tests. Safety breakers active (unchanged thresholds); no accuracy/structure gate.
+===== INSTALL MILESTONE EVALUATION (answer-direction split + composition, from the START) =====
+PASSED: milestone evaluation installed (every 4 steps, 100 held-out prompts, direction split + composition + r_signal trajectory (overt vs. substituted breakdown) tracked every milestone).
+===== STAGE 08 RUN: UP TO 8 STEPS (dry_run=True, entropy_coef=0.18) =====
+{'loss': '-0.1552', 'grad_norm': '16.38', 'learning_rate': '1e-07', 'num_tokens': '5240', 'completions/mean_length': '168.5', 'completions/min_length': '168.5', 'completions/max_length': '168.5', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '168.5', 'completions/min_terminated_length': '168.5', 'completions/max_terminated_length': '168.5', 'rewards/diagnostic_reward/mean': '3.059', 'rewards/diagnostic_reward/std': '1.904', 'reward': '3.059', 'reward_std': '1.904', 'frac_reward_zero_std': '0.5', 'policy_loss': '9.313e-10', 'kl': '0', 'entropy': '0.8622', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '112.7', 'epoch': '0.005'}
+{'loss': '-0.06118', 'grad_norm': '1.07', 'learning_rate': '1.818e-07', 'num_tokens': '7696', 'completions/mean_length': '126', 'completions/min_length': '126', 'completions/max_length': '126', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '126', 'completions/min_terminated_length': '126', 'completions/max_terminated_length': '126', 'rewards/diagnostic_reward/mean': '0.3074', 'rewards/diagnostic_reward/std': '2.351', 'reward': '0.3074', 'reward_std': '2.351', 'frac_reward_zero_std': '0', 'policy_loss': '0.0001081', 'kl': '0.02162', 'entropy': '0.3447', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '46.97', 'epoch': '0.01'}
+{'loss': '-0.01706', 'grad_norm': '0.8672', 'learning_rate': '2.636e-07', 'num_tokens': '1.341e+04', 'completions/mean_length': '76', 'completions/min_length': '76', 'completions/max_length': '76', 'completions/clipped_ratio': '0.4583', 'completions/mean_terminated_length': '76', 'completions/min_terminated_length': '76', 'completions/max_terminated_length': '76', 'rewards/diagnostic_reward/mean': '-1.035', 'rewards/diagnostic_reward/std': '0.0766', 'reward': '-1.035', 'reward_std': '0.0766', 'frac_reward_zero_std': '0.6667', 'policy_loss': '3.222e-05', 'kl': '0.006443', 'entropy': '0.09623', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '82.71', 'epoch': '0.015'}
+===== MILESTONE STEP 4: HELD-OUT GENERATION (100 prompts, greedy) =====
+ANSWER-DIRECTION SPLIT (default reporting format, not an afterthought):
+  Heads-truth: n=52 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+  Tails-truth: n=48 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+TRAINING-ROLLOUT R_SIGNAL TRAJECTORY (this window, pooled): {'n': 32, 'mean_r_signal': 0.060694679054054054, 'mean_signal_correlation_raw': 0.3380961662211662, 'mean_r_consistency': 0.0, 'mean_p_state_variation': 0.3125, 'mean_p_cot': 0.0698299050132188, 'cot_scale_at_window_end': 0.2}
+R_SIGNAL BY EXPLORATION CLASS (overt = still literal Heads/Tails; substituted = any non-literal token present, even inconsistent -- requested follow-up, not an afterthought):
+  overt: n=27 mean_r_signal=0.07193443443443444 mean_signal_correlation_raw=0.40070656737323407
+  substituted: n=0 mean_r_signal=None mean_signal_correlation_raw=None
+  vacuous: n=5 mean_r_signal=0.0 mean_signal_correlation_raw=0.0
+  NOTE: zero substituted (non-literal) rollouts this window -- the pooled r_signal mean reported above is entirely attributable to overt (literal) completions, i.e. NOT yet evidence of emerging invention signal.
+{'loss': '-0.1107', 'grad_norm': '15.06', 'learning_rate': '3.455e-07', 'num_tokens': '1.693e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.669', 'rewards/diagnostic_reward/std': '3.194', 'reward': '1.669', 'reward_std': '3.194', 'frac_reward_zero_std': '0', 'policy_loss': '0.0002427', 'kl': '0.04854', 'entropy': '0.6258', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '87.61', 'epoch': '0.02'}
+{'loss': '-0.1759', 'grad_norm': '20', 'learning_rate': '4.273e-07', 'num_tokens': '2.011e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '2.582', 'rewards/diagnostic_reward/std': '3.51', 'reward': '2.582', 'reward_std': '3.51', 'frac_reward_zero_std': '0', 'policy_loss': '0.0003172', 'kl': '0.06345', 'entropy': '0.9912', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '87.58', 'epoch': '0.025'}
+{'loss': '-0.09998', 'grad_norm': '3.234', 'learning_rate': '5.091e-07', 'num_tokens': '2.326e+04', 'completions/mean_length': '197', 'completions/min_length': '197', 'completions/max_length': '197', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '197', 'completions/min_terminated_length': '197', 'completions/max_terminated_length': '197', 'rewards/diagnostic_reward/mean': '2.627', 'rewards/diagnostic_reward/std': '1.719', 'reward': '2.627', 'reward_std': '1.719', 'frac_reward_zero_std': '0', 'policy_loss': '0.0001676', 'kl': '0.03352', 'entropy': '0.5629', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '68.73', 'epoch': '0.03'}
+{'loss': '-0.1451', 'grad_norm': '17.38', 'learning_rate': '5.909e-07', 'num_tokens': '2.67e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '2.405', 'rewards/diagnostic_reward/std': '3.337', 'reward': '2.405', 'reward_std': '3.337', 'frac_reward_zero_std': '0', 'policy_loss': '0.000258', 'kl': '0.0516', 'entropy': '0.8178', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '88.48', 'epoch': '0.035'}
+===== MILESTONE STEP 8: HELD-OUT GENERATION (100 prompts, greedy) =====
+ANSWER-DIRECTION SPLIT (default reporting format, not an afterthought):
+  Heads-truth: n=52 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+  Tails-truth: n=48 verified_rate=0.0 clean=0 leaking=0 clean_fraction=None
+TRAINING-ROLLOUT R_SIGNAL TRAJECTORY (this window, pooled): {'n': 32, 'mean_r_signal': 0.03660639632107023, 'mean_signal_correlation_raw': 0.23836082395865005, 'mean_r_consistency': 0.0, 'mean_p_state_variation': 0.296875, 'mean_p_cot': 0.1931538046894718, 'cot_scale_at_window_end': 1.4}
+R_SIGNAL BY EXPLORATION CLASS (overt = still literal Heads/Tails; substituted = any non-literal token present, even inconsistent -- requested follow-up, not an afterthought):
+  overt: n=20 mean_r_signal=0.05857023411371237 mean_signal_correlation_raw=0.3813773183338401
+  substituted: n=0 mean_r_signal=None mean_signal_correlation_raw=None
+  vacuous: n=12 mean_r_signal=0.0 mean_signal_correlation_raw=0.0
+  NOTE: zero substituted (non-literal) rollouts this window -- the pooled r_signal mean reported above is entirely attributable to overt (literal) completions, i.e. NOT yet evidence of emerging invention signal.
+{'loss': '-0.1313', 'grad_norm': '11.56', 'learning_rate': '6.727e-07', 'num_tokens': '3.302e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.1875', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '0.2965', 'rewards/diagnostic_reward/std': '3.587', 'reward': '0.2965', 'reward_std': '3.587', 'frac_reward_zero_std': '0', 'policy_loss': '0.0002108', 'kl': '0.04215', 'entropy': '0.739', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.18', 'step_time': '167.2', 'epoch': '0.04'}
+{'train_runtime': '1042', 'train_samples_per_second': '0.061', 'train_steps_per_second': '0.008', 'train_loss': '-0.1121', 'epoch': '0.04'}
+{'terminal_step': 8, 'hard_stop': None, 'survived_to_full_target': True, 'kl_clamp_engagement_rate': 0.22952650387135198, 'kl_clamp_engaged_tokens': 3083, 'kl_clamp_total_tokens': 13432}
+===== POST-HOC KL ANALYSIS (reusing the exact proven matching + k3-formula logic) =====
+KL reconstruction self-consistency: {'all_close': True, 'n_steps_checked': 8, 'unmatched_microbatches': 0}
+{'max_unclamped_per_token_kl_this_run': 7489.581400950677, 'tokens_that_would_have_exceeded_clamp_value': 2852, 'total_tokens_scored': 13432}
+===== DECLARED/TASK ACCURACY REGRESSION CHECK (training-pool correctness, first vs last window) =====
+{'first_window_n': 16, 'first_window_accuracy': 0.5, 'last_window_n': 16, 'last_window_accuracy': 0.75, 'regression': 0.25}
+===== FINAL REPORT =====
+{
+  "terminal_step": 8,
+  "requested_steps": 8,
+  "dry_run": true,
+  "hard_stop": null,
+  "survived_to_full_target": true,
+  "entropy_clamp_value": 1.6983142857142859,
+  "kl_clamp_value": 0.1518003886715766,
+  "kl_clamp_d_max": 0.504718110048141,
+  "kl_clamp_engagement_rate": 0.22952650387135198,
+  "max_unclamped_per_token_kl_this_run": 7489.581400950677,
+  "tokens_that_would_have_exceeded_clamp_value": 2852,
+  "kl_reconstruction_all_close_to_trl_logged_metric": true,
+  "task_accuracy_first_window": 0.5,
+  "task_accuracy_last_window": 0.75,
+  "task_accuracy_regression": 0.25,
+  "milestone_direction_trajectory": [
+    {
+      "step": 4,
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    },
+    {
+      "step": 8,
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    }
+  ],
+  "milestone_r_signal_trajectory": [
+    {
+      "step": 4,
+      "n": 32,
+      "mean_r_signal": 0.060694679054054054,
+      "mean_signal_correlation_raw": 0.3380961662211662,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.3125,
+      "mean_p_cot": 0.0698299050132188,
+      "cot_scale_at_window_end": 0.2,
+      "r_signal_by_exploration_class": {
+        "overt": {
+          "n": 27,
+          "mean_r_signal": 0.07193443443443444,
+          "mean_signal_correlation_raw": 0.40070656737323407
+        },
+        "substituted": {
+          "n": 0,
+          "mean_r_signal": null,
+          "mean_signal_correlation_raw": null
+        },
+        "vacuous": {
+          "n": 5,
+          "mean_r_signal": 0.0,
+          "mean_signal_correlation_raw": 0.0
+        }
+      }
+    },
+    {
+      "step": 8,
+      "n": 32,
+      "mean_r_signal": 0.03660639632107023,
+      "mean_signal_correlation_raw": 0.23836082395865005,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.296875,
+      "mean_p_cot": 0.1931538046894718,
+      "cot_scale_at_window_end": 1.4,
+      "r_signal_by_exploration_class": {
+        "overt": {
+          "n": 20,
+          "mean_r_signal": 0.05857023411371237,
+          "mean_signal_correlation_raw": 0.3813773183338401
+        },
+        "substituted": {
+          "n": 0,
+          "mean_r_signal": null,
+          "mean_signal_correlation_raw": null
+        },
+        "vacuous": {
+          "n": 12,
+          "mean_r_signal": 0.0,
+          "mean_signal_correlation_raw": 0.0
+        }
+      }
+    }
+  ],
+  "final_milestone": {
+    "step": 8,
+    "by_answer_direction": {
+      "Heads": {
+        "n": 52,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      },
+      "Tails": {
+        "n": 48,
+        "verified_non_literal_rate": 0.0,
+        "verified_n": 0,
+        "clean": 0,
+        "leaking": 0,
+        "clean_fraction": null
+      }
+    },
+    "training_rollout_window_stats": {
+      "n": 32,
+      "mean_r_signal": 0.03660639632107023,
+      "mean_signal_correlation_raw": 0.23836082395865005,
+      "mean_r_consistency": 0.0,
+      "mean_p_state_variation": 0.296875,
+      "mean_p_cot": 0.1931538046894718,
+      "cot_scale_at_window_end": 1.4,
+      "r_signal_by_exploration_class": {
+        "overt": {
+          "n": 20,
+          "mean_r_signal": 0.05857023411371237,
+          "mean_signal_correlation_raw": 0.3813773183338401
+        },
+        "substituted": {
+          "n": 0,
+          "mean_r_signal": null,
+          "mean_signal_correlation_raw": null
+        },
+        "vacuous": {
+          "n": 12,
+          "mean_r_signal": 0.0,
+          "mean_signal_correlation_raw": 0.0
+        }
+      }
+    }
+  }
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/grpo-stage08-entropy-test-dryrun-v1/stage08_entropy_test.json
+Per-token instrumentation: /home/ubuntu/aisi_checkpoints/grpo-stage08-entropy-test-dryrun-v1/per_token_instrumentation.json
+STAGE 08 ENTROPY TEST COMPLETE (entropy_coef=0.18). Read-only interpretation follows offline -- no further training decisions made here.

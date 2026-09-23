@@ -1,0 +1,197 @@
+{
+  "results": {
+    "step0_milestone12": {
+      "summary": {
+        "n_prompts": 8,
+        "grand_mean_entropy": 0.019488893973175436,
+        "grand_mean_chosen_logprob": -0.014460945065366104,
+        "min_mean_entropy_across_prompts": 0.006030140910297632,
+        "max_mean_entropy_across_prompts": 0.043509457260370255,
+        "mean_frac_high_confidence_tokens": 0.9417644888162613
+      },
+      "per_prompt": [
+        {
+          "completion_text": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+          "completion_len": 76,
+          "mean_entropy": 0.013940447010099888,
+          "max_entropy": 0.4495418667793274,
+          "min_entropy": 2.8941032903517794e-10,
+          "mean_chosen_logprob": -0.004033130593597889,
+          "median_chosen_logprob": -4.768370445162873e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9605263471603394
+        },
+        {
+          "completion_text": "Step 1: The state remains unchanged. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Tails</answer>",
+          "completion_len": 72,
+          "mean_entropy": 0.018899111077189445,
+          "max_entropy": 0.5221445560455322,
+          "min_entropy": 1.007102401473503e-09,
+          "mean_chosen_logprob": -0.026420868933200836,
+          "median_chosen_logprob": -9.536738616588991e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9305555820465088
+        },
+        {
+          "completion_text": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>",
+          "completion_len": 74,
+          "mean_entropy": 0.006030140910297632,
+          "max_entropy": 0.14749455451965332,
+          "min_entropy": 3.2488042811529283e-10,
+          "mean_chosen_logprob": -0.001025269739329815,
+          "median_chosen_logprob": -3.576278118089249e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9729729890823364
+        },
+        {
+          "completion_text": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+          "completion_len": 75,
+          "mean_entropy": 0.010707269422709942,
+          "max_entropy": 0.6204279661178589,
+          "min_entropy": 1.3652276531495033e-10,
+          "mean_chosen_logprob": -0.0033045669551938772,
+          "median_chosen_logprob": -2.3841855067985307e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9733333587646484
+        },
+        {
+          "completion_text": "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+          "completion_len": 73,
+          "mean_entropy": 0.02267022617161274,
+          "max_entropy": 0.523460328578949,
+          "min_entropy": 9.949593926528166e-11,
+          "mean_chosen_logprob": -0.007310804445296526,
+          "median_chosen_logprob": -2.3841855067985307e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9178082346916199
+        },
+        {
+          "completion_text": "Step 1: The state remains unchanged. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n\n<answer>Tails</answer>",
+          "completion_len": 72,
+          "mean_entropy": 0.01945655234158039,
+          "max_entropy": 0.6901506781578064,
+          "min_entropy": 1.1477736538978434e-09,
+          "mean_chosen_logprob": -0.01904086209833622,
+          "median_chosen_logprob": -5.960462772236497e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.944444477558136
+        },
+        {
+          "completion_text": "Step 1: The state flips. State: Tails\nStep 2: The state flips. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state remains unchanged. State: Heads\n<answer>Heads</answer>",
+          "completion_len": 73,
+          "mean_entropy": 0.043509457260370255,
+          "max_entropy": 0.9264119267463684,
+          "min_entropy": 2.2080324235673743e-09,
+          "mean_chosen_logprob": -0.02918194979429245,
+          "median_chosen_logprob": -1.1920922133867862e-06,
+          "frac_tokens_logprob_above_neg0p01": 0.9178082346916199
+        },
+        {
+          "completion_text": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state remains unchanged. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>",
+          "completion_len": 72,
+          "mean_entropy": 0.020697947591543198,
+          "max_entropy": 0.6018329858779907,
+          "min_entropy": 9.350604318614231e-11,
+          "mean_chosen_logprob": -0.02537010796368122,
+          "median_chosen_logprob": -2.3841855067985307e-07,
+          "frac_tokens_logprob_above_neg0p01": 0.9166666865348816
+        }
+      ]
+    },
+    "stage9c_sft": {
+      "summary": {
+        "n_prompts": 8,
+        "grand_mean_entropy": 0.018932570470497012,
+        "grand_mean_chosen_logprob": -0.005436136736534536,
+        "min_mean_entropy_across_prompts": 0.015144715085625648,
+        "max_mean_entropy_across_prompts": 0.022557668387889862,
+        "mean_frac_high_confidence_tokens": 0.9446079060435295
+      },
+      "per_prompt": [
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+          "completion_len": 77,
+          "mean_entropy": 0.022450782358646393,
+          "max_entropy": 0.3624683618545532,
+          "min_entropy": 2.648008376127109e-06,
+          "mean_chosen_logprob": -0.0054249269887804985,
+          "median_chosen_logprob": -5.757642793469131e-05,
+          "frac_tokens_logprob_above_neg0p01": 0.9220778942108154
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Heads</answer>",
+          "completion_len": 77,
+          "mean_entropy": 0.015144715085625648,
+          "max_entropy": 0.4194003939628601,
+          "min_entropy": 3.644913931566407e-06,
+          "mean_chosen_logprob": -0.003678808454424143,
+          "median_chosen_logprob": -0.00011598391574807465,
+          "frac_tokens_logprob_above_neg0p01": 0.9610389471054077
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+          "completion_len": 75,
+          "mean_entropy": 0.018476691097021103,
+          "max_entropy": 0.4523134231567383,
+          "min_entropy": 2.124922730217804e-06,
+          "mean_chosen_logprob": -0.0047314162366092205,
+          "median_chosen_logprob": -0.00012730741582345217,
+          "frac_tokens_logprob_above_neg0p01": 0.9333333373069763
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+          "completion_len": 77,
+          "mean_entropy": 0.01782907359302044,
+          "max_entropy": 0.33782094717025757,
+          "min_entropy": 1.2750952009810135e-06,
+          "mean_chosen_logprob": -0.004041419364511967,
+          "median_chosen_logprob": -8.05822346592322e-05,
+          "frac_tokens_logprob_above_neg0p01": 0.9220778942108154
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Heads</answer>",
+          "completion_len": 77,
+          "mean_entropy": 0.018009565770626068,
+          "max_entropy": 0.6060934066772461,
+          "min_entropy": 3.982143425673712e-06,
+          "mean_chosen_logprob": -0.0060838679783046246,
+          "median_chosen_logprob": -7.748303323751315e-05,
+          "frac_tokens_logprob_above_neg0p01": 0.9610389471054077
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+          "completion_len": 76,
+          "mean_entropy": 0.016700226813554764,
+          "max_entropy": 0.5570604205131531,
+          "min_entropy": 2.877460701711243e-06,
+          "mean_chosen_logprob": -0.005001944024115801,
+          "median_chosen_logprob": -0.00011955977242905647,
+          "frac_tokens_logprob_above_neg0p01": 0.9605263471603394
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+          "completion_len": 77,
+          "mean_entropy": 0.02029184065759182,
+          "max_entropy": 0.6059409379959106,
+          "min_entropy": 2.573909114289563e-06,
+          "mean_chosen_logprob": -0.007021749392151833,
+          "median_chosen_logprob": -7.450303382938728e-05,
+          "frac_tokens_logprob_above_neg0p01": 0.948051929473877
+        },
+        {
+          "completion_text": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Heads</answer>",
+          "completion_len": 78,
+          "mean_entropy": 0.022557668387889862,
+          "max_entropy": 0.6276195049285889,
+          "min_entropy": 1.5936310546749155e-06,
+          "mean_chosen_logprob": -0.0075049614533782005,
+          "median_chosen_logprob": -4.434487345861271e-05,
+          "frac_tokens_logprob_above_neg0p01": 0.9487179517745972
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "step0_grand_mean_entropy": 0.019488893973175436,
+    "stage9c_grand_mean_entropy": 0.018932570470497012,
+    "entropy_ratio_step0_over_stage9c": 1.0293844675526418,
+    "step0_grand_mean_chosen_logprob": -0.014460945065366104,
+    "stage9c_grand_mean_chosen_logprob": -0.005436136736534536,
+    "step0_mean_frac_high_confidence_tokens": 0.9417644888162613,
+    "stage9c_mean_frac_high_confidence_tokens": 0.9446079060435295
+  }
+}

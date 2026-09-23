@@ -1,0 +1,61 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'n_sample_prompts': 8, 'group_size': 8, 'temperature': 0.8, 'top_p': 0.95, 'checkpoints': {'step0_milestone12': 'f9f9742cc922cdf45b12f98530862ca941ab0ee0be38b5a22f05cd6de8276080', 'stage9c_sft': 'c84afe0389487766463b74aba3559940b2e92d69c4915d32a5dee1c5ccc7609c'}}
+===== step0_milestone12 =====
+  prompt 0: mean_pairwise_sim=0.9871 exact_identical_pairs=12/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 1: mean_pairwise_sim=0.8988 exact_identical_pairs=11/28 n_distinct=3/8 baseline_reward_std=0.1654 baseline_max_abs_adv=2.6442 main_reward_std=0.2035 main_max_abs_adv=2.6445 near_zero_var(baseline/main)=False/False
+  prompt 2: mean_pairwise_sim=1.0000 exact_identical_pairs=28/28 n_distinct=1/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 3: mean_pairwise_sim=0.9861 exact_identical_pairs=12/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 4: mean_pairwise_sim=0.7909 exact_identical_pairs=11/28 n_distinct=3/8 baseline_reward_std=2.1351 baseline_max_abs_adv=1.7270 main_reward_std=2.1932 main_max_abs_adv=1.7240 near_zero_var(baseline/main)=False/False
+  prompt 5: mean_pairwise_sim=0.9991 exact_identical_pairs=16/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 6: mean_pairwise_sim=0.9315 exact_identical_pairs=10/28 n_distinct=4/8 baseline_reward_std=1.4882 baseline_max_abs_adv=2.6456 main_reward_std=1.4899 main_max_abs_adv=2.6455 near_zero_var(baseline/main)=False/False
+  prompt 7: mean_pairwise_sim=0.8121 exact_identical_pairs=15/28 n_distinct=3/8 baseline_reward_std=1.6536 baseline_max_abs_adv=2.6456 main_reward_std=1.6934 main_max_abs_adv=2.6455 near_zero_var(baseline/main)=False/False
+SUMMARY [step0_milestone12]: {
+  "n_groups": 8,
+  "grand_mean_pairwise_similarity": 0.9256970442579932,
+  "grand_mean_baseline_reward_std": 0.6802844369247598,
+  "grand_mean_main_reward_std": 0.6975028799075761,
+  "grand_mean_baseline_max_abs_advantage": 1.2077915844168554,
+  "grand_mean_main_max_abs_advantage": 1.2074393804847634,
+  "n_groups_near_zero_variance_baseline": 4,
+  "n_groups_near_zero_variance_main": 4
+}
+===== stage9c_sft =====
+  prompt 0: mean_pairwise_sim=0.9956 exact_identical_pairs=16/28 n_distinct=2/8 baseline_reward_std=0.2165 baseline_max_abs_adv=1.7313 main_reward_std=0.2665 main_max_abs_adv=1.7314 near_zero_var(baseline/main)=False/False
+  prompt 1: mean_pairwise_sim=0.8812 exact_identical_pairs=15/28 n_distinct=3/8 baseline_reward_std=1.4882 baseline_max_abs_adv=2.6456 main_reward_std=1.4882 main_max_abs_adv=2.6456 near_zero_var(baseline/main)=False/False
+  prompt 2: mean_pairwise_sim=1.0000 exact_identical_pairs=28/28 n_distinct=1/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 3: mean_pairwise_sim=1.0000 exact_identical_pairs=28/28 n_distinct=1/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 4: mean_pairwise_sim=0.9133 exact_identical_pairs=15/28 n_distinct=3/8 baseline_reward_std=1.4882 baseline_max_abs_adv=2.6456 main_reward_std=1.4882 main_max_abs_adv=2.6456 near_zero_var(baseline/main)=False/False
+  prompt 5: mean_pairwise_sim=0.8619 exact_identical_pairs=21/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 6: mean_pairwise_sim=0.9872 exact_identical_pairs=21/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+  prompt 7: mean_pairwise_sim=0.7070 exact_identical_pairs=16/28 n_distinct=2/8 baseline_reward_std=0.0000 baseline_max_abs_adv=0.0000 main_reward_std=0.0000 main_max_abs_adv=0.0000 near_zero_var(baseline/main)=True/True
+SUMMARY [stage9c_sft]: {
+  "n_groups": 8,
+  "grand_mean_pairwise_similarity": 0.9182683876272335,
+  "grand_mean_baseline_reward_std": 0.3991220719867218,
+  "grand_mean_main_reward_std": 0.4053674474947826,
+  "grand_mean_baseline_max_abs_advantage": 0.8777997834206962,
+  "grand_mean_main_max_abs_advantage": 0.8778185177338709,
+  "n_groups_near_zero_variance_baseline": 5,
+  "n_groups_near_zero_variance_main": 5
+}
+===== COMPARISON =====
+{
+  "step0_mean_pairwise_similarity": 0.9256970442579932,
+  "stage9c_mean_pairwise_similarity": 0.9182683876272335,
+  "similarity_ratio_stage9c_over_step0": 0.9919750671379596,
+  "step0_mean_baseline_reward_std": 0.6802844369247598,
+  "stage9c_mean_baseline_reward_std": 0.3991220719867218,
+  "step0_mean_main_reward_std": 0.6975028799075761,
+  "stage9c_mean_main_reward_std": 0.4053674474947826,
+  "step0_mean_baseline_max_abs_advantage": 1.2077915844168554,
+  "stage9c_mean_baseline_max_abs_advantage": 0.8777997834206962,
+  "step0_mean_main_max_abs_advantage": 1.2074393804847634,
+  "stage9c_mean_main_max_abs_advantage": 0.8778185177338709,
+  "step0_n_near_zero_variance_groups_baseline_of_8": 4,
+  "stage9c_n_near_zero_variance_groups_baseline_of_8": 5,
+  "step0_n_near_zero_variance_groups_main_of_8": 4,
+  "stage9c_n_near_zero_variance_groups_main_of_8": 5
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-rollout-diversity-diagnostic/rollout_diversity_diagnostic_result.json
+ROLLOUT DIVERSITY DIAGNOSTIC COMPLETE.

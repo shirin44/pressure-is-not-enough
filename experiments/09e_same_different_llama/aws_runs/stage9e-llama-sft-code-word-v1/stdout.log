@@ -1,0 +1,68 @@
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260907, 'n_steps': 40, 'kl_breaker': 5.0, 'grad_breaker': 200.0, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+===== BUILD + VERIFY THE STRATIFIED, BALANCED BANK (fresh, not loaded from a JSON file) =====
+{'train_n': 43, 'eval_n': 21, 'all_verified': True, 'bank_sha256': '473e3d7675b8c28bcddcf37f3796c068a8898b00ad4fb92712da6fadf1e5d3de'}
+===== LOAD UNTOUCHED LLAMA-3-8B BASE + FRESH LORA =====
+{'fresh_lora_init': True, 'loaded_adapter_state_sha256': '1fed5fb2c10361616bb1763f13207d2217c29485f573cae886dfede80770a8ad', 'gpu_memory_after_load_gb': 11.216}
+{'single_token_ids': {'Bek': 71319, 'Ner': 66904, 'Jub': 80380, 'Kag': 77091}}
+===== GENERATION HARNESS (returns text AND raw generated token ids) =====
+===== SFT TRAINING: GRADIENT-ACCUMULATED TEACHER-FORCED CE, 40 STEPS, 43 TRAJECTORIES =====
+{'micro_batch_size': 8, 'num_micro_batches': 6}
+{'step': 1, 'loss': 1.6164357357246932, 'grad_norm': 2.1657025814056396, 'kl': 0.0, 'lr': 8e-05, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 2, 'loss': 1.561237235401952, 'grad_norm': 2.097257375717163, 'kl': 0.010810364969074726, 'lr': 0.00012, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 3, 'loss': 1.415867891422538, 'grad_norm': 2.099536657333374, 'kl': 0.033972661942243576, 'lr': 0.00016, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 4, 'loss': 1.2046493901762851, 'grad_norm': 1.9115859270095825, 'kl': 0.13133272528648376, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 5, 'loss': 0.9616158563037253, 'grad_norm': 1.7563130855560303, 'kl': 0.3037092983722687, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+HEALTH CHECK PASSED at step 5: (1.6164 -> 0.9616). Continuing.
+{'step': 6, 'loss': 0.7116189987160437, 'grad_norm': 1.6149574518203735, 'kl': 0.3397345542907715, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 7, 'loss': 0.5523647388746572, 'grad_norm': 1.453665018081665, 'kl': 0.5368992686271667, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 8, 'loss': 0.44864425132440966, 'grad_norm': 1.5176551342010498, 'kl': 0.8529877662658691, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 9, 'loss': 0.34001546197159344, 'grad_norm': 1.3812652826309204, 'kl': 1.0865548849105835, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 10, 'loss': 0.2400058334649995, 'grad_norm': 1.3081789016723633, 'kl': 1.278368592262268, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+[OVERFIT-WATCH] step=10: {'step': 10, 'intermediate_tracking_accuracy': 0.047619047619047616, 'final_answer_accuracy': 0.23809523809523808, 'tracking_vs_answer_gap': -0.19047619047619047}
+{'step': 11, 'loss': 0.14767311132231425, 'grad_norm': 1.1425621509552002, 'kl': 1.5063600540161133, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 12, 'loss': 0.08818129432755847, 'grad_norm': 0.7759233117103577, 'kl': 1.7718243598937988, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 13, 'loss': 0.0584631860256195, 'grad_norm': 0.6336437463760376, 'kl': 1.8749332427978516, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 14, 'loss': 0.043389414805312485, 'grad_norm': 0.5787750482559204, 'kl': 1.8613049983978271, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 15, 'loss': 0.03098871190707351, 'grad_norm': 0.5265234112739563, 'kl': 1.7628215551376343, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 16, 'loss': 0.02000362512677215, 'grad_norm': 0.2929255962371826, 'kl': 1.6326388120651245, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 17, 'loss': 0.018689267727178195, 'grad_norm': 0.46096208691596985, 'kl': 1.567626714706421, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 18, 'loss': 0.014426561072468756, 'grad_norm': 0.3786502480506897, 'kl': 1.5857040882110596, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 19, 'loss': 0.010286663214914329, 'grad_norm': 0.11135350912809372, 'kl': 1.6187752485275269, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 20, 'loss': 0.010948178450425351, 'grad_norm': 0.3876880407333374, 'kl': 1.6353617906570435, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+[OVERFIT-WATCH] step=20: {'step': 20, 'intermediate_tracking_accuracy': 0.5238095238095238, 'final_answer_accuracy': 0.5238095238095238, 'tracking_vs_answer_gap': 0.0}
+{'step': 21, 'loss': 0.009718893864733536, 'grad_norm': 0.12192083895206451, 'kl': 1.6302720308303833, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 22, 'loss': 0.01016271304945613, 'grad_norm': 0.31320619583129883, 'kl': 1.6220859289169312, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 23, 'loss': 0.009711957514979119, 'grad_norm': 0.2773623466491699, 'kl': 1.6225053071975708, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 24, 'loss': 0.009082688191948934, 'grad_norm': 0.2265634536743164, 'kl': 1.6336476802825928, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 25, 'loss': 0.009115569802477609, 'grad_norm': 0.3320600092411041, 'kl': 1.6348652839660645, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 26, 'loss': 0.007370576462816707, 'grad_norm': 0.11920410394668579, 'kl': 1.6251002550125122, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 27, 'loss': 0.008323740831381361, 'grad_norm': 0.33746588230133057, 'kl': 1.6204793453216553, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 28, 'loss': 0.006379515479513724, 'grad_norm': 0.08836930990219116, 'kl': 1.6238086223602295, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 29, 'loss': 0.007141952658732704, 'grad_norm': 0.30539682507514954, 'kl': 1.6339341402053833, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 30, 'loss': 0.0052760403405680036, 'grad_norm': 0.14522597193717957, 'kl': 1.6308097839355469, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+[OVERFIT-WATCH] step=30: {'step': 30, 'intermediate_tracking_accuracy': 0.5238095238095238, 'final_answer_accuracy': 0.5238095238095238, 'tracking_vs_answer_gap': 0.0}
+{'step': 31, 'loss': 0.005865142832315246, 'grad_norm': 0.3009534180164337, 'kl': 1.6242207288742065, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 32, 'loss': 0.004694436217907296, 'grad_norm': 0.17468449473381042, 'kl': 1.62783682346344, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 33, 'loss': 0.004401305048092983, 'grad_norm': 0.20646189153194427, 'kl': 1.638369083404541, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 34, 'loss': 0.003828945153103167, 'grad_norm': 0.19780899584293365, 'kl': 1.6368004083633423, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 35, 'loss': 0.0028384416394590857, 'grad_norm': 0.11207199096679688, 'kl': 1.6280852556228638, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 36, 'loss': 0.00266123351134728, 'grad_norm': 0.16720129549503326, 'kl': 1.627307653427124, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 37, 'loss': 0.001865599735580428, 'grad_norm': 0.08677495270967484, 'kl': 1.635596752166748, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 38, 'loss': 0.001578791985297738, 'grad_norm': 0.1467185914516449, 'kl': 1.6454453468322754, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 39, 'loss': 0.001021746792058937, 'grad_norm': 0.11224634945392609, 'kl': 1.6488635540008545, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+{'step': 40, 'loss': 0.0004806584914805107, 'grad_norm': 0.03739503026008606, 'kl': 1.6480520963668823, 'lr': 0.0002, 'qwen_grad_breaker_would_fire': False, 'qwen_kl_breaker_would_fire': False}
+[OVERFIT-WATCH] step=40: {'step': 40, 'intermediate_tracking_accuracy': 1.0, 'final_answer_accuracy': 1.0, 'tracking_vs_answer_gap': 0.0}
+{'final_loss': 0.0004806584914805107, 'first_loss': 1.6164357357246932, 'hard_stop': None, 'terminal_step': 40}
+===== TIER (a): TRAINING-SET RECALL =====
+======================================================================
+TIER (a) RESULT: {'n': 43, 'intermediate_tracking_accuracy': 1.0, 'final_answer_accuracy': 1.0, 'answer_is_single_token_rate': 1.0, 'split_or_malformed_answer_token_count': 0}
+======================================================================
+===== TIER (b): HELD-OUT SAME-PAIR (Bek/Ner, clean prompts, never trained on these scenarios) =====
+TIER (b) RESULT: {'n': 21, 'intermediate_tracking_accuracy': 1.0, 'final_answer_accuracy': 1.0, 'answer_is_single_token_rate': 1.0, 'split_or_malformed_answer_token_count': 0, 'tracking_vs_answer_gap': 0.0}
+===== TIER (c): HELD-OUT DIFFERENT-PAIR (Jub/Kag, never trained, explicitly instructed) =====
+TIER (c) RESULT: {'n': 21, 'fully_correct_rate': 0.5238095238095238, 'final_answer_correct_rate': 0.5238095238095238, 'stayed_within_instructed_pair_rate': 0.7619047619047619, 'lapsed_into_literal_rate': 0.0, 'answer_is_single_token_rate': 0.7619047619047619, 'split_or_malformed_answer_token_count': 0}
+===== FINAL REPORT =====
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9e-llama-sft-code-word-v1/stage9e_llama_sft_code_word.json
+STAGE 9E LLAMA SFT CODE-WORD SEEDING COMPLETE.

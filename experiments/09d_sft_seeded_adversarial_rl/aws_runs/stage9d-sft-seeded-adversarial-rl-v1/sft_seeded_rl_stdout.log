@@ -1,0 +1,44 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260830, 'baseline_steps': 16, 'dryrun_steps': 8, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+REWARD INVARIANT (checkpoint-independent by construction -- design.md section 2): {'baseline': {'margin_correct_over_wrong': 3.0, 'margin_wrong_over_malformed': 3.0}, 'main_adversarial': {'margin_correct_over_wrong': 0.7, 'margin_wrong_over_malformed': 0.6999999999999993}}
+{'train_pool_n': 43, 'eval_n': 21, 'clean21_sha256_verified': True}
+===== LOAD 3B BASE (once, shared across both runs) =====
+{'stage9c_adapter_path': '/home/ubuntu/aisi_checkpoints/stage9c-sft-diagnostic-v1/final_adapter/adapter_model.safetensors', 'stage9c_adapter_sha256': 'c84afe0389487766463b74aba3559940b2e92d69c4915d32a5dee1c5ccc7609c'}
+===== ZERO-STEP SANITY CHECK: does the freshly-loaded Stage 9c checkpoint reproduce its own reported ~100% held-out non-literal rate? =====
+{'sanity_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be', 'sanity_nonliteral_rate': 1.0, 'n': 21, 'matches_stage9c_report': True}
+PASSED: checkpoint loads correctly and reproduces its own reported behavior before any Stage 9d training.
+===== PHASE 1: BASELINE CONTROL (correctness-only, no p_cot/consistency/signal) =====
+===== PHASE: baseline_correctness_only (16 steps) =====
+{'run_label': 'baseline_correctness_only', 'loaded_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be'}
+{'loss': '-0.05719', 'grad_norm': '48.75', 'learning_rate': '1e-07', 'num_tokens': '3352', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-1.062', 'rewards/diagnostic_reward/std': '3.812', 'reward': '-1.062', 'reward_std': '3.812', 'frac_reward_zero_std': '0', 'policy_loss': '4.657e-10', 'kl': '0', 'entropy': '1.144', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.82', 'epoch': '0.02326'}
+{'loss': '-0.04282', 'grad_norm': '13.88', 'learning_rate': '3.25e-07', 'num_tokens': '6480', 'completions/mean_length': '229', 'completions/min_length': '229', 'completions/max_length': '229', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '229', 'completions/min_terminated_length': '229', 'completions/max_terminated_length': '229', 'rewards/diagnostic_reward/mean': '2.312', 'rewards/diagnostic_reward/std': '2.235', 'reward': '2.312', 'reward_std': '2.235', 'frac_reward_zero_std': '0', 'policy_loss': '0.001388', 'kl': '0.2775', 'entropy': '1.078', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.75', 'epoch': '0.04651'}
+{'loss': '-0.03419', 'grad_norm': '69.5', 'learning_rate': '5.5e-07', 'num_tokens': '9800', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.375', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-2.688', 'rewards/diagnostic_reward/std': '2.52', 'reward': '-2.688', 'reward_std': '2.52', 'frac_reward_zero_std': '0', 'policy_loss': '0.001042', 'kl': '0.2085', 'entropy': '0.8505', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.15', 'epoch': '0.06977'}
+{'train_runtime': '162.8', 'train_samples_per_second': '0.786', 'train_steps_per_second': '0.098', 'train_loss': '-0.04473', 'epoch': '0.06977'}
+===== PHASE 2: MAIN ADVERSARIAL DRY RUN (full Stage-1-equivalent reward, p_cot reinstated) =====
+===== PHASE: main_adversarial_dryrun (8 steps) =====
+{'run_label': 'main_adversarial_dryrun', 'loaded_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be'}
+{'loss': '-0.05719', 'grad_norm': '49', 'learning_rate': '1e-07', 'num_tokens': '3352', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-0.9875', 'rewards/diagnostic_reward/std': '3.876', 'reward': '-0.9875', 'reward_std': '3.876', 'frac_reward_zero_std': '0', 'policy_loss': '-2.561e-09', 'kl': '0', 'entropy': '1.144', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.31', 'epoch': '0.02326'}
+{'loss': '-0.04732', 'grad_norm': '31.25', 'learning_rate': '3.25e-07', 'num_tokens': '6696', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.536', 'rewards/diagnostic_reward/std': '3.705', 'reward': '1.536', 'reward_std': '3.705', 'frac_reward_zero_std': '0', 'policy_loss': '0.000852', 'kl': '0.1704', 'entropy': '1.083', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '55.34', 'epoch': '0.04651'}
+{'loss': '-0.04258', 'grad_norm': '54.5', 'learning_rate': '5.5e-07', 'num_tokens': '1.002e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.375', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-2.112', 'rewards/diagnostic_reward/std': '3.662', 'reward': '-2.112', 'reward_std': '3.662', 'frac_reward_zero_std': '0', 'policy_loss': '0.000668', 'kl': '0.1336', 'entropy': '0.9584', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.62', 'epoch': '0.06977'}
+{'train_runtime': '168.3', 'train_samples_per_second': '0.38', 'train_steps_per_second': '0.048', 'train_loss': '-0.04903', 'epoch': '0.06977'}
+===== FINAL REPORT =====
+{
+  "baseline_terminal_step": 3,
+  "baseline_hard_stop": {
+    "step": 3,
+    "grad_norm": 69.5,
+    "kl": 0.20846489688847214
+  },
+  "baseline_milestones_summary": [],
+  "main_terminal_step": 3,
+  "main_hard_stop": {
+    "step": 3,
+    "grad_norm": 54.5,
+    "kl": 0.13360676346928813
+  },
+  "main_milestones_summary": []
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-sft-seeded-adversarial-rl-v1/stage9d_sft_seeded_adversarial_rl.json
+STAGE 9D BASELINE + MAIN DRY RUN COMPLETE. No longer main run launched.

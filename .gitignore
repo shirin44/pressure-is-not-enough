@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+checkpoints/
+outputs/
+experiments/**/outputs/
+
+# Data & model artifacts
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+data/raw/
+data/processed/
+*.npy
+*.npz
+
+# Logs & large outputs
+logs/*
+!logs/.gitkeep
+!logs/development_log.md
+wandb/
+mlruns/
+*.log
+!experiments/**/aws_runs/**/stdout.log
+!experiments/**/aws_runs/**/*_stdout.log
+!experiments/**/aws_runs/**/*_stdout_v*.log
+!experiments/**/aws_recovered/**/*.log
+
+# Notebook safety backups (see src/notebook_io.py) -- local safety net,
+# never meant to be committed; if one matters, rename it out of this pattern.
+*.backup-*.ipynb
+
+# Env / secrets
+.env
+*.key
+credentials.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/

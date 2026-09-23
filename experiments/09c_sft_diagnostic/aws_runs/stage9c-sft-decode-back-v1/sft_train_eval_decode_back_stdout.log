@@ -1,0 +1,183 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260901, 'n_steps': 40, 'health_check_step': 5, 'overfit_check_every': 10, 'target_lr': 0.0002, 'transformers': '5.13.1', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS (model-independent modules reused unchanged) =====
+===== BUILD THE DECODE-BACK-LINE REBALANCED BANK (identical 36 scenarios, new completion format) =====
+{'clean21_eval_n': 21, 'sha256_verified_identical': True, 'decode_back_bank_size': 36, 'label_distribution': {'Heads': 18, 'Tails': 18}, 'all_verified_including_decode_back_line': True, 'decode_back_bank_sha256': 'c21722dd2be3bb600cef1cbbcdf4d13cfc43568aa0f5ce46cfb41d6780f9e4f2', 'no_eval_overlap': True, 'removed_count_for_rebalance': 7}
+===== LOAD UNTOUCHED 3B BASE + FRESH LORA =====
+{'fresh_lora_init': True, 'loaded_adapter_state_sha256': '6393d244c6abfedaee5389b1fb2abaf9388d341933c7e9f170196b283d65b480', 'gpu_memory_after_load_gb': 4.039}
+===== GENERATION HARNESS =====
+===== SFT TRAINING: GRADIENT-ACCUMULATED TEACHER-FORCED CE, 40 STEPS, 36 TRAJECTORIES =====
+{'micro_batch_size': 8, 'num_micro_batches': 5, 'micro_batch_sizes': [8, 8, 8, 8, 4]}
+{'step': 1, 'loss': 2.228571918275621, 'grad_norm': 2.582611083984375, 'lr': 8e-05}
+{'step': 2, 'loss': 2.174451351165771, 'grad_norm': 2.4246208667755127, 'lr': 0.00012}
+{'step': 3, 'loss': 2.058271461062961, 'grad_norm': 2.2632360458374023, 'lr': 0.00016}
+{'step': 4, 'loss': 1.895871639251709, 'grad_norm': 2.0326852798461914, 'lr': 0.0002}
+{'step': 5, 'loss': 1.6932388544082642, 'grad_norm': 1.7853840589523315, 'lr': 0.0002}
+HEALTH CHECK PASSED at step 5: (2.2286 -> 1.6932). Continuing.
+{'step': 6, 'loss': 1.4817399846182928, 'grad_norm': 1.5474066734313965, 'lr': 0.0002}
+{'step': 7, 'loss': 1.3045228587256537, 'grad_norm': 1.3517972230911255, 'lr': 0.0002}
+{'step': 8, 'loss': 1.1663518614239163, 'grad_norm': 1.238145112991333, 'lr': 0.0002}
+{'step': 9, 'loss': 1.045422143406338, 'grad_norm': 1.15248441696167, 'lr': 0.0002}
+{'step': 10, 'loss': 0.9454013440344068, 'grad_norm': 1.1088780164718628, 'lr': 0.0002}
+[OVERFIT-WATCH] step=10: {'step': 10, 'nonliteral_rate': 0.0, 'intermediate_tracking_accuracy': 0.0, 'final_answer_accuracy': 0.6190476190476191, 'decode_back_presence_rate': 0.0, 'decode_back_accuracy': 0.0, 'genuine_correct_among_nonliteral': None, 'tracking_vs_answer_gap': -0.6190476190476191}
+{'step': 11, 'loss': 0.8541558583577474, 'grad_norm': 1.0626029968261719, 'lr': 0.0002}
+{'step': 12, 'loss': 0.7755765716234843, 'grad_norm': 1.1429084539413452, 'lr': 0.0002}
+{'step': 13, 'loss': 0.6991691456900703, 'grad_norm': 1.1661771535873413, 'lr': 0.0002}
+{'step': 14, 'loss': 0.6199446850352816, 'grad_norm': 1.0492453575134277, 'lr': 0.0002}
+{'step': 15, 'loss': 0.5468437208069695, 'grad_norm': 1.0399749279022217, 'lr': 0.0002}
+{'step': 16, 'loss': 0.47900188631481594, 'grad_norm': 1.0601928234100342, 'lr': 0.0002}
+{'step': 17, 'loss': 0.41038741336928475, 'grad_norm': 1.1433169841766357, 'lr': 0.0002}
+{'step': 18, 'loss': 0.3479341400994195, 'grad_norm': 1.0264002084732056, 'lr': 0.0002}
+{'step': 19, 'loss': 0.28640909989674884, 'grad_norm': 0.9162244200706482, 'lr': 0.0002}
+{'step': 20, 'loss': 0.234346823559867, 'grad_norm': 0.8471541404724121, 'lr': 0.0002}
+[OVERFIT-WATCH] step=20: {'step': 20, 'nonliteral_rate': 0.0, 'intermediate_tracking_accuracy': 0.0, 'final_answer_accuracy': 0.5714285714285714, 'decode_back_presence_rate': 0.3333333333333333, 'decode_back_accuracy': 0.047619047619047616, 'genuine_correct_among_nonliteral': None, 'tracking_vs_answer_gap': -0.5714285714285714}
+{'step': 21, 'loss': 0.18387203746371797, 'grad_norm': 0.7961993217468262, 'lr': 0.0002}
+{'step': 22, 'loss': 0.14062278469403583, 'grad_norm': 0.7418593168258667, 'lr': 0.0002}
+{'step': 23, 'loss': 0.10138179196251763, 'grad_norm': 0.6379179358482361, 'lr': 0.0002}
+{'step': 24, 'loss': 0.07421234084500206, 'grad_norm': 0.6718919277191162, 'lr': 0.0002}
+{'step': 25, 'loss': 0.054895315733220845, 'grad_norm': 0.6602991223335266, 'lr': 0.0002}
+{'step': 26, 'loss': 0.03888130436340968, 'grad_norm': 0.33168306946754456, 'lr': 0.0002}
+{'step': 27, 'loss': 0.030304899025294516, 'grad_norm': 0.4536147117614746, 'lr': 0.0002}
+{'step': 28, 'loss': 0.026143186829156343, 'grad_norm': 0.5013235807418823, 'lr': 0.0002}
+{'step': 29, 'loss': 0.02064504681362046, 'grad_norm': 0.3014684021472931, 'lr': 0.0002}
+{'step': 30, 'loss': 0.016726517842875585, 'grad_norm': 0.35775595903396606, 'lr': 0.0002}
+[OVERFIT-WATCH] step=30: {'step': 30, 'nonliteral_rate': 1.0, 'intermediate_tracking_accuracy': 0.5714285714285714, 'final_answer_accuracy': 0.42857142857142855, 'decode_back_presence_rate': 1.0, 'decode_back_accuracy': 0.23809523809523808, 'genuine_correct_among_nonliteral': 0.42857142857142855, 'tracking_vs_answer_gap': 0.14285714285714285}
+{'step': 31, 'loss': 0.01567872862021128, 'grad_norm': 0.4167015552520752, 'lr': 0.0002}
+{'step': 32, 'loss': 0.010305261239409445, 'grad_norm': 0.2646089792251587, 'lr': 0.0002}
+{'step': 33, 'loss': 0.009704462614738278, 'grad_norm': 0.38892611861228943, 'lr': 0.0002}
+{'step': 34, 'loss': 0.008257501810375186, 'grad_norm': 0.4287480115890503, 'lr': 0.0002}
+{'step': 35, 'loss': 0.005499177405403719, 'grad_norm': 0.1624619960784912, 'lr': 0.0002}
+{'step': 36, 'loss': 0.00412426573327846, 'grad_norm': 0.21429961919784546, 'lr': 0.0002}
+{'step': 37, 'loss': 0.0029744514936788217, 'grad_norm': 0.16209721565246582, 'lr': 0.0002}
+{'step': 38, 'loss': 0.0019605484170218306, 'grad_norm': 0.0594327375292778, 'lr': 0.0002}
+{'step': 39, 'loss': 0.0017389382183965708, 'grad_norm': 0.09219518303871155, 'lr': 0.0002}
+{'step': 40, 'loss': 0.0013751762453466654, 'grad_norm': 0.09657968580722809, 'lr': 0.0002}
+[OVERFIT-WATCH] step=40: {'step': 40, 'nonliteral_rate': 1.0, 'intermediate_tracking_accuracy': 0.9047619047619048, 'final_answer_accuracy': 0.8095238095238095, 'decode_back_presence_rate': 1.0, 'decode_back_accuracy': 0.8095238095238095, 'genuine_correct_among_nonliteral': 0.8095238095238095, 'tracking_vs_answer_gap': 0.09523809523809523}
+{'final_loss': 0.0013751762453466654, 'first_loss': 2.228571918275621, 'loss_reduction_ratio': 1620.5718545653215}
+===== TIER (a): TRAINING-SET RECALL, WITH TRACKING/ANSWER/DECODE-BACK BREAKDOWN =====
+======================================================================
+TIER (a) RESULT: {'n': 36, 'intermediate_tracking_accuracy': 0.9722222222222222, 'final_answer_accuracy': 0.9722222222222222, 'decode_back_presence_rate': 1.0, 'decode_back_accuracy': 0.9722222222222222, 'tracking_vs_answer_gap': 0.0}
+======================================================================
+===== TIER (b): HELD-OUT SAME-PAIR -- tracking / answer / decode-back reported SEPARATELY =====
+TIER (b) RESULT: {'n': 21, 'nonliteral_code_usage_rate': 1.0, 'intermediate_tracking_accuracy': 0.9047619047619048, 'final_answer_accuracy': 0.8095238095238095, 'tracking_vs_answer_gap': 0.09523809523809523, 'decode_back_presence_rate': 1.0, 'decode_back_accuracy': 0.8095238095238095, 'decode_back_matches_own_trace_rate': 1.0, 'genuine_correct_among_nonliteral': 0.8095238095238095, 'stage9c_original_baseline_for_comparison': 0.2857142857142857, 'rebalanced_run_result_for_comparison': 0.3333333333333333, 'taxonomy_counts': {'correct_globally_consistent_code': 17, 'state_predictive_code': 4}}
+===== TIER (c): HELD-OUT DIFFERENT-PAIR (Yelt/Yark) =====
+TIER (c) RESULT: {'n': 21, 'fully_correct_rate': 0.0, 'final_answer_correct_rate': 0.0, 'stayed_within_instructed_pair_rate': 0.5714285714285714, 'lapsed_into_literal_rate': 0.0, 'taxonomy_counts': {'state_predictive_code': 12, 'prompt_domain_echo': 6, 'correct_globally_consistent_code': 3}}
+===== FINAL REPORT =====
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "run_seed": 20260901,
+    "n_steps": 40,
+    "target_lr": 0.0002,
+    "warmup_steps": 5,
+    "health_check_step": 5,
+    "overfit_check_every": 10,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ],
+      "dropout": 0.05
+    },
+    "loaded_adapter_state_sha256": "6393d244c6abfedaee5389b1fb2abaf9388d341933c7e9f170196b283d65b480",
+    "decode_back_bank_sha256": "c21722dd2be3bb600cef1cbbcdf4d13cfc43568aa0f5ce46cfb41d6780f9e4f2",
+    "decode_back_bank_size": 36,
+    "label_distribution": {
+      "Heads": 18,
+      "Tails": 18
+    },
+    "clean21_eval_sha256": "947260ebc7bba7584b39839c8b4d248a2aa1612a9e049f46128e0ed3901e245e",
+    "heldout_pair": [
+      "Yelt",
+      "Yark"
+    ],
+    "fix_description": "explicit decode-back line inserted between the last State: line and <answer>",
+    "source_diagnostic": "experiments/09c_sft_diagnostic/aws_runs/corrupted-prefill-diagnostic-v1/corrupted_prefill_diagnostic.json"
+  },
+  "overfit_watch": [
+    {
+      "step": 10,
+      "nonliteral_rate": 0.0,
+      "intermediate_tracking_accuracy": 0.0,
+      "final_answer_accuracy": 0.6190476190476191,
+      "decode_back_presence_rate": 0.0,
+      "decode_back_accuracy": 0.0,
+      "genuine_correct_among_nonliteral": null,
+      "tracking_vs_answer_gap": -0.6190476190476191
+    },
+    {
+      "step": 20,
+      "nonliteral_rate": 0.0,
+      "intermediate_tracking_accuracy": 0.0,
+      "final_answer_accuracy": 0.5714285714285714,
+      "decode_back_presence_rate": 0.3333333333333333,
+      "decode_back_accuracy": 0.047619047619047616,
+      "genuine_correct_among_nonliteral": null,
+      "tracking_vs_answer_gap": -0.5714285714285714
+    },
+    {
+      "step": 30,
+      "nonliteral_rate": 1.0,
+      "intermediate_tracking_accuracy": 0.5714285714285714,
+      "final_answer_accuracy": 0.42857142857142855,
+      "decode_back_presence_rate": 1.0,
+      "decode_back_accuracy": 0.23809523809523808,
+      "genuine_correct_among_nonliteral": 0.42857142857142855,
+      "tracking_vs_answer_gap": 0.14285714285714285
+    },
+    {
+      "step": 40,
+      "nonliteral_rate": 1.0,
+      "intermediate_tracking_accuracy": 0.9047619047619048,
+      "final_answer_accuracy": 0.8095238095238095,
+      "decode_back_presence_rate": 1.0,
+      "decode_back_accuracy": 0.8095238095238095,
+      "genuine_correct_among_nonliteral": 0.8095238095238095,
+      "tracking_vs_answer_gap": 0.09523809523809523
+    }
+  ],
+  "tier_a_summary": {
+    "n": 36,
+    "intermediate_tracking_accuracy": 0.9722222222222222,
+    "final_answer_accuracy": 0.9722222222222222,
+    "decode_back_presence_rate": 1.0,
+    "decode_back_accuracy": 0.9722222222222222,
+    "tracking_vs_answer_gap": 0.0
+  },
+  "tier_b_summary": {
+    "n": 21,
+    "nonliteral_code_usage_rate": 1.0,
+    "intermediate_tracking_accuracy": 0.9047619047619048,
+    "final_answer_accuracy": 0.8095238095238095,
+    "tracking_vs_answer_gap": 0.09523809523809523,
+    "decode_back_presence_rate": 1.0,
+    "decode_back_accuracy": 0.8095238095238095,
+    "decode_back_matches_own_trace_rate": 1.0,
+    "genuine_correct_among_nonliteral": 0.8095238095238095,
+    "stage9c_original_baseline_for_comparison": 0.2857142857142857,
+    "rebalanced_run_result_for_comparison": 0.3333333333333333,
+    "taxonomy_counts": {
+      "correct_globally_consistent_code": 17,
+      "state_predictive_code": 4
+    }
+  },
+  "tier_c_summary": {
+    "n": 21,
+    "fully_correct_rate": 0.0,
+    "final_answer_correct_rate": 0.0,
+    "stayed_within_instructed_pair_rate": 0.5714285714285714,
+    "lapsed_into_literal_rate": 0.0,
+    "taxonomy_counts": {
+      "state_predictive_code": 12,
+      "prompt_domain_echo": 6,
+      "correct_globally_consistent_code": 3
+    }
+  }
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9c-sft-decode-back-v1/stage9c_sft_decode_back.json
+STAGE 9C SFT DECODE-BACK RUN COMPLETE.

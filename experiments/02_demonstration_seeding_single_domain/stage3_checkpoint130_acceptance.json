@@ -1,0 +1,27 @@
+{
+  "decision": "accepted_with_registered_threshold_exception",
+  "stage": "Stage 3 latch-domain seeding",
+  "accepted_checkpoint": "/content/drive/MyDrive/AISI/checkpoints/latch-seed-stage3-decode-back-sft-v3/trainer-output/checkpoint-130",
+  "accepted_logical_step": 130,
+  "registered_threshold": 0.95,
+  "all_metrics_cleared_registered_threshold": false,
+  "metrics": {
+    "final_answer_accuracy": 0.925,
+    "structural_compliance": 1.0,
+    "internal_transition_tracking": 0.905,
+    "global_mapping_consistency": 0.89,
+    "declared_mapping_adherence": 0.895,
+    "decode_back_accuracy": 0.92,
+    "nonliteral_token_use": 1.0
+  },
+  "rationale": [
+    "The diagnosed consistent declared-mapping-swap failure was eliminated: 8/11 mapping errors at step 100 became 0/2 at step 130.",
+    "Structural compliance and nonliteral token use both reached 100%.",
+    "The remaining gap was diffuse per-step transition noise rather than a systematic mapping-orientation or formatting defect.",
+    "The explicit-transition diagnostic at checkpoint 140 reduced pure tracking errors but destabilized mapping orientation and was rejected."
+  ],
+  "rejected_checkpoint": "/content/drive/MyDrive/AISI/checkpoints/latch-seed-stage3-decode-back-sft-v3/trainer-output/checkpoint-140",
+  "next_stage": "Stage 3.5 zero-shot third-domain generalization",
+  "stage4_blocked_pending_review": true,
+  "decision_date": "2026-08-11"
+}

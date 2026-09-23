@@ -1,0 +1,64 @@
+{
+  "stage": "08_load_bearing_and_exploration_audit",
+  "question": "Does the project's working flip-length range (3-8) actually require encoded state (Experiment 1), and does higher-temperature generation-only sampling -- no training -- ever produce a non-literal token attempt (Experiment 2)?",
+  "experiment_1_load_bearing_regime": {
+    "model": "fresh Qwen2.5-3B-Instruct, no LoRA",
+    "lengths_swept": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "n_per_length": {"2": 8, "3": 16, "4": 32, "5": 40, "6": 40, "7": 40, "8": 40, "9": 40, "10": 40},
+    "n_capped_by_combinatorics_note": "lengths 2/3/4 capped below 40 by the actual scenario-space size (8/16/32 distinct starting-state+operations combinations) -- see the unique_sampling.py bug this triggered",
+    "results_by_length": {
+      "2": {"answer_only_accuracy": 0.500, "normal_cot_accuracy": 0.500, "corrupted_prefill_change_rate": 0.75},
+      "3": {"answer_only_accuracy": 0.438, "normal_cot_accuracy": 0.562, "corrupted_prefill_change_rate": 0.625},
+      "4": {"answer_only_accuracy": 0.531, "normal_cot_accuracy": 0.719, "corrupted_prefill_change_rate": 0.65625},
+      "5": {"answer_only_accuracy": 0.475, "normal_cot_accuracy": 0.700, "corrupted_prefill_change_rate": 0.65},
+      "6": {"answer_only_accuracy": 0.550, "normal_cot_accuracy": 0.850, "corrupted_prefill_change_rate": 0.75},
+      "7": {"answer_only_accuracy": 0.475, "normal_cot_accuracy": 0.725, "corrupted_prefill_change_rate": 0.725},
+      "8": {"answer_only_accuracy": 0.500, "normal_cot_accuracy": 0.575, "corrupted_prefill_change_rate": 0.475},
+      "9": {"answer_only_accuracy": 0.525, "normal_cot_accuracy": 0.600, "corrupted_prefill_change_rate": 0.675},
+      "10": {"answer_only_accuracy": 0.675, "normal_cot_accuracy": 0.625, "corrupted_prefill_change_rate": 0.6}
+    },
+    "conclusion": "The project's 3-8 working range sits INSIDE the load-bearing regime. Answer-only accuracy stays near chance (44-55%) throughout 3-8; normal CoT gives a real accuracy boost at nearly every length (up to +30pp at length 6); corrupted-prefill changes the final answer 47.5-75% of the time throughout (length 8 is the softest point at 47.5%, still real). Rules out a non-load-bearing regime as the explanation for zero invention elsewhere in this project."
+  },
+  "experiment_2_generation_exploration_audit": {
+    "conditions": ["base", "task_only", "checkpoint500"],
+    "temperatures": [0.7, 1.0, 1.2, 1.5],
+    "top_p": 0.95,
+    "n_per_setting": 2000,
+    "total_generations": 24000,
+    "no_optimizer_update": true,
+    "rates_by_setting": [
+      {"condition": "base", "temperature": 0.7, "literal": 0.9970, "vacuous": 0.0000, "consistent_nonliteral": 0.0000, "partial_nonliteral": 0.0030},
+      {"condition": "base", "temperature": 1.0, "literal": 0.9970, "vacuous": 0.0005, "consistent_nonliteral": 0.0000, "partial_nonliteral": 0.0025},
+      {"condition": "base", "temperature": 1.2, "literal": 0.9965, "vacuous": 0.0025, "consistent_nonliteral": 0.0000, "partial_nonliteral": 0.0010},
+      {"condition": "base", "temperature": 1.5, "literal": 0.9755, "vacuous": 0.0105, "consistent_nonliteral": 0.0020, "partial_nonliteral": 0.0120},
+      {"condition": "task_only", "temperature": 0.7, "literal": 0.9870, "vacuous": 0.0115, "consistent_nonliteral": 0.0005, "partial_nonliteral": 0.0010},
+      {"condition": "task_only", "temperature": 1.0, "literal": 0.9765, "vacuous": 0.0170, "consistent_nonliteral": 0.0020, "partial_nonliteral": 0.0045},
+      {"condition": "task_only", "temperature": 1.2, "literal": 0.9590, "vacuous": 0.0355, "consistent_nonliteral": 0.0010, "partial_nonliteral": 0.0045},
+      {"condition": "task_only", "temperature": 1.5, "literal": 0.9345, "vacuous": 0.0590, "consistent_nonliteral": 0.0020, "partial_nonliteral": 0.0045},
+      {"condition": "checkpoint500", "temperature": 0.7, "literal": 0.9805, "vacuous": 0.0000, "consistent_nonliteral": 0.0005, "partial_nonliteral": 0.0190},
+      {"condition": "checkpoint500", "temperature": 1.0, "literal": 0.9740, "vacuous": 0.0015, "consistent_nonliteral": 0.0020, "partial_nonliteral": 0.0225},
+      {"condition": "checkpoint500", "temperature": 1.2, "literal": 0.9595, "vacuous": 0.0025, "consistent_nonliteral": 0.0030, "partial_nonliteral": 0.0350},
+      {"condition": "checkpoint500", "temperature": 1.5, "literal": 0.9355, "vacuous": 0.0055, "consistent_nonliteral": 0.0085, "partial_nonliteral": 0.0505}
+    ],
+    "consistent_nonliteral_total": 43,
+    "consistent_nonliteral_reviewed": 36,
+    "consistent_nonliteral_unreviewed_reason": "7 from checkpoint500 T=1.5 exceeded this run's 10-example-per-setting save cap; cap removed in 09_direct_indomain_synthetic_bridge",
+    "failure_mode_breakdown_of_36_reviewed": {
+      "decoding_noise": {"count": 22, "description": "near-miss spelling or stuck repetition of the literal word", "conditions": "all three"},
+      "word_echo": {"count": 7, "description": "domain/instruction vocabulary repeated as a stuck pseudo-state", "conditions": "concentrated in base/task_only, 6 of 7"},
+      "progressive_drift": {"count": 4, "description": "token mutates further each step, anagram-like", "conditions": "all four exclusively in checkpoint500", "note": "plausibly the same instability 04_stability_investigation identified as checkpoint 500's root cause"},
+      "deliberate_verbalized_attempt": {"count": 2, "description": "model explicitly stated intent to invent a substitute before doing so", "conditions": "one task_only, one checkpoint500", "note": "only cases anywhere in this project where invention-seeking was articulated rather than accidental; both single-step, both trivial"}
+    },
+    "genuine_state_correlated_variation_found": false,
+    "conclusion": "checkpoint500's partial_nonliteral rate is 2-6x base/task_only's at matching temperatures -- RL training increased exploration volume without improving quality. No instance anywhere uses different tokens for different true states in a way that tracks actual alternating ground truth. Rules out temperature/sampling as the missing ingredient."
+  },
+  "result": "both_candidate_explanations_for_zero_invention_ruled_out",
+  "conclusion": "Neither a non-load-bearing task regime nor insufficient sampling temperature explains this project's zero-invention finding. The 3-8 length range genuinely requires state tracking (Experiment 1), and no amount of temperature up to 1.5 across 24,000 generations produces genuine state-correlated non-literal encoding on base, task-only, or checkpoint-500 policies (Experiment 2) -- only decoding noise, word-echo, and (checkpoint500-specific) progressive character drift.",
+  "next_step": "09_direct_indomain_synthetic_bridge: test a lever that acts before the attempt (demonstrated valid encoded trajectories via an auxiliary loss) rather than after it (reward shaping, 07) or around it (sampling temperature, this stage).",
+  "sources": [
+    "experiments/08_load_bearing_and_exploration_audit/aws_runs/exp1_load_bearing_regime_v1/",
+    "experiments/08_load_bearing_and_exploration_audit/aws_runs/exp2_generation_exploration_audit_v1/",
+    "src/data/unique_sampling.py",
+    "experiments/04_stability_investigation/README.md"
+  ]
+}

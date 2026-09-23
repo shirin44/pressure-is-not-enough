@@ -1,0 +1,1618 @@
+{
+  "name": "dataset_A_arbitrary_only",
+  "audit": {
+    "count": 46,
+    "semantic_pass_rate": 100.0,
+    "failures": [],
+    "accepted": true
+  },
+  "count": 46,
+  "rows": [
+    {
+      "example_id": "bootstrap-fan-03303",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. same as previously (the fan mode does NOT change)\n8. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FOB\nStep 2: Fan stayed in FOB. State: FOB\nStep 3: Fan stayed in FOB. State: FOB\nStep 4: Fan stayed in FOB. State: FOB\nStep 5: Fan stayed in FOB. State: FOB\nStep 6: Fan stayed in FOB. State: FOB\nStep 7: Fan stayed in FOB. State: FOB\nStep 8: Fan changed to Running. State: FRN\nFinal coded state: FRN. FRN represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "fob",
+        "frn"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-03079",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. different from previously (the fan changes to its other mode)\n3. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The fan was initially stopped. State: R\nStep 2: The fan changed to running. State: F\nStep 3: The fan changed back to being stopped. State: R\nFinal coded state: R. R represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "f",
+        "r"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02284",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. different from previously (the fan changes to its other mode)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. different from previously (the fan changes to its other mode)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan starts running. State: ZR\nStep 5: Fan stays running. State: ZR\nStep 6: Fan stops running. State: FZ\nStep 7: Fan stays stopped. State: FZ\nStep 8: Fan starts running. State: ZR\nStep 9: Fan stays running. State: ZR\nStep 10: Fan stops running. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02989",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. different from previously (the fan changes to its other mode)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan stays stopped. State: FZ\nStep 5: Fan continues to be stopped. State: FZ\nStep 6: Fan changes to running. State: ZR\nStep 7: Fan stays running. State: ZR\nStep 8: Fan stays running. State: ZR\nStep 9: Fan changes back to stopped. State: FZ\nStep 10: Fan changes back to running. State: ZR\nFinal coded state: ZR. ZR represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-01349",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. different from previously (the fan changes to its other mode)\n8. same as previously (the fan mode does NOT change)\n9. different from previously (the fan changes to its other mode)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan stays stopped. State: FZ\nStep 5: Fan continues to be stopped. State: FZ\nStep 6: Fan changed to running. State: ZR\nStep 7: Fan changed back to stopped. State: FZ\nStep 8: Fan stays stopped. State: FZ\nStep 9: Fan changed to running. State: ZR\nStep 10: Fan changed back to stopped. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02548",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Running",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Running.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. different from previously (the fan changes to its other mode)\n6. same as previously (the fan mode does NOT change)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan started. State: F\nStep 2: No change. State: F\nStep 3: No change. State: F\nStep 4: No change. State: F\nStep 5: Mode changed. State: T\nStep 6: No change. State: T\nStep 7: No change. State: T\nStep 8: No change. State: T\nStep 9: No change. State: T\nFinal coded state: T. T represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "f",
+        "t"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-01194",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. different from previously (the fan changes to its other mode)\n6. same as previously (the fan mode does NOT change)\n7. different from previously (the fan changes to its other mode)\n8. different from previously (the fan changes to its other mode)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: No change detected. State: FZ\nStep 3: No change detected. State: FZ\nStep 4: No change detected. State: FZ\nStep 5: Change observed. State: ZF\nStep 6: No change detected. State: ZF\nStep 7: Change observed. State: FZ\nStep 8: Change observed. State: ZF\nStep 9: No change detected. State: ZF\nStep 10: Change observed. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02834",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. different from previously (the fan changes to its other mode)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. different from previously (the fan changes to its other mode)\n10. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan starts running. State: ZR\nStep 5: Fan stays running. State: ZR\nStep 6: Fan stops running. State: FZ\nStep 7: Fan stays stopped. State: FZ\nStep 8: Fan stays stopped. State: FZ\nStep 9: Fan starts running. State: ZR\nStep 10: Fan stays running. State: ZR\nFinal coded state: ZR. ZR represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02418",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. different from previously (the fan changes to its other mode)\n2. different from previously (the fan changes to its other mode)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. different from previously (the fan changes to its other mode)\n8. different from previously (the fan changes to its other mode)\n9. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The fan changed. State: Fx\nStep 2: The fan changed. State: Tx\nStep 3: The fan stayed the same. State: Tx\nStep 4: The fan stayed the same. State: Tx\nStep 5: The fan stayed the same. State: Tx\nStep 6: The fan changed. State: Fx\nStep 7: The fan changed. State: Tx\nStep 8: The fan changed. State: Fx\nStep 9: The fan changed. State: Tx\nFinal coded state: Tx. Tx represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fx",
+        "tx"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02896",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. different from previously (the fan changes to its other mode)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan remains stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan changes to running. State: ZR\nStep 5: Fan remains running. State: ZR\nStep 6: Fan remains running. State: ZR\nFinal coded state: ZR. ZR represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-00134",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. different from previously (the fan changes to its other mode)\n2. different from previously (the fan changes to its other mode)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. different from previously (the fan changes to its other mode)\n8. different from previously (the fan changes to its other mode)\n9. different from previously (the fan changes to its other mode)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The fan changed. State: Fx\nStep 2: The fan changed. State: Tx\nStep 3: The fan stayed. State: Tx\nStep 4: The fan stayed. State: Tx\nStep 5: The fan stayed. State: Tx\nStep 6: The fan stayed. State: Tx\nStep 7: The fan changed. State: Fx\nStep 8: The fan changed. State: Tx\nStep 9: The fan changed. State: Fx\nStep 10: The fan changed. State: Tx\nFinal coded state: Tx. Tx represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fx",
+        "tx"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-03211",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. different from previously (the fan changes to its other mode)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was stopped. State: FZ\nStep 2: Fan is still FZ. State: FZ\nStep 3: Fan changed. State: ZF\nStep 4: Fan is still ZF. State: ZF\nStep 5: Fan is still ZF. State: ZF\nStep 6: Fan changed. State: FZ\nStep 7: Fan changed again. State: ZF\nStep 8: Fan is still ZF. State: ZF\nStep 9: Fan is still ZF. State: ZF\nStep 10: Fan changed. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-03127",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "different",
+        "different",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. different from previously (the fan changes to its other mode)\n5. different from previously (the fan changes to its other mode)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\n10. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan changed to running. State: ZR\nStep 4: Fan changed to stopped. State: FZ\nStep 5: Fan changed to running. State: ZR\nStep 6: Fan changed to stopped. State: FZ\nStep 7: Fan remains stopped. State: FZ\nStep 8: Fan remains stopped. State: FZ\nStep 9: Fan remains stopped. State: FZ\nStep 10: Fan remains stopped. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-00602",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. different from previously (the fan changes to its other mode)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was stopped. State: FZ\nStep 2: Fan is still FZ. State: FZ\nStep 3: Fan changed. State: ZF\nStep 4: Fan is still ZF. State: ZF\nStep 5: Fan stays ZF. State: ZF\nStep 6: Fan changed. State: FZ\nStep 7: Fan stays FZ. State: FZ\nStep 8: Fan changed. State: ZF\nStep 9: Fan stays ZF. State: ZF\nStep 10: Fan changed. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-00471",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. same as previously (the fan mode does NOT change)\n8. different from previously (the fan changes to its other mode)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan stays stopped. State: FZ\nStep 5: Fan continues to be stopped. State: FZ\nStep 6: Fan changes to running. State: ZR\nStep 7: Fan stays running. State: ZR\nStep 8: Fan changes back to stopped. State: FZ\nStep 9: Fan stays stopped. State: FZ\nStep 10: Fan changes to running. State: ZR\nFinal coded state: ZR. ZR represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-00051",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. different from previously (the fan changes to its other mode)\n8. same as previously (the fan mode does NOT change)\n9. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan stays stopped. State: FZ\nStep 5: Fan continues to be stopped. State: FZ\nStep 6: Fan stays stopped. State: FZ\nStep 7: Fan now running. State: ZR\nStep 8: Fan stays running. State: ZR\nStep 9: Fan changes back to stop. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-03646",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. different from previously (the fan changes to its other mode)\n2. different from previously (the fan changes to its other mode)\n3. same as previously (the fan mode does NOT change)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. different from previously (the fan changes to its other mode)\n8. different from previously (the fan changes to its other mode)\n9. same as previously (the fan mode does NOT change)\n10. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The fan changed. State: Fx\nStep 2: The fan changed. State: Tx\nStep 3: The fan stayed. State: Tx\nStep 4: The fan stayed. State: Tx\nStep 5: The fan stayed. State: Tx\nStep 6: The fan stayed. State: Tx\nStep 7: The fan changed. State: Fx\nStep 8: The fan changed. State: Tx\nStep 9: The fan stayed. State: Tx\nStep 10: The fan stayed. State: Tx\nFinal coded state: Tx. Tx represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fx",
+        "tx"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02667",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: No change in state. State: FZ\nStep 3: Change in state. State: ZF\nStep 4: No change in state. State: ZF\nStep 5: No change in state. State: ZF\nStep 6: No change in state. State: ZF\nStep 7: No change in state. State: ZF\nStep 8: No change in state. State: ZF\nStep 9: No change in state. State: ZF\nStep 10: Change in state. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-02361",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. same as previously (the fan mode does NOT change)\n8. different from previously (the fan changes to its other mode)\n9. different from previously (the fan changes to its other mode)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was stopped. State: FZ\nStep 2: Fan is still FZ. State: FZ\nStep 3: Fan changed. State: ZF\nStep 4: Fan is ZF. State: ZF\nStep 5: Fan is ZF. State: ZF\nStep 6: Fan is ZF. State: ZF\nStep 7: Fan is ZF. State: ZF\nStep 8: Fan changed. State: FZ\nStep 9: Fan changed. State: ZF\nStep 10: Fan changed. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-01031",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. different from previously (the fan changes to its other mode)\n5. same as previously (the fan mode does NOT change)\n6. different from previously (the fan changes to its other mode)\n7. different from previously (the fan changes to its other mode)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan starts running. State: ZR\nStep 5: Fan stays running. State: ZR\nStep 6: Fan stops running. State: FZ\nStep 7: Fan starts running again. State: ZR\nStep 8: Fan stays running. State: ZR\nStep 9: Fan stays running. State: ZR\nStep 10: Fan stops running. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-03283",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. same as previously (the fan mode does NOT change)\n4. different from previously (the fan changes to its other mode)\n5. different from previously (the fan changes to its other mode)\n6. same as previously (the fan mode does NOT change)\n7. same as previously (the fan mode does NOT change)\n8. same as previously (the fan mode does NOT change)\n9. same as previously (the fan mode does NOT change)\n10. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was initially stopped. State: FZ\nStep 2: Fan is still stopped. State: FZ\nStep 3: Fan remains stopped. State: FZ\nStep 4: Fan changed to running. State: ZR\nStep 5: Fan changed back to stopped. State: FZ\nStep 6: Fan stays stopped. State: FZ\nStep 7: Fan stays stopped. State: FZ\nStep 8: Fan stays stopped. State: FZ\nStep 9: Fan stays stopped. State: FZ\nStep 10: Fan stays stopped. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zr"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-01631",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Running",
+        "Running",
+        "Running",
+        "Stopped",
+        "Stopped",
+        "Running",
+        "Stopped"
+      ],
+      "final_answer": "Stopped",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. same as previously (the fan mode does NOT change)\n3. different from previously (the fan changes to its other mode)\n4. same as previously (the fan mode does NOT change)\n5. same as previously (the fan mode does NOT change)\n6. same as previously (the fan mode does NOT change)\n7. different from previously (the fan changes to its other mode)\n8. same as previously (the fan mode does NOT change)\n9. different from previously (the fan changes to its other mode)\n10. different from previously (the fan changes to its other mode)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Fan was stopped. State: FZ\nStep 2: Fan is still FZ. State: FZ\nStep 3: Fan changed. State: ZF\nStep 4: Fan is still ZF. State: ZF\nStep 5: Fan is still ZF. State: ZF\nStep 6: Fan is still ZF. State: ZF\nStep 7: Fan changed. State: FZ\nStep 8: Fan is still FZ. State: FZ\nStep 9: Fan changed. State: ZF\nStep 10: Fan changed. State: FZ\nFinal coded state: FZ. FZ represents Stopped.\n<answer>Stopped</answer>",
+      "self_invented_token_pair": [
+        "fz",
+        "zf"
+      ]
+    },
+    {
+      "example_id": "bootstrap-fan-00347",
+      "domain": "fan",
+      "split": "bootstrap_sft",
+      "initial_state": "Stopped",
+      "operations": [
+        "same",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Stopped",
+        "Running",
+        "Running"
+      ],
+      "final_answer": "Running",
+      "prompt": "A greenhouse ventilation fan starts Stopped.\nTrack its physical state through every instruction.\n1. same as previously (the fan mode does NOT change)\n2. different from previously (the fan changes to its other mode)\n3. same as previously (the fan mode does NOT change)\nChoose your own two different invented single-word codes for Running and Stopped.\nDo not use Running or Stopped in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The fan was initially stopped. State: R\nStep 2: The fan changed to running. State: F\nStep 3: The fan remained running. State: F\nFinal coded state: F. F represents Running.\n<answer>Running</answer>",
+      "self_invented_token_pair": [
+        "f",
+        "r"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00627",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\n10. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: Change. State: L\nStep 5: No change. State: L\nStep 6: No change. State: L\nStep 7: No change. State: L\nStep 8: No change. State: L\nStep 9: No change. State: L\nStep 10: No change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-03214",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: Change. State: V\nStep 5: No change. State: V\nStep 6: No change. State: V\nStep 7: No change. State: V\nStep 8: Change. State: H\nStep 9: No change. State: H\n\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02747",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. different from previously (the valve moves to its other position)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: No change. State: V\nStep 5: No change. State: V\nStep 6: No change. State: V\nStep 7: Change. State: L\nStep 8: No change. State: L\nStep 9: No change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01217",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: No change. State: H\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00380",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\n10. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: Change. State: R\nStep 4: No change. State: R\nStep 5: No change. State: R\nStep 6: Change. State: V\nStep 7: No change. State: V\nStep 8: Change. State: R\nStep 9: No change. State: R\nStep 10: No change. State: R\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01618",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: Change. State: R\nStep 5: No change. State: R\nStep 6: Change. State: V\nStep 7: No change. State: V\nStep 8: Change. State: R\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01057",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. different from previously (the valve moves to its other position)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\n10. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: Change. State: V\nStep 7: Change. State: H\nStep 8: Change. State: V\nStep 9: No change. State: V\nStep 10: Change. State: H\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-03726",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. different from previously (the valve moves to its other position)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\n10. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: No change. State: H\nStep 7: Change. State: V\nStep 8: No change. State: V\nStep 9: No change. State: V\nStep 10: Change. State: H\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02343",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Closed",
+      "operations": [
+        "different",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Closed.\nTrack its physical state through every instruction.\n1. different from previously (the valve moves to its other position)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Different position. State: V\nStep 2: Same position. State: V\nStep 3: Same position. State: V\nStep 4: Different position. State: L\nStep 5: Same position. State: L\nStep 6: Same position. State: L\nStep 7: Same position. State: L\nStep 8: Same position. State: L\nStep 9: Same position. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00219",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "different",
+        "same",
+        "different",
+        "different",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed",
+        "Open",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. different from previously (the valve moves to its other position)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Same as before. State: V\nStep 2: Same as before. State: V\nStep 3: Different from 1. State: F\nStep 4: Different from 3. State: V\nStep 5: Same as before. State: V\nStep 6: Different from 4. State: F\nStep 7: Different from 6. State: V\nStep 8: Different from 7. State: F\nStep 9: Same as before. State: F\nFinal coded state: F. F represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "f",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02789",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Closed",
+      "operations": [
+        "different",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Closed.\nTrack its physical state through every instruction.\n1. different from previously (the valve moves to its other position)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\n9. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: The valve moves to its other position. State: Va\nStep 2: The valve moves to its other position. State: Vi\nStep 3: The valve position does NOT change. State: Vi\nStep 4: The valve moves to its other position. State: Va\nStep 5: The valve position does NOT change. State: Va\nStep 6: The valve moves to its other position. State: Vi\nStep 7: The valve position does NOT change. State: Vi\nStep 8: The valve moves to its other position. State: Va\nStep 9: The valve moves to its other position. State: Vi\nFinal coded state: Vi. Vi represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "va",
+        "vi"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00273",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: Change. State: V\nStep 7: No change. State: V\nStep 8: Change. State: H\nStep 9: No change. State: H\n\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01704",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. different from previously (the valve moves to its other position)\n9. same as previously (the valve position does NOT change)\n10. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: Change. State: R\nStep 4: No change. State: R\nStep 5: No change. State: R\nStep 6: No change. State: R\nStep 7: No change. State: R\nStep 8: Change. State: V\nStep 9: No change. State: V\nStep 10: Change. State: R\n\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01664",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. same as previously (the valve position does NOT change)\n5. different from previously (the valve moves to its other position)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\n10. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: Change. State: R\nStep 4: No change. State: R\nStep 5: Change. State: V\nStep 6: No change. State: V\nStep 7: No change. State: V\nStep 8: No change. State: V\nStep 9: No change. State: V\nStep 10: Change. State: R\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02591",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. different from previously (the valve moves to its other position)\n10. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: Change. State: R\nStep 4: No change. State: R\nStep 5: No change. State: R\nStep 6: Change. State: V\nStep 7: No change. State: V\nStep 8: No change. State: V\nStep 9: Change. State: R\nStep 10: No change. State: R\n\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01076",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: Change. State: L\nStep 5: No change. State: L\nStep 6: Change. State: V\nStep 7: Change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00169",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. different from previously (the valve moves to its other position)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: Change. State: L\nStep 5: No change. State: L\nStep 6: No change. State: L\nStep 7: No change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02644",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: No change. State: V\nStep 5: No change. State: V\nStep 6: Change. State: L\nStep 7: No change. State: L\nStep 8: No change. State: L\nStep 9: No change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-02369",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. different from previously (the valve moves to its other position)\n6. same as previously (the valve position does NOT change)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. different from previously (the valve moves to its other position)\n10. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: Same as before. State: VAL\nStep 2: Same as before. State: VAL\nStep 3: Same as before. State: VAL\nStep 4: Same as before. State: VAL\nStep 5: Changed. State: ALT\nStep 6: Same as before. State: ALT\nStep 7: Same as before. State: ALT\nStep 8: Same as before. State: ALT\nStep 9: Changed. State: VAL\nStep 10: Changed. State: ALT\nFinal coded state: ALT. ALT represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "alt",
+        "val"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01670",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Open",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. different from previously (the valve moves to its other position)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\n9. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: Change. State: R\nStep 4: No change. State: R\nStep 5: No change. State: R\nStep 6: Change. State: V\nStep 7: No change. State: V\nStep 8: No change. State: V\nStep 9: Change. State: R\nFinal coded state: R. R represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "r",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-01338",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "same",
+        "same"
+      ],
+      "expected_states": [
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. same as previously (the valve position does NOT change)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. same as previously (the valve position does NOT change)\n8. same as previously (the valve position does NOT change)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: No change. State: V\nStep 3: No change. State: V\nStep 4: No change. State: V\nStep 5: No change. State: V\nStep 6: Change. State: L\nStep 7: No change. State: L\nStep 8: No change. State: L\nFinal coded state: L. L represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "l",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-00000",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. same as previously (the valve position does NOT change)\n7. different from previously (the valve moves to its other position)\n8. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: No change. State: H\nStep 7: Change. State: V\nStep 8: Change. State: H\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    },
+    {
+      "example_id": "bootstrap-valve-03463",
+      "domain": "valve",
+      "split": "bootstrap_sft",
+      "initial_state": "Open",
+      "operations": [
+        "same",
+        "different",
+        "same",
+        "same",
+        "same",
+        "different",
+        "different",
+        "different",
+        "different"
+      ],
+      "expected_states": [
+        "Open",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Closed",
+        "Open",
+        "Closed",
+        "Open",
+        "Closed"
+      ],
+      "final_answer": "Closed",
+      "prompt": "An irrigation water valve starts Open.\nTrack its physical state through every instruction.\n1. same as previously (the valve position does NOT change)\n2. different from previously (the valve moves to its other position)\n3. same as previously (the valve position does NOT change)\n4. same as previously (the valve position does NOT change)\n5. same as previously (the valve position does NOT change)\n6. different from previously (the valve moves to its other position)\n7. different from previously (the valve moves to its other position)\n8. different from previously (the valve moves to its other position)\n9. different from previously (the valve moves to its other position)\nChoose your own two different invented single-word codes for Open and Closed.\nDo not use Open or Closed in the numbered reasoning lines.\nKeep the same self-chosen code-to-state mapping throughout this problem.\nWrite each line as: Step i: <brief reasoning>. State: <invented code word>\nAfter all steps, write exactly: Final coded state: <code>. <code> represents <physical state>.\nEnd with the physical state, not its code, inside <answer>...</answer>.",
+      "target": "Step 1: No change. State: V\nStep 2: Change. State: H\nStep 3: No change. State: H\nStep 4: No change. State: H\nStep 5: No change. State: H\nStep 6: Change. State: V\nStep 7: Change. State: H\nStep 8: Change. State: V\nStep 9: Change. State: H\nFinal coded state: H. H represents Closed.\n<answer>Closed</answer>",
+      "self_invented_token_pair": [
+        "h",
+        "v"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'n_sample_prompts': 8, 'checkpoints': {'step0_milestone12': 'f9f9742cc922cdf45b12f98530862ca941ab0ee0be38b5a22f05cd6de8276080', 'stage9c_sft': 'c84afe0389487766463b74aba3559940b2e92d69c4915d32a5dee1c5ccc7609c'}}
+===== step0_milestone12 =====
+{
+  "n_prompts": 8,
+  "grand_mean_entropy": 0.019488893973175436,
+  "grand_mean_chosen_logprob": -0.014460945065366104,
+  "min_mean_entropy_across_prompts": 0.006030140910297632,
+  "max_mean_entropy_across_prompts": 0.043509457260370255,
+  "mean_frac_high_confidence_tokens": 0.9417644888162613
+}
+===== stage9c_sft =====
+{
+  "n_prompts": 8,
+  "grand_mean_entropy": 0.018932570470497012,
+  "grand_mean_chosen_logprob": -0.005436136736534536,
+  "min_mean_entropy_across_prompts": 0.015144715085625648,
+  "max_mean_entropy_across_prompts": 0.022557668387889862,
+  "mean_frac_high_confidence_tokens": 0.9446079060435295
+}
+===== COMPARISON =====
+{
+  "step0_grand_mean_entropy": 0.019488893973175436,
+  "stage9c_grand_mean_entropy": 0.018932570470497012,
+  "entropy_ratio_step0_over_stage9c": 1.0293844675526418,
+  "step0_grand_mean_chosen_logprob": -0.014460945065366104,
+  "stage9c_grand_mean_chosen_logprob": -0.005436136736534536,
+  "step0_mean_frac_high_confidence_tokens": 0.9417644888162613,
+  "stage9c_mean_frac_high_confidence_tokens": 0.9446079060435295
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-entropy-diagnostic/entropy_diagnostic_result.json
+ENTROPY DIAGNOSTIC COMPLETE.

@@ -1,0 +1,676 @@
+{
+  "change": "none; corrected fan wording retained",
+  "checkpoint": "/content/drive/MyDrive/AISI/checkpoints/multidomain-stage3-v1/trainer-output/checkpoint-130",
+  "full_scheduler_horizon": 150,
+  "metrics": {
+    "per_domain": {
+      "fan": {
+        "answer_failure_category_counts": {
+          "other_wrong_answer": 4,
+          "wrong_mapping": 1,
+          "wrong_tracking": 10
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.82,
+        "decode_back_specific_accuracy": 0.81,
+        "distinct_correctly_applied_token_pairs": 82,
+        "global_mapping_consistency_rate": 0.82,
+        "nonliteral_encoding_rate": 0.97,
+        "physical_final_answer_accuracy": 0.85,
+        "structural_format_rate": 0.98,
+        "transition_tracking_rate": 0.85
+      },
+      "lamp": {
+        "answer_failure_category_counts": {
+          "wrong_mapping": 2,
+          "wrong_tracking": 12
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.79,
+        "decode_back_specific_accuracy": 0.86,
+        "distinct_correctly_applied_token_pairs": 79,
+        "global_mapping_consistency_rate": 0.8,
+        "nonliteral_encoding_rate": 0.99,
+        "physical_final_answer_accuracy": 0.86,
+        "structural_format_rate": 0.99,
+        "transition_tracking_rate": 0.81
+      },
+      "valve": {
+        "answer_failure_category_counts": {
+          "other_wrong_answer": 1,
+          "wrong_mapping": 1,
+          "wrong_tracking": 1
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.97,
+        "decode_back_specific_accuracy": 0.96,
+        "distinct_correctly_applied_token_pairs": 97,
+        "global_mapping_consistency_rate": 0.96,
+        "nonliteral_encoding_rate": 1.0,
+        "physical_final_answer_accuracy": 0.97,
+        "structural_format_rate": 1.0,
+        "transition_tracking_rate": 0.98
+      }
+    },
+    "pooled": {
+      "answer_failure_category_counts": {
+        "other_wrong_answer": 5,
+        "wrong_mapping": 4,
+        "wrong_tracking": 23
+      },
+      "answer_is_code_word_fraction_of_failures": 0.0,
+      "answer_is_code_word_rate": 0.0,
+      "count": 300,
+      "declared_mapping_adherence_rate": 0.86,
+      "decode_back_specific_accuracy": 0.8766666666666667,
+      "distinct_correctly_applied_token_pairs": 258,
+      "global_mapping_consistency_rate": 0.86,
+      "nonliteral_encoding_rate": 0.9866666666666667,
+      "physical_final_answer_accuracy": 0.8933333333333333,
+      "structural_format_rate": 0.99,
+      "transition_tracking_rate": 0.88
+    },
+    "samples": [
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "divuzu",
+          "jebu"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0000",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Divuzu\nStep 2: The fan stays in the same state. State: Divuzu\nStep 3: The fan stays in the same state. State: Divuzu\nStep 4: The fan changes state. State: Jebu\nStep 5: The fan changes state. State: Divuzu\nStep 6: The fan changes state. State: Jebu\nStep 7: The fan stays in the same state. State: Jebu\nStep 8: The fan stays in the same state. State: Jebu\nFinal coded state: Jebu. Jebu represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": false,
+        "answer_failure_type": "wrong_tracking",
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "cesuyopo",
+          "fuweja"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0001",
+        "global_consistent": false,
+        "mapping_adherence": false,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Fuweja\nStep 2: The fan flips to the opposite state. State: Cesuyopo\nStep 3: The fan flips to the opposite state. State: Fuweja\nStep 4: The fan mode stays the same. State: Cesuyopo\nFinal coded state: Cesuyopo. Cesuyopo represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": false
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "rekegini",
+          "wasayiro"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0002",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Wasayiro\nStep 2: The fan mode changes. State: Rekegini\nStep 3: The fan mode stays the same. State: Rekegini\nStep 4: The fan mode stays the same. State: Rekegini\nStep 5: The fan mode changes. State: Wasayiro\nStep 6: The fan mode stays the same. State: Wasayiro\nStep 7: The fan mode changes. State: Rekegini\nFinal coded state: Rekegini. Rekegini represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "cewuvoka",
+          "darohezo"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0003",
+        "global_consistent": true,
+        "mapping_adherence": false,
+        "nonliteral": false,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Stopped\nStep 2: The fan stays in the same state. State: Stopped\nStep 3: The fan stays in the same state. State: Stopped\nStep 4: The fan changes state. State: Running\nStep 5: The fan stays in the same state. State: Running\nStep 6: The fan stays in the same state. State: Running\nStep 7: The fan stays in the same state. State: Running\nStep 8: The fan changes state. State: Stopped\nFinal coded state: Stopped. Stopped represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "fijajeya",
+          "suzoge"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0004",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Suzoge\nStep 2: The fan changes state. State: Fijajeya\nStep 3: The fan changes state. State: Suzoge\nStep 4: The fan stays in the same state. State: Suzoge\nStep 5: The fan changes state. State: Fijajeya\nStep 6: The fan stays in the same state. State: Fijajeya\nStep 7: The fan changes state. State: Suzoge\nStep 8: The fan changes state. State: Fijajeya\nFinal coded state: Fijajeya. Fijajeya represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "kuyazi",
+          "poke"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0005",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Poke\nStep 2: The fan stays the same. State: Poke\nStep 3: The fan stays the same. State: Poke\nStep 4: The fan stays the same. State: Poke\nStep 5: The fan changes state. State: Kuyazi\nStep 6: The fan changes state. State: Poke\nStep 7: The fan changes state. State: Kuyazi\nStep 8: The fan changes state. State: Poke\nFinal coded state: Poke. Poke represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "capoto",
+          "tedolaja"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0006",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan remains in the same state. State: Capoto\nStep 2: The fan changes state. State: Tedolaja\nStep 3: The fan remains in the same state. State: Tedolaja\nStep 4: The fan remains in the same state. State: Tedolaja\nStep 5: The fan changes state. State: Capoto\nStep 6: The fan remains in the same state. State: Capoto\nStep 7: The fan changes state. State: Tedolaja\nStep 8: The fan changes state. State: Capoto\nFinal coded state: Capoto. Capoto represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "fufurako",
+          "xinipuwo"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0007",
+        "global_consistent": false,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Xinipuwo\nStep 2: The fan mode stays the same. State: Xinipuwo\nStep 3: The fan mode stays the same. State: Xinipuwo\nStep 4: The fan mode stays the same. State: Xinipuwo\nStep 5: The fan mode stays the same. State: Xinipuwo\nStep 6: The fan mode stays the same. State: Xinipuwo\nStep 7: The fan mode stays the same. State: Xinipuwo\nStep 8: The fan mode stays the same. State: Xinipuwo\nFinal coded state: Xinipuwo. The fan is Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "decuneka",
+          "fugo"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0008",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Fugo\nStep 2: The fan mode stays the same. State: Fugo\nStep 3: The fan mode stays the same. State: Fugo\nStep 4: The fan changes state. State: Decuneka\nStep 5: The fan mode stays the same. State: Decuneka\nFinal coded state: Decuneka. Decuneka represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "sage",
+          "wapuro"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0009",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan remains in the same state. State: Sage\nStep 2: The fan changes state. State: Wapuro\nStep 3: The fan changes state. State: Sage\nStep 4: The fan remains in the same state. State: Sage\nStep 5: The fan remains in the same state. State: Sage\nStep 6: The fan changes state. State: Wapuro\nFinal coded state: Wapuro. Wapuro represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "ralabeka",
+          "wayerenu"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0010",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Ralabeka\nStep 2: The fan stays in the same state. State: Ralabeka\nStep 3: The fan changes state. State: Wayerenu\nStep 4: The fan changes state. State: Ralabeka\nStep 5: The fan changes state. State: Wayerenu\nStep 6: The fan stays in the same state. State: Wayerenu\nStep 7: The fan stays in the same state. State: Wayerenu\nStep 8: The fan changes state. State: Ralabeka\nFinal coded state: Ralabeka. Ralabeka represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": false,
+        "answer_failure_type": "wrong_mapping",
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "nanudu",
+          "tacu"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0011",
+        "global_consistent": true,
+        "mapping_adherence": false,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state but stays in the same overall pattern. State: Tacu\nStep 2: The fan state remains unchanged. State: Tacu\nStep 3: The fan flips states. State: Nanudu\nStep 4: The fan flips states. State: Tacu\nStep 5: The fan state remains unchanged. State: Tacu\nStep 6: The fan state remains unchanged. State: Tacu\nStep 7: The fan flips states. State: Nanudu\nStep 8: The fan flips states. State: Tacu\nFinal coded state: Tacu. Tacu represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      }
+    ]
+  },
+  "pooled_acceptance_gate": {
+    "full_pooled_gate_passed": false,
+    "per_metric": {
+      "declared_mapping_adherence_rate": {
+        "passed": false,
+        "value": 0.86
+      },
+      "decode_back_specific_accuracy": {
+        "passed": false,
+        "value": 0.8766666666666667
+      },
+      "global_mapping_consistency_rate": {
+        "passed": false,
+        "value": 0.86
+      },
+      "nonliteral_encoding_rate": {
+        "passed": true,
+        "value": 0.9866666666666667
+      },
+      "physical_final_answer_accuracy": {
+        "passed": false,
+        "value": 0.8933333333333333
+      },
+      "structural_format_rate": {
+        "passed": true,
+        "value": 0.99
+      },
+      "transition_tracking_rate": {
+        "passed": false,
+        "value": 0.88
+      }
+    },
+    "threshold": 0.95,
+    "zero_code_copy": true
+  },
+  "source_checkpoint": "/content/drive/MyDrive/AISI/checkpoints/multidomain-stage3-v1/trainer-output/checkpoint-100",
+  "stage": "multi_domain_stage3_step130_unchanged",
+  "stage4_authorized": false,
+  "step100_reference": {
+    "per_domain": {
+      "fan": {
+        "answer_failure_category_counts": {
+          "other_wrong_answer": 6,
+          "wrong_tracking": 13
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.79,
+        "decode_back_specific_accuracy": 0.77,
+        "distinct_correctly_applied_token_pairs": 79,
+        "global_mapping_consistency_rate": 0.79,
+        "nonliteral_encoding_rate": 0.96,
+        "physical_final_answer_accuracy": 0.81,
+        "structural_format_rate": 0.98,
+        "transition_tracking_rate": 0.82
+      },
+      "lamp": {
+        "answer_failure_category_counts": {
+          "wrong_mapping": 1,
+          "wrong_tracking": 12
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.8,
+        "decode_back_specific_accuracy": 0.87,
+        "distinct_correctly_applied_token_pairs": 80,
+        "global_mapping_consistency_rate": 0.8,
+        "nonliteral_encoding_rate": 0.99,
+        "physical_final_answer_accuracy": 0.87,
+        "structural_format_rate": 0.99,
+        "transition_tracking_rate": 0.81
+      },
+      "valve": {
+        "answer_failure_category_counts": {
+          "other_wrong_answer": 1,
+          "wrong_mapping": 1
+        },
+        "answer_is_code_word_fraction_of_failures": 0.0,
+        "answer_is_code_word_rate": 0.0,
+        "count": 100,
+        "declared_mapping_adherence_rate": 0.97,
+        "decode_back_specific_accuracy": 0.97,
+        "distinct_correctly_applied_token_pairs": 97,
+        "global_mapping_consistency_rate": 0.97,
+        "nonliteral_encoding_rate": 1.0,
+        "physical_final_answer_accuracy": 0.98,
+        "structural_format_rate": 1.0,
+        "transition_tracking_rate": 0.99
+      }
+    },
+    "pooled": {
+      "answer_failure_category_counts": {
+        "other_wrong_answer": 7,
+        "wrong_mapping": 2,
+        "wrong_tracking": 25
+      },
+      "answer_is_code_word_fraction_of_failures": 0.0,
+      "answer_is_code_word_rate": 0.0,
+      "count": 300,
+      "declared_mapping_adherence_rate": 0.8533333333333334,
+      "decode_back_specific_accuracy": 0.87,
+      "distinct_correctly_applied_token_pairs": 256,
+      "global_mapping_consistency_rate": 0.8533333333333334,
+      "nonliteral_encoding_rate": 0.9833333333333333,
+      "physical_final_answer_accuracy": 0.8866666666666667,
+      "structural_format_rate": 0.99,
+      "transition_tracking_rate": 0.8733333333333333
+    },
+    "samples": [
+      {
+        "answer_correct": false,
+        "answer_failure_type": "wrong_tracking",
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "divuzu",
+          "jebu"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0000",
+        "global_consistent": false,
+        "mapping_adherence": false,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Divuzu\nStep 2: The fan state remains the same. State: Divuzu\nStep 3: The fan state remains the same. State: Divuzu\nStep 4: The fan changes state. State: Jebu\nStep 5: The fan state remains the same. State: Jebu\nStep 6: The fan state remains the same. State: Jebu\nStep 7: The fan state remains the same. State: Divuzu\nStep 8: The fan state remains the same. State: Divuzu\nFinal coded state: Divuzu. Divuzu represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": false
+      },
+      {
+        "answer_correct": false,
+        "answer_failure_type": "wrong_tracking",
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "cesuyopo",
+          "fuweja"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0001",
+        "global_consistent": false,
+        "mapping_adherence": false,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Fuweja\nStep 2: The fan mode changes. State: Cesuyopo\nStep 3: The fan mode changes. State: Fuweja\nStep 4: The fan mode stays the same. State: Cesuyopo\nFinal coded state: Cesuyopo. Cesuyopo represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": false
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "rekegini",
+          "wasayiro"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0002",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan remains in the same state. State: Wasayiro\nStep 2: The fan changes state. State: Rekegini\nStep 3: The fan remains in the same state. State: Rekegini\nStep 4: The fan remains in the same state. State: Rekegini\nStep 5: The fan changes state. State: Wasayiro\nStep 6: The fan remains in the same state. State: Wasayiro\nStep 7: The fan changes state. State: Rekegini\nFinal coded state: Rekegini. Rekegini represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "cewuvoka",
+          "darohezo"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0003",
+        "global_consistent": true,
+        "mapping_adherence": false,
+        "nonliteral": false,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Stopped\nStep 2: The fan state remains the same. State: Stopped\nStep 3: The fan state remains the same. State: Stopped\nStep 4: The fan changes state. State: Running\nStep 5: The fan state remains the same. State: Running\nStep 6: The fan state remains the same. State: Running\nStep 7: The fan state remains the same. State: Running\nStep 8: The fan changes state. State: Stopped\nFinal coded state: Stopped. Stopped represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": false,
+        "answer_failure_type": "wrong_tracking",
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "fijajeya",
+          "suzoge"
+        ],
+        "decode_back_correct": false,
+        "domain": "fan",
+        "example_id": "fan-eval-0004",
+        "global_consistent": false,
+        "mapping_adherence": false,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Suzoge\nStep 2: The fan changes state. State: Fijajeya\nStep 3: The fan changes state. State: Suzoge\nStep 4: The fan remains in the same state. State: Suzoge\nStep 5: The fan changes state. State: Fijajeya\nStep 6: The fan remains in the same state. State: Suzoge\nStep 7: The fan changes state. State: Fijajeya\nStep 8: The fan changes state. State: Suzoge\nFinal coded state: Suzoge. Suzoge represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": false
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "kuyazi",
+          "poke"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0005",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Poke\nStep 2: The fan state remains the same. State: Poke\nStep 3: The fan state remains the same. State: Poke\nStep 4: The fan state remains the same. State: Poke\nStep 5: The fan changes state. State: Kuyazi\nStep 6: The fan changes state. State: Poke\nStep 7: The fan changes state. State: Kuyazi\nStep 8: The fan changes state. State: Poke\nFinal coded state: Poke. Poke represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "capoto",
+          "tedolaja"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0006",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan remains in the same state. State: Capoto\nStep 2: The fan changes state. State: Tedolaja\nStep 3: The fan remains in the same state. State: Tedolaja\nStep 4: The fan remains in the same state. State: Tedolaja\nStep 5: The fan changes state. State: Capoto\nStep 6: The fan remains in the same state. State: Capoto\nStep 7: The fan changes state. State: Tedolaja\nStep 8: The fan changes state. State: Capoto\nFinal coded state: Capoto. Capoto represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "fufurako",
+          "xinipuwo"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0007",
+        "global_consistent": false,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode remains unchanged. State: Xinipuwo\nStep 2: The fan mode remains unchanged. State: Xinipuwo\nStep 3: The fan mode remains unchanged. State: Xinipuwo\nStep 4: The fan mode remains unchanged. State: Xinipuwo\nStep 5: The fan mode remains unchanged. State: Xinipuwo\nStep 6: The fan mode remains unchanged. State: Xinipuwo\nStep 7: The fan mode remains unchanged. State: Xinipuwo\nStep 8: The fan mode remains unchanged. State: Xinipuwo\nFinal coded state: Xinipuwo. Xinipuwo represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "decuneka",
+          "fugo"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0008",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan mode stays the same. State: Fugo\nStep 2: The fan mode stays the same. State: Fugo\nStep 3: The fan mode stays the same. State: Fugo\nStep 4: The fan changes state. State: Decuneka\nStep 5: The fan mode stays the same. State: Decuneka\nFinal coded state: Decuneka. Decuneka represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "sage",
+          "wapuro"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0009",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan remains in the same state. State: Sage\nStep 2: The fan changes state. State: Wapuro\nStep 3: The fan changes state. State: Sage\nStep 4: The fan remains in the same state. State: Sage\nStep 5: The fan remains in the same state. State: Sage\nStep 6: The fan changes state. State: Wapuro\nFinal coded state: Wapuro. Wapuro represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "ralabeka",
+          "wayerenu"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0010",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Ralabeka\nStep 2: The fan remains in the same state. State: Ralabeka\nStep 3: The fan changes state. State: Wayerenu\nStep 4: The fan changes state. State: Ralabeka\nStep 5: The fan changes state. State: Wayerenu\nStep 6: The fan remains in the same state. State: Wayerenu\nStep 7: The fan remains in the same state. State: Wayerenu\nStep 8: The fan changes state. State: Ralabeka\nFinal coded state: Ralabeka. Ralabeka represents Stopped.\n<answer>Stopped</answer>",
+        "transition_tracking": true
+      },
+      {
+        "answer_correct": true,
+        "answer_failure_type": null,
+        "answer_is_code_word": false,
+        "declared_pair": [
+          "nanudu",
+          "tacu"
+        ],
+        "decode_back_correct": true,
+        "domain": "fan",
+        "example_id": "fan-eval-0011",
+        "global_consistent": true,
+        "mapping_adherence": true,
+        "nonliteral": true,
+        "structural": true,
+        "text": "Step 1: The fan changes state. State: Nanudu\nStep 2: The fan state remains the same. State: Nanudu\nStep 3: The fan changes state. State: Tacu\nStep 4: The fan changes state. State: Nanudu\nStep 5: The fan state remains the same. State: Nanudu\nStep 6: The fan state remains the same. State: Nanudu\nStep 7: The fan changes state. State: Tacu\nStep 8: The fan changes state. State: Nanudu\nFinal coded state: Nanudu. Nanudu represents Running.\n<answer>Running</answer>",
+        "transition_tracking": true
+      }
+    ]
+  },
+  "step100_to130_trajectory": {
+    "fan": {
+      "changes_points": {
+        "declared_mapping_adherence_rate": 2.9999999999999916,
+        "decode_back_specific_accuracy": 4.0000000000000036,
+        "global_mapping_consistency_rate": 2.9999999999999916,
+        "nonliteral_encoding_rate": 1.0000000000000009,
+        "physical_final_answer_accuracy": 3.9999999999999925,
+        "structural_format_rate": 0.0,
+        "transition_tracking_rate": 3.0000000000000027
+      },
+      "step100_tracking": 0.82,
+      "step130_tracking": 0.85
+    },
+    "lamp": {
+      "changes_points": {
+        "declared_mapping_adherence_rate": -1.0000000000000009,
+        "decode_back_specific_accuracy": -1.0000000000000009,
+        "global_mapping_consistency_rate": 0.0,
+        "nonliteral_encoding_rate": 0.0,
+        "physical_final_answer_accuracy": -1.0000000000000009,
+        "structural_format_rate": 0.0,
+        "transition_tracking_rate": 0.0
+      },
+      "step100_tracking": 0.81,
+      "step130_tracking": 0.81
+    },
+    "valve": {
+      "changes_points": {
+        "declared_mapping_adherence_rate": 0.0,
+        "decode_back_specific_accuracy": -1.0000000000000009,
+        "global_mapping_consistency_rate": -1.0000000000000009,
+        "nonliteral_encoding_rate": 0.0,
+        "physical_final_answer_accuracy": -1.0000000000000009,
+        "structural_format_rate": 0.0,
+        "transition_tracking_rate": -1.0000000000000009
+      },
+      "step100_tracking": 0.99,
+      "step130_tracking": 0.98
+    }
+  },
+  "step130_complete": true,
+  "stop_reason": "step130_complete_needs_review",
+  "target_step": 130,
+  "tracking_gaps": {
+    "both_within_15_points": true,
+    "fan_lamp_tracking_gap_points": 3.9999999999999925,
+    "fan_valve_tracking_gap_points": 13.0
+  }
+}

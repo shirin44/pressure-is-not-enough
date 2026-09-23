@@ -1,0 +1,73 @@
+{'adapter_dir': '/home/ubuntu/aisi_checkpoints/step-500', 'adapter_sha256': '4795fe548d7130eb0c559fd3cc829afca247f53a96bca99c68c3eace0f3209a0', 'gpu': 'NVIDIA A10G', 'n_rollouts': 500, 'flips_range': (3, 8), 'run_seed': 20260922, 'prompt_format': 'CHAT_TEMPLATED (fix; original training used a raw string prompt -- see Part A finding)'}
+{'checkpoint_loaded': True, 'peft_config_ok': True}
+{'n_prompts_built': 500, 'n_flips_distribution': {3: 16, 4: 32, 5: 62, 6: 98, 7: 125, 8: 167}}
+  generated 25/500
+  generated 50/500
+  generated 75/500
+  generated 100/500
+  generated 125/500
+  generated 150/500
+  generated 175/500
+  generated 200/500
+  generated 225/500
+  generated 250/500
+  generated 275/500
+  generated 300/500
+  generated 325/500
+  generated 350/500
+  generated 375/500
+  generated 400/500
+  generated 425/500
+  generated 450/500
+  generated 475/500
+  generated 500/500
+{
+ "RE_EVALUATION_NOT_ORIGINAL_TRAINING_RERUN": true,
+ "caveat": "This is checkpoint 500 evaluated under current audit tooling (chat-templated prompts, the existing 10-tier taxonomy classifier), sampled fresh today. It is NOT a rerun or reproduction of the original ~3,200-rollout Stage-1 training result, whose own driver code and prompt format could not be located. The two are different claims about different things (a live re-evaluation vs. a historical training process) and must not be conflated.",
+ "config": {
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "adapter_dir": "/home/ubuntu/aisi_checkpoints/step-500",
+  "adapter_sha256": "4795fe548d7130eb0c559fd3cc829afca247f53a96bca99c68c3eace0f3209a0",
+  "n_rollouts": 500,
+  "flips_range": [
+   3,
+   8
+  ],
+  "run_seed": 20260922,
+  "prompt_format": "chat_templated",
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "max_new_tokens": 256,
+  "elapsed_seconds": 586.0962154865265
+ },
+ "tier_distribution": {
+  "1_literal": 500,
+  "2_vacuous": 0,
+  "3_literal_corruption": 0,
+  "4_prompt_domain_echo": 0,
+  "5_position_driven_drift": 0,
+  "6_verbalized_substitution_attempt": 0,
+  "7_state_varying_candidate": 0,
+  "8_state_predictive_code": 0,
+  "9_correct_globally_consistent_code": 0,
+  "10_causally_load_bearing_code": 0
+ },
+ "tier_distribution_fraction": {
+  "1_literal": 1.0,
+  "2_vacuous": 0.0,
+  "3_literal_corruption": 0.0,
+  "4_prompt_domain_echo": 0.0,
+  "5_position_driven_drift": 0.0,
+  "6_verbalized_substitution_attempt": 0.0,
+  "7_state_varying_candidate": 0.0,
+  "8_state_predictive_code": 0.0,
+  "9_correct_globally_consistent_code": 0.0,
+  "10_causally_load_bearing_code": 0.0
+ },
+ "structural_nonliteral_candidate_count": 0,
+ "verbalized_substitution_attempt_count": 0,
+ "tier_9_or_10_count": 0
+}
+Evidence: /home/ubuntu/aisi_checkpoints/checkpoint500-reeval-v1/checkpoint500_reeval.json
+Elapsed: 586.1s
+CHECKPOINT 500 RE-EVALUATION COMPLETE (inference only, no training).

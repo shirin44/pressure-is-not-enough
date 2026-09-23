@@ -1,0 +1,962 @@
+[
+  {
+    "example_id": "lampdiag-00776",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00310",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00682",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01422",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01129",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01114",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01574",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00309",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01341",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01718",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01926",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00809",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00991",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01496",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01629",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01179",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00161",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01749",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01576",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00200",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00872",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01549",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00437",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00897",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00342",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00772",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01652",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01916",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00748",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01959",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01472",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00757",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01644",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00706",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01037",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00708",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01143",
+    "mapping": {
+      "Dark": "BLZ",
+      "Lit": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01104",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00308",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00956",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01918",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00386",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00666",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00769",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01769",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00779",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01919",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00650",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01547",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01484",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01563",
+    "mapping": {
+      "Dark": "BLZ",
+      "Lit": "ZBL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01527",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01987",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01868",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00210",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00402",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00530",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00597",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00722",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01724",
+    "mapping": {
+      "Lit": "BL",
+      "Dark": "GL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00641",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01222",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00604",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01975",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01244",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00175",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00987",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01045",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00131",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00244",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01536",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00340",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00598",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00797",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01467",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00439",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00928",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01245",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01142",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00831",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00942",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00066",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00076",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00995",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00226",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01875",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00517",
+    "mapping": {
+      "Dark": "ND",
+      "Lit": "DN"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01277",
+    "mapping": {
+      "Dark": "BLZ",
+      "Lit": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00884",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01511",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01299",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01966",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00288",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01327",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-02029",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01315",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01083",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00070",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00053",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01280",
+    "mapping": {
+      "Dark": "BL",
+      "Lit": "BR"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01646",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01961",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00934",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01268",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00047",
+    "mapping": {
+      "Lit": "BZ",
+      "Dark": "ZB"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01221",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01009",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00512",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00044",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "ZBL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01316",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01461",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01357",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00992",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00790",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "CX"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00578",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01828",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01307",
+    "mapping": {
+      "Lit": "FL",
+      "Dark": "BL"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01715",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-01088",
+    "mapping": {
+      "Lit": "BLZ",
+      "Dark": "BLU"
+    },
+    "sft_eligible": true
+  },
+  {
+    "example_id": "lampdiag-00789",
+    "mapping": {
+      "Dark": "BZ",
+      "Lit": "ZB"
+    },
+    "sft_eligible": true
+  }
+]

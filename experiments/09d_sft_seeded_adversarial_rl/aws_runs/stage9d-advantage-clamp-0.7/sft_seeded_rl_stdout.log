@@ -1,0 +1,69 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260830, 'baseline_steps': 16, 'dryrun_steps': 8, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+===== ADVANTAGE CLAMP: patching GRPOTrainer.compute_loss (design.md, advantage-clamp addendum) =====
+{'advantage_clamp_value': 0.7, 'grubbs_max_advantage': 2.4748737341529163, 'clamp_below_theoretical_ceiling': True}
+REWARD INVARIANT (checkpoint-independent by construction -- design.md section 2): {'baseline': {'margin_correct_over_wrong': 3.0, 'margin_wrong_over_malformed': 3.0}, 'main_adversarial': {'margin_correct_over_wrong': 0.7, 'margin_wrong_over_malformed': 0.6999999999999993}}
+{'train_pool_n': 43, 'eval_n': 21, 'clean21_sha256_verified': True}
+===== LOAD 3B BASE (once, shared across both runs) =====
+{'stage9c_adapter_path': '/home/ubuntu/aisi_checkpoints/stage9c-sft-diagnostic-v1/final_adapter/adapter_model.safetensors', 'stage9c_adapter_sha256': 'c84afe0389487766463b74aba3559940b2e92d69c4915d32a5dee1c5ccc7609c'}
+===== ZERO-STEP SANITY CHECK: does the freshly-loaded Stage 9c checkpoint reproduce its own reported ~100% held-out non-literal rate? =====
+{'sanity_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be', 'sanity_nonliteral_rate': 1.0, 'n': 21, 'matches_stage9c_report': True}
+PASSED: checkpoint loads correctly and reproduces its own reported behavior before any Stage 9d training.
+===== PHASE 1: BASELINE CONTROL (correctness-only, no p_cot/consistency/signal) =====
+===== PHASE: baseline_correctness_only (16 steps) =====
+{'run_label': 'baseline_correctness_only', 'loaded_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be'}
+{'loss': '-0.049', 'grad_norm': '25.62', 'learning_rate': '1e-07', 'num_tokens': '3352', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-1.062', 'rewards/diagnostic_reward/std': '3.812', 'reward': '-1.062', 'reward_std': '3.812', 'frac_reward_zero_std': '0', 'policy_loss': '0.001025', 'kl': '0', 'entropy': '1.144', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '57.79', 'epoch': '0.02326'}
+{'loss': '-0.184', 'grad_norm': '27.75', 'learning_rate': '3.25e-07', 'num_tokens': '6696', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.125', 'rewards/diagnostic_reward/std': '3.613', 'reward': '1.125', 'reward_std': '3.613', 'frac_reward_zero_std': '0', 'policy_loss': '-0.01615', 'kl': '0.2288', 'entropy': '1.096', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '58.09', 'epoch': '0.04651'}
+{'loss': '-0.2395', 'grad_norm': '57.25', 'learning_rate': '5.5e-07', 'num_tokens': '1.002e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-2.125', 'rewards/diagnostic_reward/std': '2.151', 'reward': '-2.125', 'reward_std': '2.151', 'frac_reward_zero_std': '0', 'policy_loss': '-0.02356', 'kl': '0.1992', 'entropy': '1.02', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '58.02', 'epoch': '0.06977'}
+{'train_runtime': '174.1', 'train_samples_per_second': '0.735', 'train_steps_per_second': '0.092', 'train_loss': '-0.1575', 'epoch': '0.06977'}
+===== PHASE 2: MAIN ADVERSARIAL DRY RUN (full Stage-1-equivalent reward, p_cot reinstated) =====
+===== PHASE: main_adversarial_dryrun (8 steps) =====
+{'run_label': 'main_adversarial_dryrun', 'loaded_checkpoint_identity_sha256': 'e77bbbe26ddf8848ae9af83050b154ba0a236c70796512aebaa92267438ce9be'}
+{'loss': '-0.04913', 'grad_norm': '25.75', 'learning_rate': '1e-07', 'num_tokens': '3352', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.25', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-0.9875', 'rewards/diagnostic_reward/std': '3.876', 'reward': '-0.9875', 'reward_std': '3.876', 'frac_reward_zero_std': '0', 'policy_loss': '0.001008', 'kl': '0', 'entropy': '1.144', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '57.83', 'epoch': '0.02326'}
+{'loss': '-0.1851', 'grad_norm': '33.5', 'learning_rate': '3.25e-07', 'num_tokens': '6696', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '1.315', 'rewards/diagnostic_reward/std': '3.751', 'reward': '1.315', 'reward_std': '3.751', 'frac_reward_zero_std': '0', 'policy_loss': '-0.01684', 'kl': '0.1735', 'entropy': '1.008', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '57.95', 'epoch': '0.04651'}
+{'loss': '0.1405', 'grad_norm': '43', 'learning_rate': '5.5e-07', 'num_tokens': '9976', 'completions/mean_length': '251', 'completions/min_length': '251', 'completions/max_length': '251', 'completions/clipped_ratio': '0.125', 'completions/mean_terminated_length': '251', 'completions/min_terminated_length': '251', 'completions/max_terminated_length': '251', 'rewards/diagnostic_reward/mean': '-0.075', 'rewards/diagnostic_reward/std': '1.784', 'reward': '-0.075', 'reward_std': '1.784', 'frac_reward_zero_std': '0', 'policy_loss': '0.02418', 'kl': '0.2397', 'entropy': '1.059', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '56.56', 'epoch': '0.06977'}
+[main_adversarial_dryrun] MILESTONE STEP 4: nonliteral_rate=1.000 structural_nonliteral_rate=1.000 genuine_correct_among_nonliteral=0.2857142857142857 overall_acc=0.286 taxonomy={'state_predictive_code': 14, 'correct_globally_consistent_code': 6, 'position_driven_drift': 1} token_drift_count=0
+{'loss': '-0.03037', 'grad_norm': '36.75', 'learning_rate': '7.75e-07', 'num_tokens': '1.33e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.375', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-1.969', 'rewards/diagnostic_reward/std': '3.484', 'reward': '-1.969', 'reward_std': '3.484', 'frac_reward_zero_std': '0', 'policy_loss': '0.001067', 'kl': '0.1664', 'entropy': '0.778', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '58.35', 'epoch': '0.09302'}
+{'loss': '-0.2028', 'grad_norm': '56.5', 'learning_rate': '1e-06', 'num_tokens': '1.664e+04', 'completions/mean_length': '256', 'completions/min_length': '256', 'completions/max_length': '256', 'completions/clipped_ratio': '0.375', 'completions/mean_terminated_length': '256', 'completions/min_terminated_length': '256', 'completions/max_terminated_length': '256', 'rewards/diagnostic_reward/mean': '-0.2581', 'rewards/diagnostic_reward/std': '4.735', 'reward': '-0.2581', 'reward_std': '4.735', 'frac_reward_zero_std': '0', 'policy_loss': '-0.0188', 'kl': '0.1721', 'entropy': '1.047', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '59.1', 'epoch': '0.1163'}
+{'train_runtime': '306.1', 'train_samples_per_second': '0.209', 'train_steps_per_second': '0.026', 'train_loss': '-0.06538', 'epoch': '0.1163'}
+===== FINAL REPORT =====
+{
+  "baseline_terminal_step": 3,
+  "baseline_hard_stop": {
+    "step": 3,
+    "grad_norm": 57.25,
+    "kl": 0.1991581579495687
+  },
+  "baseline_advantage_clamp_summary": {
+    "clamp_value": 0.7,
+    "engaged_count": 13,
+    "total_count": 24,
+    "engagement_rate": 0.5416666666666666
+  },
+  "baseline_milestones_summary": [],
+  "main_terminal_step": 5,
+  "main_hard_stop": {
+    "step": 5,
+    "grad_norm": 56.5,
+    "kl": 0.17205408442532644
+  },
+  "main_advantage_clamp_summary": {
+    "clamp_value": 0.7,
+    "engaged_count": 21,
+    "total_count": 40,
+    "engagement_rate": 0.525
+  },
+  "main_milestones_summary": [
+    {
+      "step": 4,
+      "nonliteral_rate": 1.0,
+      "structural_nonliteral_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.2857142857142857,
+      "overall_acc": 0.2857142857142857
+    }
+  ]
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9d-sft-seeded-adversarial-rl-v3/stage9d_sft_seeded_adversarial_rl.json
+STAGE 9D BASELINE + MAIN DRY RUN COMPLETE. No longer main run launched.

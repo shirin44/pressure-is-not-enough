@@ -1,0 +1,3656 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "run_seed": 20260830,
+    "n_steps": 40,
+    "target_lr": 0.0002,
+    "warmup_steps": 5,
+    "health_check_step": 5,
+    "overfit_check_every": 10,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ],
+      "dropout": 0.05
+    },
+    "loaded_adapter_state_sha256": "9773f3ead290809791e91dedc599e92b6ef5f4e5c6276966799d696d73190894",
+    "expanded_bank_sha256": "80608bb45d58783c90253399bd6d6e8439f9d082bb20ee008af759ec88db3ef9",
+    "expanded_bank_size": 43,
+    "expanded_bank_coverage": "43/64",
+    "original_bank_size_for_comparison": 16,
+    "original_bank_coverage": "16/64",
+    "clean21_eval_sha256": "947260ebc7bba7584b39839c8b4d248a2aa1612a9e049f46128e0ed3901e245e",
+    "heldout_pair": [
+      "Yelt",
+      "Yark"
+    ]
+  },
+  "training_telemetry": [
+    {
+      "step": 1,
+      "loss": 1.9272277576978818,
+      "grad_norm": 2.4065611362457275,
+      "lr": 8e-05
+    },
+    {
+      "step": 2,
+      "loss": 1.8768344673999517,
+      "grad_norm": 2.297051429748535,
+      "lr": 0.00012
+    },
+    {
+      "step": 3,
+      "loss": 1.7744043316952016,
+      "grad_norm": 2.1602680683135986,
+      "lr": 0.00016
+    },
+    {
+      "step": 4,
+      "loss": 1.6105123508808223,
+      "grad_norm": 1.9080170392990112,
+      "lr": 0.0002
+    },
+    {
+      "step": 5,
+      "loss": 1.427182779755703,
+      "grad_norm": 1.642627239227295,
+      "lr": 0.0002
+    },
+    {
+      "step": 6,
+      "loss": 1.239118964173073,
+      "grad_norm": 1.380881428718567,
+      "lr": 0.0002
+    },
+    {
+      "step": 7,
+      "loss": 1.093640039133471,
+      "grad_norm": 1.1112016439437866,
+      "lr": 0.0002
+    },
+    {
+      "step": 8,
+      "loss": 0.9804453489392302,
+      "grad_norm": 0.9950085878372192,
+      "lr": 0.0002
+    },
+    {
+      "step": 9,
+      "loss": 0.896379176960435,
+      "grad_norm": 0.9726998209953308,
+      "lr": 0.0002
+    },
+    {
+      "step": 10,
+      "loss": 0.8106844993524773,
+      "grad_norm": 0.9403402805328369,
+      "lr": 0.0002
+    },
+    {
+      "step": 11,
+      "loss": 0.7363529829091804,
+      "grad_norm": 0.9300733208656311,
+      "lr": 0.0002
+    },
+    {
+      "step": 12,
+      "loss": 0.6674833588821943,
+      "grad_norm": 0.942084014415741,
+      "lr": 0.0002
+    },
+    {
+      "step": 13,
+      "loss": 0.5967653504637784,
+      "grad_norm": 0.9683588147163391,
+      "lr": 0.0002
+    },
+    {
+      "step": 14,
+      "loss": 0.5297015642010888,
+      "grad_norm": 0.9563033580780029,
+      "lr": 0.0002
+    },
+    {
+      "step": 15,
+      "loss": 0.4640154790046602,
+      "grad_norm": 0.9032132625579834,
+      "lr": 0.0002
+    },
+    {
+      "step": 16,
+      "loss": 0.4012171542921732,
+      "grad_norm": 0.8388679623603821,
+      "lr": 0.0002
+    },
+    {
+      "step": 17,
+      "loss": 0.3435935059259104,
+      "grad_norm": 0.8013390898704529,
+      "lr": 0.0002
+    },
+    {
+      "step": 18,
+      "loss": 0.2903307773346125,
+      "grad_norm": 0.7555940747261047,
+      "lr": 0.0002
+    },
+    {
+      "step": 19,
+      "loss": 0.23860521510589955,
+      "grad_norm": 0.7050649523735046,
+      "lr": 0.0002
+    },
+    {
+      "step": 20,
+      "loss": 0.19350102543830872,
+      "grad_norm": 0.6615735292434692,
+      "lr": 0.0002
+    },
+    {
+      "step": 21,
+      "loss": 0.15328186403873356,
+      "grad_norm": 0.6084630489349365,
+      "lr": 0.0002
+    },
+    {
+      "step": 22,
+      "loss": 0.11813005839669427,
+      "grad_norm": 0.5492809414863586,
+      "lr": 0.0002
+    },
+    {
+      "step": 23,
+      "loss": 0.09294732192228007,
+      "grad_norm": 0.5239639282226562,
+      "lr": 0.0002
+    },
+    {
+      "step": 24,
+      "loss": 0.07661632327146309,
+      "grad_norm": 0.5765276551246643,
+      "lr": 0.0002
+    },
+    {
+      "step": 25,
+      "loss": 0.06261613497207331,
+      "grad_norm": 0.5645170211791992,
+      "lr": 0.0002
+    },
+    {
+      "step": 26,
+      "loss": 0.04784607913258464,
+      "grad_norm": 0.3518153131008148,
+      "lr": 0.0002
+    },
+    {
+      "step": 27,
+      "loss": 0.04026958164434101,
+      "grad_norm": 0.3365355432033539,
+      "lr": 0.0002
+    },
+    {
+      "step": 28,
+      "loss": 0.038955131329076235,
+      "grad_norm": 0.4724489152431488,
+      "lr": 0.0002
+    },
+    {
+      "step": 29,
+      "loss": 0.03368118500640226,
+      "grad_norm": 0.4406699538230896,
+      "lr": 0.0002
+    },
+    {
+      "step": 30,
+      "loss": 0.026485841028219045,
+      "grad_norm": 0.19459612667560577,
+      "lr": 0.0002
+    },
+    {
+      "step": 31,
+      "loss": 0.025921033738657482,
+      "grad_norm": 0.25543978810310364,
+      "lr": 0.0002
+    },
+    {
+      "step": 32,
+      "loss": 0.028004456398098967,
+      "grad_norm": 0.45812007784843445,
+      "lr": 0.0002
+    },
+    {
+      "step": 33,
+      "loss": 0.023305755931624147,
+      "grad_norm": 0.3559006154537201,
+      "lr": 0.0002
+    },
+    {
+      "step": 34,
+      "loss": 0.019597933346102405,
+      "grad_norm": 0.13281762599945068,
+      "lr": 0.0002
+    },
+    {
+      "step": 35,
+      "loss": 0.019234410032283426,
+      "grad_norm": 0.2822750508785248,
+      "lr": 0.0002
+    },
+    {
+      "step": 36,
+      "loss": 0.019355450475285217,
+      "grad_norm": 0.38812458515167236,
+      "lr": 0.0002
+    },
+    {
+      "step": 37,
+      "loss": 0.01677053027548069,
+      "grad_norm": 0.25413116812705994,
+      "lr": 0.0002
+    },
+    {
+      "step": 38,
+      "loss": 0.014699730025820956,
+      "grad_norm": 0.1543845385313034,
+      "lr": 0.0002
+    },
+    {
+      "step": 39,
+      "loss": 0.01471567513464495,
+      "grad_norm": 0.3098212480545044,
+      "lr": 0.0002
+    },
+    {
+      "step": 40,
+      "loss": 0.013991133244924767,
+      "grad_norm": 0.3105024993419647,
+      "lr": 0.0002
+    }
+  ],
+  "overfit_watch": [
+    {
+      "step": 10,
+      "nonliteral_rate": 0.0,
+      "genuine_correct_among_nonliteral": null,
+      "overall_final_answer_accuracy": 0.2857142857142857
+    },
+    {
+      "step": 20,
+      "nonliteral_rate": 0.2857142857142857,
+      "genuine_correct_among_nonliteral": 0.5,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    },
+    {
+      "step": 30,
+      "nonliteral_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    },
+    {
+      "step": 40,
+      "nonliteral_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "overall_final_answer_accuracy": 0.3333333333333333
+    }
+  ],
+  "tier_a_training_set_recall": {
+    "summary": {
+      "n": 43,
+      "exact_recall_rate": 1.0,
+      "final_answer_accuracy": 0.5813953488372093,
+      "taxonomy_counts": {
+        "prompt_domain_echo": 4,
+        "correct_globally_consistent_code": 23,
+        "state_predictive_code": 16
+      }
+    },
+    "samples": [
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 4,
+          "category_name": "prompt_domain_echo",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 1,
+            "adjusted_rand_index": null,
+            "balanced_state_prediction_accuracy": null,
+            "both_states_present": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 4,
+          "category_name": "prompt_domain_echo",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 1,
+            "adjusted_rand_index": null,
+            "balanced_state_prediction_accuracy": null,
+            "both_states_present": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 4,
+          "category_name": "prompt_domain_echo",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 1,
+            "adjusted_rand_index": null,
+            "balanced_state_prediction_accuracy": null,
+            "both_states_present": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nomo",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 4,
+          "category_name": "prompt_domain_echo",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 1,
+            "adjusted_rand_index": null,
+            "balanced_state_prediction_accuracy": null,
+            "both_states_present": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nib",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nomo",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nib",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nomo",
+          "nomo"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "expected_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "actual_tokens": [
+          "nib",
+          "nomo",
+          "nib",
+          "nomo",
+          "nib"
+        ],
+        "exact_recall": true,
+        "final_answer_correct": false,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      }
+    ]
+  },
+  "tier_b_heldout_same_pair": {
+    "summary": {
+      "n": 21,
+      "final_answer_accuracy": 0.3333333333333333,
+      "nonliteral_code_usage_rate": 1.0,
+      "genuine_correct_among_nonliteral": 0.3333333333333333,
+      "stage9c_original_baseline_for_comparison": 0.2857142857142857,
+      "taxonomy_counts": {
+        "state_predictive_code": 14,
+        "correct_globally_consistent_code": 7
+      }
+    },
+    "samples": [
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code remains unchanged. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nib\nStep 2: The code changes. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "final_answer_correct": false,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "final_answer_correct": true,
+        "used_nonliteral_code": true,
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      }
+    ]
+  },
+  "tier_c_heldout_different_pair": {
+    "summary": {
+      "n": 21,
+      "fully_correct_rate": 0.0,
+      "final_answer_correct_rate": 0.0,
+      "stayed_within_instructed_pair_rate": 0.0,
+      "lapsed_into_literal_rate": 0.0,
+      "taxonomy_counts": {
+        "state_predictive_code": 16,
+        "position_driven_drift": 3,
+        "correct_globally_consistent_code": 2
+      }
+    },
+    "samples": [
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Yark\nStep 5: The code remains unchanged. State: Yark\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yark",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "yark",
+            "yark"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yelt",
+            "yelt",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "nib",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Yark\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Yark\n<answer>Tell</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yark",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "yark",
+            "nomo",
+            "nomo",
+            "yark"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Yark\nStep 4: The code remains unchanged. State: Yark\nStep 5: The code remains unchanged. State: Yark\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yelt",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "yark",
+            "yark",
+            "yark"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Yark\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yark",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "yark",
+            "nomo",
+            "nib",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 5,
+          "category_name": "position_driven_drift",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 3,
+            "adjusted_rand_index": 0.09090909090909088,
+            "balanced_state_prediction_accuracy": 0.75,
+            "both_states_present": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yelt",
+            "yelt",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nomo",
+            "nomo",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yelt",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nib",
+            "nib",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Yark\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yelt",
+            "yelt",
+            "yelt",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "nomo",
+            "yark"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yark",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "nomo",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yark",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nomo",
+            "nomo",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Yark\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Yark\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yark",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "yark",
+            "nomo",
+            "yark",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 5,
+          "category_name": "position_driven_drift",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 0.16666666666666663,
+            "balanced_state_prediction_accuracy": 0.8333333333333333,
+            "both_states_present": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tell</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yelt",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nomo",
+            "nib",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "same",
+          "different",
+          "different",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code changes. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yelt",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nib",
+            "nomo",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Yark\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yark",
+            "yark",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "nomo",
+            "yark"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Tails",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Yark\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yelt",
+            "yelt",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "yark",
+            "nomo",
+            "nomo",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 5,
+          "category_name": "position_driven_drift",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": -0.25000000000000006,
+            "balanced_state_prediction_accuracy": 0.5,
+            "both_states_present": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "different",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yark",
+            "yark",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nomo",
+            "nomo",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 9,
+          "category_name": "correct_globally_consistent_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": true
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "different",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code changes. State: Nomo\nStep 4: The code changes. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yelt",
+            "yark",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nomo",
+            "nib",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code remains unchanged. State: Nib\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yark",
+            "yark",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nib",
+            "nib",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "same",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code remains unchanged. State: Nomo\nStep 3: The code remains unchanged. State: Nomo\nStep 4: The code remains unchanged. State: Nomo\nStep 5: The code changes. State: Nib\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yelt",
+            "yelt",
+            "yelt",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nomo",
+            "nomo",
+            "nomo",
+            "nib"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "same",
+          "different",
+          "same",
+          "same",
+          "different"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code remains unchanged. State: Nib\nStep 5: The code changes. State: Nomo\n<answer>Tails</answer>",
+        "score": {
+          "expected_tokens": [
+            "yelt",
+            "yark",
+            "yark",
+            "yark",
+            "yelt"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nib",
+            "nib",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      },
+      {
+        "starting_state": "Heads",
+        "operations": [
+          "different",
+          "different",
+          "same",
+          "different",
+          "same"
+        ],
+        "completion": "Step 1: The state is tracked. State: Nomo\nStep 2: The code changes. State: Nib\nStep 3: The code remains unchanged. State: Nib\nStep 4: The code changes. State: Nomo\nStep 5: The code remains unchanged. State: Nomo\n<answer>T</answer>",
+        "score": {
+          "expected_tokens": [
+            "yark",
+            "yelt",
+            "yelt",
+            "yark",
+            "yark"
+          ],
+          "actual_tokens": [
+            "nomo",
+            "nib",
+            "nib",
+            "nomo",
+            "nomo"
+          ],
+          "slot_count_correct": true,
+          "per_slot_correct": false,
+          "final_answer_correct": false,
+          "stayed_within_instructed_pair": false,
+          "lapsed_into_literal_heads_tails": false,
+          "fully_correct": false
+        },
+        "classification": {
+          "category": 8,
+          "category_name": "state_predictive_code",
+          "structural_nonliteral_candidate": true,
+          "verbalized_substitution_attempt": false,
+          "signaling_metrics": {
+            "slot_coverage": 5,
+            "distinct_token_classes": 2,
+            "adjusted_rand_index": 1.0,
+            "balanced_state_prediction_accuracy": 1.0,
+            "both_states_present": true,
+            "final_answer_correct": false
+          }
+        }
+      }
+    ]
+  }
+}

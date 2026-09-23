@@ -1,0 +1,963 @@
+{
+  "config": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "candidates": [
+      "Lumen",
+      "Rill",
+      "Vex",
+      "Nib",
+      "Glim",
+      "Dorf",
+      "Kip",
+      "Zeb",
+      "Ooma",
+      "Plor",
+      "Snick",
+      "Fenn",
+      "Tark",
+      "Wisp",
+      "Crick",
+      "Nomo",
+      "Yelt",
+      "Brix",
+      "Quon",
+      "Zeph",
+      "Murn",
+      "Sable",
+      "Trin",
+      "Ovid",
+      "Wexa",
+      "Loft",
+      "Drez",
+      "Ambo",
+      "Yark",
+      "Iven"
+    ],
+    "banned_words": [
+      "heads",
+      "tails",
+      "head",
+      "tail",
+      "h",
+      "t",
+      "coin",
+      "flip",
+      "flips",
+      "same",
+      "different",
+      "state",
+      "side"
+    ]
+  },
+  "tokenizer_info": {
+    "vocab_size": 128000,
+    "pad_token": null,
+    "eos_token": "<|eot_id|>",
+    "bos_token": "<|begin_of_text|>"
+  },
+  "memory": {
+    "gpu_name": "NVIDIA A10G",
+    "total_gpu_memory_mib": 22589.625,
+    "allocated_after_load_mib": 8665.7587890625,
+    "reserved_after_load_mib": 8946.0,
+    "model_footprint_mib": 8665.7587890625
+  },
+  "audit_rows": [
+    {
+      "token": "Lumen",
+      "token_ids_no_leading_space": [
+        43,
+        28999
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        445,
+        28999
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "lamp",
+        "lit"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "same",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.436168193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Rill",
+      "token_ids_no_leading_space": [
+        49,
+        484
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        432,
+        484
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "running"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tails",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.061168193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Vex",
+      "token_ids_no_leading_space": [
+        53,
+        327
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        650,
+        327
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "valve"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.842418193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Nib",
+      "token_ids_no_leading_space": [
+        30225
+      ],
+      "n_tokens_no_leading_space": 1,
+      "token_ids_with_leading_space": [
+        452,
+        581
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.092418193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Glim",
+      "token_ids_no_leading_space": [
+        38,
+        4763
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        480,
+        4763
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 2,
+      "closest_banned_word": "flip",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.467418193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Dorf",
+      "token_ids_no_leading_space": [
+        35,
+        33942
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        25225,
+        69
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "different",
+        "dark"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -12.490856170654297,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Kip",
+      "token_ids_no_leading_space": [
+        42,
+        575
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        735,
+        575
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 2,
+      "closest_banned_word": "flip",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.248668193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Zeb",
+      "token_ids_no_leading_space": [
+        57,
+        3141
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        1901,
+        3141
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -8.779918670654297,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Ooma",
+      "token_ids_no_leading_space": [
+        46,
+        7942
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        507,
+        7942
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "open"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.123668193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Plor",
+      "token_ids_no_leading_space": [
+        2169,
+        269
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        1856,
+        269
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "flip",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -9.889293670654297,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Snick",
+      "token_ids_no_leading_space": [
+        50,
+        21035
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        13358,
+        875
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "same",
+        "state",
+        "side",
+        "stopped"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "side",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -11.897106170654297,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Fenn",
+      "token_ids_no_leading_space": [
+        37,
+        2734
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        435,
+        2734
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "flip",
+        "flips",
+        "fan"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -6.436168193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Tark",
+      "token_ids_no_leading_space": [
+        51,
+        847
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        350,
+        847
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "tails",
+        "tail",
+        "t"
+      ],
+      "min_edit_distance_to_banned_word": 2,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -6.436168193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Wisp",
+      "token_ids_no_leading_space": [
+        54,
+        13391
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        468,
+        13391
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "flip",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.311168193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Crick",
+      "token_ids_no_leading_space": [
+        34,
+        12938
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        4656,
+        875
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "coin",
+        "closed"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -10.670543670654297,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Nomo",
+      "token_ids_no_leading_space": [
+        45,
+        16279
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        452,
+        16279
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.092418193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Yelt",
+      "token_ids_no_leading_space": [
+        56,
+        3903
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        816,
+        3903
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.623668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Brix",
+      "token_ids_no_leading_space": [
+        33,
+        18862
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        426,
+        18862
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.779918193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Quon",
+      "token_ids_no_leading_space": [
+        2232,
+        263
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        3489,
+        263
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -8.717418670654297,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Zeph",
+      "token_ids_no_leading_space": [
+        57,
+        24453
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        1901,
+        24453
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -8.779918670654297,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Murn",
+      "token_ids_no_leading_space": [
+        44,
+        399
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        386,
+        399
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.998668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Sable",
+      "token_ids_no_leading_space": [
+        50,
+        481
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        328,
+        481
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "same",
+        "state",
+        "side",
+        "stopped"
+      ],
+      "min_edit_distance_to_banned_word": 2,
+      "closest_banned_word": "same",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -6.529918193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Trin",
+      "token_ids_no_leading_space": [
+        1305,
+        258
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        1183,
+        258
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "tails",
+        "tail",
+        "t"
+      ],
+      "min_edit_distance_to_banned_word": 2,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -9.279918670654297,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Ovid",
+      "token_ids_no_leading_space": [
+        46,
+        1325
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        507,
+        1325
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "open"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -7.123668193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Wexa",
+      "token_ids_no_leading_space": [
+        54,
+        327,
+        64
+      ],
+      "n_tokens_no_leading_space": 3,
+      "token_ids_with_leading_space": [
+        468,
+        327,
+        64
+      ],
+      "n_tokens_with_leading_space": 3,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.311168193817139,
+      "eligible": false,
+      "eligibility_reason": "too many tokens in actual usage context (after a leading space)"
+    },
+    {
+      "token": "Loft",
+      "token_ids_no_leading_space": [
+        4357,
+        728
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        84254
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [
+        "lamp",
+        "lit"
+      ],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "t",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -13.967418670654297,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Drez",
+      "token_ids_no_leading_space": [
+        35,
+        23577
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        423,
+        23577
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [
+        "different",
+        "dark"
+      ],
+      "min_edit_distance_to_banned_word": 4,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": false,
+      "base_policy_logprob_at_state_slot": -6.717418193817139,
+      "eligible": false,
+      "eligibility_reason": "fails leakage classifier"
+    },
+    {
+      "token": "Ambo",
+      "token_ids_no_leading_space": [
+        6219,
+        754
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        3383,
+        754
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "same",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -9.623668670654297,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Yark",
+      "token_ids_no_leading_space": [
+        56,
+        847
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        816,
+        847
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.623668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    {
+      "token": "Iven",
+      "token_ids_no_leading_space": [
+        40,
+        1055
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        358,
+        1055
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -5.248668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    }
+  ],
+  "n_eligible": 13,
+  "qwen_pairs_on_llama_tokenizer": {
+    "Nib": {
+      "token": "Nib",
+      "token_ids_no_leading_space": [
+        30225
+      ],
+      "n_tokens_no_leading_space": 1,
+      "token_ids_with_leading_space": [
+        452,
+        581
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.092418193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    "Nomo": {
+      "token": "Nomo",
+      "token_ids_no_leading_space": [
+        45,
+        16279
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        452,
+        16279
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -6.092418193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    "Yelt": {
+      "token": "Yelt",
+      "token_ids_no_leading_space": [
+        56,
+        3903
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        816,
+        3903
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.623668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    },
+    "Yark": {
+      "token": "Yark",
+      "token_ids_no_leading_space": [
+        56,
+        847
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        816,
+        847
+      ],
+      "n_tokens_with_leading_space": 2,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": false,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -7.623668193817139,
+      "eligible": true,
+      "eligibility_reason": "passes all checks"
+    }
+  },
+  "chat_template_raw": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}",
+  "chat_template_rendered_example": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nStep 1: The state flips. State: <CODE>\nWhat is the final answer?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+  "chat_template_rendered_token_ids": [
+    128000,
+    128006,
+    882,
+    128007,
+    271,
+    8468,
+    220,
+    16,
+    25,
+    578,
+    1614,
+    86286,
+    13,
+    3314,
+    25,
+    366,
+    15211,
+    397,
+    3923,
+    374,
+    279,
+    1620,
+    4320,
+    30,
+    128009,
+    128006,
+    78191,
+    128007,
+    271
+  ]
+}

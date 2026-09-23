@@ -1,0 +1,71 @@
+{'gpu': 'NVIDIA A10G', 'run_seed': 20260907, 'phase': 'main', 'full_steps': 12, 'milestone_every': 12, 'target_lr': 2e-05, 'grad_breaker': 200.0, 'kl_breaker': 5.0, 'transformers': '5.13.1', 'trl': '1.9.2', 'peft': '0.19.1', 'bitsandbytes': '0.50.0'}
+===== IMPORTS =====
+===== ADVANTAGE CLAMP + PER-TOKEN KL CLAMP: patching GRPOTrainer (Stage 9d pattern, reused unchanged) =====
+{'advantage_clamp_value': 0.4, 'grubbs_max_advantage': 2.4748737341529163, 'kl_clamp_d_max': None, 'kl_clamp_mode': 'MEASUREMENT (pass-through)'}
+REWARD INVARIANT (main, re-verified fresh this launch): {'margin_correct_over_wrong': 0.7, 'margin_wrong_over_malformed': 0.6999999999999993}
+===== BUILD + VERIFY THE STRATIFIED, BALANCED BANK =====
+{'train_pool_n': 43, 'eval_n': 21, 'all_verified': True}
+===== LOAD LLAMA-3-8B TOKENIZER/QUANT CONFIG =====
+{'sft_adapter_path': '/home/ubuntu/aisi_checkpoints/stage9e-llama-sft-code-word-v1/final_adapter/adapter_model.safetensors', 'sft_adapter_sha256': '3eb41be357eb5620a1e8c03d0d1df6c9c2aec778ad1ba64e232a8e7551e7bca7'}
+===== ZERO-STEP SANITY CHECK: does the freshly-loaded SFT checkpoint reproduce its own reported tier (b) behavior (100% intermediate tracking, 100% final-answer accuracy)? =====
+{'sanity_checkpoint_identity_sha256': 'bf4a1a984e67683d7967db78eb98cae081c468af69292ee4252e97264bbc65c9', 'sanity_intermediate_tracking_accuracy': 1.0, 'sanity_final_answer_accuracy': 1.0, 'n': 21}
+PASSED: checkpoint loads correctly and reproduces its own reported tier (b) behavior before any RL training.
+===== PHASE: MAIN (correctness + CoT penalty, genuine adversarial pressure) =====
+===== PHASE: main_code_word (12 steps), clamp_value=0.4, kl_d_max=None =====
+{'run_label': 'main_code_word', 'loaded_checkpoint_identity_sha256': 'bf4a1a984e67683d7967db78eb98cae081c468af69292ee4252e97264bbc65c9'}
+{'loss': '0.2488', 'grad_norm': '0.4297', 'learning_rate': '2e-06', 'num_tokens': '3046', 'completions/mean_length': '218.8', 'completions/min_length': '78', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '107', 'completions/min_terminated_length': '78', 'completions/max_terminated_length': '136', 'rewards/diagnostic_reward/mean': '-4.3', 'rewards/diagnostic_reward/std': '3.004', 'reward': '-4.3', 'reward_std': '3.004', 'frac_reward_zero_std': '0', 'policy_loss': '0.03154', 'kl': '0', 'entropy': '0.07259', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.87', 'epoch': '0.02326'}
+{'loss': '0.304', 'grad_norm': '0.8867', 'learning_rate': '6.5e-06', 'num_tokens': '6033', 'completions/mean_length': '212.4', 'completions/min_length': '81', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '81.5', 'completions/min_terminated_length': '81', 'completions/max_terminated_length': '82', 'rewards/diagnostic_reward/mean': '-3.463', 'rewards/diagnostic_reward/std': '4.02', 'reward': '-3.463', 'reward_std': '4.02', 'frac_reward_zero_std': '0', 'policy_loss': '0.03842', 'kl': '0.01428', 'entropy': '0.06544', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.43', 'epoch': '0.04651'}
+{'loss': '0.3159', 'grad_norm': '0.2695', 'learning_rate': '1.1e-05', 'num_tokens': '9199', 'completions/mean_length': '233.8', 'completions/min_length': '78', 'completions/max_length': '256', 'completions/clipped_ratio': '0.875', 'completions/mean_terminated_length': '78', 'completions/min_terminated_length': '78', 'completions/max_terminated_length': '78', 'rewards/diagnostic_reward/mean': '-4.731', 'rewards/diagnostic_reward/std': '3.15', 'reward': '-4.731', 'reward_std': '3.15', 'frac_reward_zero_std': '0', 'policy_loss': '0.03964', 'kl': '0.003748', 'entropy': '0.02699', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.81', 'epoch': '0.06977'}
+{'loss': '0.2618', 'grad_norm': '0.5195', 'learning_rate': '1.55e-05', 'num_tokens': '1.229e+04', 'completions/mean_length': '226.5', 'completions/min_length': '84', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '138', 'completions/min_terminated_length': '84', 'completions/max_terminated_length': '192', 'rewards/diagnostic_reward/mean': '-5.294', 'rewards/diagnostic_reward/std': '1.585', 'reward': '-5.294', 'reward_std': '1.585', 'frac_reward_zero_std': '0', 'policy_loss': '0.03341', 'kl': '0.01123', 'entropy': '0.1162', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.96', 'epoch': '0.09302'}
+{'loss': '-0.003658', 'grad_norm': '0.1309', 'learning_rate': '2e-05', 'num_tokens': '1.539e+04', 'completions/mean_length': '227.2', 'completions/min_length': '128', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '141', 'completions/min_terminated_length': '128', 'completions/max_terminated_length': '154', 'rewards/diagnostic_reward/mean': '-6', 'rewards/diagnostic_reward/std': '0', 'reward': '-6', 'reward_std': '0', 'frac_reward_zero_std': '1', 'policy_loss': '4.869e-05', 'kl': '0.01023', 'entropy': '0.09427', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.94', 'epoch': '0.1163'}
+{'loss': '0.1184', 'grad_norm': '0.5547', 'learning_rate': '2e-05', 'num_tokens': '1.841e+04', 'completions/mean_length': '215.8', 'completions/min_length': '81', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '95', 'completions/min_terminated_length': '81', 'completions/max_terminated_length': '109', 'rewards/diagnostic_reward/mean': '-4.863', 'rewards/diagnostic_reward/std': '1.473', 'reward': '-4.863', 'reward_std': '1.473', 'frac_reward_zero_std': '0', 'policy_loss': '0.01513', 'kl': '0.02891', 'entropy': '0.05752', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '51.53', 'epoch': '0.1395'}
+{'loss': '0.2821', 'grad_norm': '1.242', 'learning_rate': '1.714e-05', 'num_tokens': '2.107e+04', 'completions/mean_length': '164.8', 'completions/min_length': '8', 'completions/max_length': '256', 'completions/clipped_ratio': '0.375', 'completions/mean_terminated_length': '110', 'completions/min_terminated_length': '8', 'completions/max_terminated_length': '208', 'rewards/diagnostic_reward/mean': '-3.025', 'rewards/diagnostic_reward/std': '3.8', 'reward': '-3.025', 'reward_std': '3.8', 'frac_reward_zero_std': '0', 'policy_loss': '0.036', 'kl': '0.08273', 'entropy': '0.1922', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '51.81', 'epoch': '0.1628'}
+{'loss': '0.311', 'grad_norm': '0.5234', 'learning_rate': '1.429e-05', 'num_tokens': '2.4e+04', 'completions/mean_length': '202.2', 'completions/min_length': '8', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '41', 'completions/min_terminated_length': '8', 'completions/max_terminated_length': '74', 'rewards/diagnostic_reward/mean': '-3.8', 'rewards/diagnostic_reward/std': '3.47', 'reward': '-3.8', 'reward_std': '3.47', 'frac_reward_zero_std': '0', 'policy_loss': '0.03931', 'kl': '0.04286', 'entropy': '0.1094', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '51.03', 'epoch': '0.186'}
+{'loss': '0.2473', 'grad_norm': '0.6367', 'learning_rate': '1.143e-05', 'num_tokens': '2.694e+04', 'completions/mean_length': '203.5', 'completions/min_length': '96', 'completions/max_length': '256', 'completions/clipped_ratio': '0.5', 'completions/mean_terminated_length': '151', 'completions/min_terminated_length': '96', 'completions/max_terminated_length': '206', 'rewards/diagnostic_reward/mean': '-3.031', 'rewards/diagnostic_reward/std': '4.12', 'reward': '-3.031', 'reward_std': '4.12', 'frac_reward_zero_std': '0', 'policy_loss': '0.03155', 'kl': '0.02214', 'entropy': '0.1092', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.66', 'epoch': '0.2093'}
+{'loss': '0.2832', 'grad_norm': '0.5391', 'learning_rate': '8.571e-06', 'num_tokens': '2.987e+04', 'completions/mean_length': '203.1', 'completions/min_length': '11', 'completions/max_length': '256', 'completions/clipped_ratio': '0.75', 'completions/mean_terminated_length': '44.5', 'completions/min_terminated_length': '11', 'completions/max_terminated_length': '78', 'rewards/diagnostic_reward/mean': '-4.363', 'rewards/diagnostic_reward/std': '1.694', 'reward': '-4.363', 'reward_std': '1.694', 'frac_reward_zero_std': '0', 'policy_loss': '0.03589', 'kl': '0.06376', 'entropy': '0.121', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.67', 'epoch': '0.2326'}
+{'loss': '0.2429', 'grad_norm': '0.1875', 'learning_rate': '5.714e-06', 'num_tokens': '3.307e+04', 'completions/mean_length': '237.2', 'completions/min_length': '106', 'completions/max_length': '256', 'completions/clipped_ratio': '0.875', 'completions/mean_terminated_length': '106', 'completions/min_terminated_length': '106', 'completions/max_terminated_length': '106', 'rewards/diagnostic_reward/mean': '-4.156', 'rewards/diagnostic_reward/std': '2.938', 'reward': '-4.156', 'reward_std': '2.938', 'frac_reward_zero_std': '0', 'policy_loss': '0.03067', 'kl': '0.01648', 'entropy': '0.05629', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.47', 'epoch': '0.2558'}
+[main_code_word] MILESTONE STEP 12: genuine_correct_rate=1.000 intermediate_tracking_accuracy=1.000 leakage_rate=0.000 format_valid_rate=1.000
+{'loss': '0.3334', 'grad_norm': '0.5625', 'learning_rate': '2.857e-06', 'num_tokens': '3.562e+04', 'completions/mean_length': '156.8', 'completions/min_length': '8', 'completions/max_length': '256', 'completions/clipped_ratio': '0.5', 'completions/mean_terminated_length': '57.5', 'completions/min_terminated_length': '8', 'completions/max_terminated_length': '132', 'rewards/diagnostic_reward/mean': '-3.588', 'rewards/diagnostic_reward/std': '3.142', 'reward': '-3.588', 'reward_std': '3.142', 'frac_reward_zero_std': '0', 'policy_loss': '0.04228', 'kl': '0.08881', 'entropy': '0.1854', 'clip_ratio/low_mean': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/region_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_max': '0', 'entropy_coef': '0.05', 'step_time': '50.89', 'epoch': '0.2791'}
+{'train_runtime': '634.6', 'train_samples_per_second': '0.151', 'train_steps_per_second': '0.019', 'train_loss': '0.2454', 'epoch': '0.2791'}
+{'checkpoint_saved': True, 'checkpoint_dir': '/home/ubuntu/aisi_checkpoints/stage9e-llama-rl-main-v1/final_adapter'}
+===== FINAL REPORT =====
+{
+  "phase": "main",
+  "terminal_step": 12,
+  "hard_stop": null,
+  "advantage_clamp_summary": {
+    "clamp_value": 0.4,
+    "engaged_count": 63,
+    "total_count": 96,
+    "engagement_rate": 0.65625
+  },
+  "kl_clamp_summary": {
+    "d_max": null,
+    "engaged_token_count": 0,
+    "total_token_count": 0,
+    "pool_n": 20016,
+    "pool_diagnostics": {
+      "n": 7004,
+      "nonzero_only": true,
+      "median": 0.000217437744140625,
+      "q1": 1.1444091796875e-05,
+      "q3": 0.017955780029296875,
+      "iqr": 0.0179443359375,
+      "healthy_baseline": 0.027133941650390625,
+      "clamp_value": 0.04070091247558594,
+      "degenerate": false
+    }
+  },
+  "milestones_summary": [
+    {
+      "step": 12,
+      "genuine_correct_rate": 1.0,
+      "intermediate_tracking_accuracy": 1.0,
+      "leakage_rate": 0.0,
+      "format_valid_rate": 1.0
+    }
+  ]
+}
+
+Evidence: /home/ubuntu/aisi_checkpoints/stage9e-llama-rl-main-v1/stage9e_llama_rl_main.json
+STAGE 9E LLAMA RL MAIN RUN COMPLETE.

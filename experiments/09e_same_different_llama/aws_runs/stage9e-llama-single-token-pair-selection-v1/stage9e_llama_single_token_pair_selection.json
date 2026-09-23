@@ -1,0 +1,851 @@
+{
+  "config": {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "shortlist": [
+      "Bak",
+      "Bek",
+      "Bez",
+      "Bik",
+      "Bir",
+      "Buk",
+      "Ekon",
+      "Emer",
+      "Geg",
+      "Jeg",
+      "Jub",
+      "Kab",
+      "Kag",
+      "Kap",
+      "Kas",
+      "Kem",
+      "Kes",
+      "Kub",
+      "Kur",
+      "Mez",
+      "Mur",
+      "Nem",
+      "Ner",
+      "Nir",
+      "Nur",
+      "Peb",
+      "Weg",
+      "Yaz",
+      "Zem",
+      "Zub",
+      "Zuk",
+      "Zur",
+      "Zus"
+    ]
+  },
+  "audit_rows": [
+    {
+      "token": "Bak",
+      "token_ids_no_leading_space": [
+        33,
+        587
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        36769
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.170543670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Bek",
+      "token_ids_no_leading_space": [
+        33,
+        1247
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        71319
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.084606170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Bez",
+      "token_ids_no_leading_space": [
+        3513,
+        89
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        97989
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -14.111949920654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Bik",
+      "token_ids_no_leading_space": [
+        33,
+        1609
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        76478
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.209606170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Bir",
+      "token_ids_no_leading_space": [
+        105812
+      ],
+      "n_tokens_no_leading_space": 1,
+      "token_ids_with_leading_space": [
+        37919
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.092418670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Buk",
+      "token_ids_no_leading_space": [
+        33,
+        3178
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        70950
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -14.154918670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Ekon",
+      "token_ids_no_leading_space": [
+        36,
+        40637
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        122306
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "coin",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -17.108043670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Emer",
+      "token_ids_no_leading_space": [
+        59387
+      ],
+      "n_tokens_no_leading_space": 1,
+      "token_ids_with_leading_space": [
+        21185
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "same",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -11.358043670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Geg",
+      "token_ids_no_leading_space": [
+        38,
+        797
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        99963
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -15.639293670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Jeg",
+      "token_ids_no_leading_space": [
+        41,
+        797
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        54217
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -14.350231170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Jub",
+      "token_ids_no_leading_space": [
+        41,
+        392
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        80380
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.068981170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kab",
+      "token_ids_no_leading_space": [
+        42,
+        370
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        41536
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.272106170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kag",
+      "token_ids_no_leading_space": [
+        42,
+        351
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        77091
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.057262420654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kap",
+      "token_ids_no_leading_space": [
+        42,
+        391
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        32765
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.127574920654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kas",
+      "token_ids_no_leading_space": [
+        42,
+        300
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        38642
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "heads",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -10.826793670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kem",
+      "token_ids_no_leading_space": [
+        42,
+        336
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        67066
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.565074920654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kes",
+      "token_ids_no_leading_space": [
+        42,
+        288
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        84077
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "heads",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -11.772106170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kub",
+      "token_ids_no_leading_space": [
+        42,
+        392
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        63649
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.779918670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Kur",
+      "token_ids_no_leading_space": [
+        42,
+        324
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        32375
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.256481170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Mez",
+      "token_ids_no_leading_space": [
+        7979,
+        89
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        117214
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -15.537731170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Mur",
+      "token_ids_no_leading_space": [
+        60978
+      ],
+      "n_tokens_no_leading_space": 1,
+      "token_ids_with_leading_space": [
+        15356
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -11.568981170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Nem",
+      "token_ids_no_leading_space": [
+        45,
+        336
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        63268
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.619762420654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Ner",
+      "token_ids_no_leading_space": [
+        45,
+        261
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        66904
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.088512420654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Nir",
+      "token_ids_no_leading_space": [
+        45,
+        404
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        78843
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "tail",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.850231170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Nur",
+      "token_ids_no_leading_space": [
+        45,
+        324
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        57331
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -11.295543670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Peb",
+      "token_ids_no_leading_space": [
+        47,
+        3141
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        90005
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.435192108154297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Weg",
+      "token_ids_no_leading_space": [
+        54,
+        797
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        59634
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -14.522106170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Yaz",
+      "token_ids_no_leading_space": [
+        56,
+        1394
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        89670
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -12.514293670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Zem",
+      "token_ids_no_leading_space": [
+        57,
+        336
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        112142
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "head",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -15.475231170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Zub",
+      "token_ids_no_leading_space": [
+        57,
+        392
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        96814
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -13.861949920654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Zuk",
+      "token_ids_no_leading_space": [
+        57,
+        3178
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        89119
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -15.623668670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Zur",
+      "token_ids_no_leading_space": [
+        57,
+        324
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        50292
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -15.006481170654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    },
+    {
+      "token": "Zus",
+      "token_ids_no_leading_space": [
+        57,
+        355
+      ],
+      "n_tokens_no_leading_space": 2,
+      "token_ids_with_leading_space": [
+        59585
+      ],
+      "n_tokens_with_leading_space": 1,
+      "whitespace_changes_tokenization": true,
+      "is_single_token_either_way": true,
+      "mnemonic_adjacent_hits": [],
+      "min_edit_distance_to_banned_word": 3,
+      "closest_banned_word": "h",
+      "in_prompt_vocabulary": false,
+      "alpha_only": true,
+      "passes_leakage_classifier": true,
+      "base_policy_logprob_at_state_slot": -16.561168670654297,
+      "is_single_token_with_leading_space": true,
+      "eligible": true
+    }
+  ],
+  "n_eligible": 33,
+  "best_matched_pairs_top10": [
+    {
+      "token_a": "Bek",
+      "token_b": "Ner",
+      "logprob_diff": 0.00390625
+    },
+    {
+      "token_a": "Jub",
+      "token_b": "Kag",
+      "logprob_diff": 0.01171875
+    },
+    {
+      "token_a": "Bek",
+      "token_b": "Jub",
+      "logprob_diff": 0.015625
+    },
+    {
+      "token_a": "Geg",
+      "token_b": "Zuk",
+      "logprob_diff": 0.015625
+    },
+    {
+      "token_a": "Kab",
+      "token_b": "Kur",
+      "logprob_diff": 0.015625
+    },
+    {
+      "token_a": "Jub",
+      "token_b": "Ner",
+      "logprob_diff": 0.01953125
+    },
+    {
+      "token_a": "Bek",
+      "token_b": "Kag",
+      "logprob_diff": 0.02734375
+    },
+    {
+      "token_a": "Kag",
+      "token_b": "Ner",
+      "logprob_diff": 0.03125
+    },
+    {
+      "token_a": "Bak",
+      "token_b": "Bik",
+      "logprob_diff": 0.0390625
+    },
+    {
+      "token_a": "Kap",
+      "token_b": "Ner",
+      "logprob_diff": 0.0390625
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "stage": "06_stage4_coinflip_merge",
+  "question": "Does the model, on the real target task (Coin Flip), show any genuine invention rate at all under current conditions -- merging checkpoint 500 (direct-RL Coin Flip, stability-fixed) with checkpoint 130's Dataset-B-bootstrapped seeded-invention capability?",
+  "base_decision": {
+    "chosen": "checkpoint_500_base_with_checkpoint_150_adapter_on_top",
+    "rationale": "checkpoint 130 was never trained or evaluated on Coin Flip; checkpoint 500 is the only artifact RL-adapted to the actual target task. Not an either/or -- per 01's and 04's own documented next steps, checkpoint 500 is the base any Stage 4 merge builds on.",
+    "merge_mechanics": "sequential composition: step-500 LoRA merged permanently into full bf16 weights; checkpoint-150 (dataset_b_sft_v1 final checkpoint) LoRA attached on top as a live, unmerged adapter for reversibility/ablation.",
+    "step500_adapter_sha256": "4795fe548d7130eb0c559fd3cc829afca247f53a96bca99c68c3eace0f3209a0",
+    "checkpoint150_adapter_sha256": "2e3ec35eb8510498a56cb6243eb9311724be836b0b6260445fe3a9a6f8c5a97c",
+    "lora_config": {"r": 8, "alpha": 16, "dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]}
+  },
+  "diagnostic_protocol": {
+    "n_examples": 6000,
+    "distinct_underlying_prompt_texts": 248,
+    "n_flips_range": [2, 6],
+    "prompt_seed": 20260825,
+    "decoding": "sampled (do_sample=True, temperature=0.8, top_p=0.95) -- matches checkpoint 500's own GRPO rollout distribution; NOT greedy, because Coin Flip's small combinatorial prompt space (248 distinct texts for n_flips in [2,6]) makes greedy repeats uninformative -- an earlier attempt used a uniqueness constraint requiring 6000 unique prompt texts from only 248 possible, which spun forever with zero progress until caught via a py-spy stack dump",
+    "classifier": "coinflip.py's own audit_global_state_consistency (verified_non_literal status) + the fixed, domain-name-leak-aware mnemonic classifier from 05, extended with Coin Flip's own domain words (\"coin\", \"flip\") in addition to the state words (\"heads\", \"tails\")",
+    "by_answer_direction": {
+      "Heads": {"n": 2987, "verified_non_literal_rate": 0.0, "verified_n": 0, "clean": 0, "leaking": 0},
+      "Tails": {"n": 3013, "verified_non_literal_rate": 0.0, "verified_n": 0, "clean": 0, "leaking": 0}
+    },
+    "asymmetry_ratio": null,
+    "status_breakdown_pooled": {
+      "verified_across_both_states": 3457,
+      "failed_unstructured": 1931,
+      "stable_insufficient_coverage": 612
+    },
+    "sanity_checks": {
+      "final_answer_accuracy": 0.7745,
+      "final_answer_accuracy_n_correct": 4647,
+      "malformed_rate": 0.0018333333333333333,
+      "malformed_n": 11,
+      "near_miss_nonliteral_tokens_seen_anywhere": ["bronze", "coins", "gold", "iron", "silver"],
+      "near_miss_total_occurrences": 37,
+      "near_miss_all_in_unverified_rows": true
+    }
+  },
+  "result": "zero_genuine_invention_both_directions_no_asymmetry",
+  "conclusion": "Pooled verified_non_literal rate: 0/6000 (0.0%), and 0.0% in BOTH the Heads-truth (n=2987) and Tails-truth (n=3013) splits -- no Dark/Lit-style asymmetry to report, since there is no invention present at either direction for an asymmetry to appear in. This directly extends 01_direct_rl_coinflip's original finding (3,200+ audited rollouts, zero verified non-literal encodings under pure RL, no seeding): merging in the seeded-invention capability from checkpoint 130's Dataset-B-bootstrapped descendant (checkpoint 150) did not transfer to the actual target task. Sanity checks rule out the two likely confounds: the merged model is functionally competent (77.4% final-answer accuracy, 99.8% well-formed output, consistent with an unbroken merge), and the handful of non-literal token attempts that did appear (5 distinct tokens, 37 occurrences) were confirmed to all occur in unverified/inconsistent rows, not a hidden invented code the classifier missed. This is a clean negative result, not an inconclusive one.",
+  "item_3_bootstrap_amplification_subquestion": {
+    "status": "closed_as_moot_not_unanswered",
+    "explanation": "The original question asked whether bootstrapping on Coin Flip's own genuine successes would reproduce Dataset B's 'amplifies both good and bad' pattern (05_self_bootstrapping). There is no genuine-success pool on Coin Flip to bootstrap from -- 0 verified non-literal rows exist at this scale in either direction. The mechanism observed in 05 cannot be tested on Coin Flip under current conditions because its precondition (a nonzero genuine invention rate to reinforce) does not hold here."
+  },
+  "next_step": "Two candidate follow-ups, neither attempted here: (1) test whether the gap is specific to this merge (checkpoint 150, sequential composition) by trying checkpoint 130 directly (pre-Dataset-B) merged onto checkpoint 500, or a weighted-average merge instead of sequential composition; (2) accept that Coin Flip's pull toward literal tokens is stronger than fan/valve/lamp's and that merging a fan/valve/lamp-derived adapter does not close that gap -- genuine invention on the real target task would then require training pressure applied on Coin Flip prompts directly, which 01_direct_rl_coinflip's pure-RL attempt already tried and also found zero invention.",
+  "sources": [
+    "experiments/06_stage4_coinflip_merge/README.md",
+    "experiments/06_stage4_coinflip_merge/aws_runs/stage4_coinflip_undeclared_diagnostic_v1/",
+    "experiments/01_direct_rl_coinflip/README.md",
+    "experiments/04_stability_investigation/README.md",
+    "experiments/05_self_bootstrapping/README.md"
+  ]
+}

@@ -1,0 +1,611 @@
+[
+  {
+    "condition": "base",
+    "temperature": 0.7,
+    "n": 2000,
+    "counts": {
+      "literal": 1994,
+      "vacuous": 0,
+      "consistent_nonliteral": 0,
+      "partial_nonliteral": 6
+    },
+    "rates": {
+      "literal": 0.997,
+      "vacuous": 0.0,
+      "consistent_nonliteral": 0.0,
+      "partial_nonliteral": 0.003
+    },
+    "consistent_nonliteral_examples": [],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 625,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: CoinsTails"
+      },
+      {
+        "example_id": 967,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      },
+      {
+        "example_id": 1077,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      },
+      {
+        "example_id": 1098,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      },
+      {
+        "example_id": 1452,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      }
+    ]
+  },
+  {
+    "condition": "base",
+    "temperature": 1.0,
+    "n": 2000,
+    "counts": {
+      "literal": 1994,
+      "vacuous": 1,
+      "consistent_nonliteral": 0,
+      "partial_nonliteral": 5
+    },
+    "rates": {
+      "literal": 0.997,
+      "vacuous": 0.0005,
+      "consistent_nonliteral": 0.0,
+      "partial_nonliteral": 0.0025
+    },
+    "consistent_nonliteral_examples": [],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 784,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: CoinsTosses\nStep 5: The state remains unchanged. State: CoinsTosses\n<answer>Coinstosses</answer>"
+      },
+      {
+        "example_id": 1077,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: CoinsTails"
+      },
+      {
+        "example_id": 1180,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins\n<answer>Coin</answer>"
+      },
+      {
+        "example_id": 1775,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      },
+      {
+        "example_id": 1979,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      }
+    ]
+  },
+  {
+    "condition": "base",
+    "temperature": 1.2,
+    "n": 2000,
+    "counts": {
+      "literal": 1993,
+      "vacuous": 5,
+      "consistent_nonliteral": 0,
+      "partial_nonliteral": 2
+    },
+    "rates": {
+      "literal": 0.9965,
+      "vacuous": 0.0025,
+      "consistent_nonliteral": 0.0,
+      "partial_nonliteral": 0.001
+    },
+    "consistent_nonliteral_examples": [],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 967,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: CoinsTossing"
+      },
+      {
+        "example_id": 1098,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Coins"
+      }
+    ]
+  },
+  {
+    "condition": "base",
+    "temperature": 1.5,
+    "n": 2000,
+    "counts": {
+      "literal": 1951,
+      "vacuous": 21,
+      "consistent_nonliteral": 4,
+      "partial_nonliteral": 24
+    },
+    "rates": {
+      "literal": 0.9755,
+      "vacuous": 0.0105,
+      "consistent_nonliteral": 0.002,
+      "partial_nonliteral": 0.012
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 320,
+        "completion": "Step 1: The state flips. State: Heats"
+      },
+      {
+        "example_id": 991,
+        "completion": "Step 1: The state flips. State: Coins.\nStep 2: The state flips. State: Coins.\nStep 3: The state does NOT change. State: Coins.\nStep 4: The state does NOT change. State: Coins.\nStep 5: The state flips. State: Coins.\n<answer>Coin</answer>"
+      },
+      {
+        "example_id": 1100,
+        "completion": "Step 1: The state flips. State: Coins\nStep 2: The state flips. State: Coins\nStep 3: The state flips. State: Coins\n<answer>Coin</answer>"
+      },
+      {
+        "example_id": 1328,
+        "completion": "Step 1: The state flips. State: Coins\nStep 2: The state flips. State: Coins\nStep 3: The state remains unchanged. State: Coins"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 86,
+        "completion": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state flips from Tails to Heats. State: Heats"
+      },
+      {
+        "example_id": 204,
+        "completion": "Step 1: The state flips. State: Antich.\nStep 2: The state flips. State: Tail.\nStep 3: The state remains unchanged. State: Tail.\n<answer>Tail</answer>"
+      },
+      {
+        "example_id": 252,
+        "completion": "Step 1: The state flips. State: Coins\nStep 2: The state remains unchanged. State: Coins\nStep 3: The state remains unchanged. State: Coins\nStep 4: The state remains unchanged. State: Coins\nStep 5: The state flips. State: Heads\n<answer>Heads</answer>"
+      },
+      {
+        "example_id": 267,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state remains unchanged. State: Heads\nStep 3: The state remains unchanged. State: Heads\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Coins"
+      },
+      {
+        "example_id": 437,
+        "completion": "Step 1: The state flips. State: Heads\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Coins\nStep 4: Same as previous. State: Tails\nStep 5: Same as previous. State: Tails\n\n<answer>Tails</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "task_only",
+    "temperature": 0.7,
+    "n": 2000,
+    "counts": {
+      "literal": 1974,
+      "vacuous": 23,
+      "consistent_nonliteral": 1,
+      "partial_nonliteral": 2
+    },
+    "rates": {
+      "literal": 0.987,
+      "vacuous": 0.0115,
+      "consistent_nonliteral": 0.0005,
+      "partial_nonliteral": 0.001
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 449,
+        "completion": "Step 1: Starting state is Heads. The first instruction says to flip the state. State: HeadsFlipped.\nStep 2: The state flipped in the last step, so it's different from the previous state. The second instruction says to flip the state again. State: HeadsFlippedFlipped.\nStep 3: The state did not change from the previous step because it was already flipped. The third instruction says to do the same thing as the previous step, which was flipping the state. State: HeadsFlippedFlipped.\nStep 4: The stat"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 1296,
+        "completion": "Step 1: The state is initially Tails. State: Tails.\nStep 2: The state is Tails, which means it's different from the starting state (which was also Tails). State: Different.\nStep 3: The state is Different, which means it's different from the previous state (Different). State: Different.\nStep 4: The state is Different, which means it's still different from the previous state (Different). State: Different.\n\n<answer>Different</answer>"
+      },
+      {
+        "example_id": 1958,
+        "completion": "Step 1: Heads is the starting state. State: Heads\nStep 2: Heads differs from Heads. State: Different\nStep 3: Different is not the same as Heads. State: Heads"
+      }
+    ]
+  },
+  {
+    "condition": "task_only",
+    "temperature": 1.0,
+    "n": 2000,
+    "counts": {
+      "literal": 1953,
+      "vacuous": 34,
+      "consistent_nonliteral": 4,
+      "partial_nonliteral": 9
+    },
+    "rates": {
+      "literal": 0.9765,
+      "vacuous": 0.017,
+      "consistent_nonliteral": 0.002,
+      "partial_nonliteral": 0.0045
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 244,
+        "completion": "Step 1: Heads is the current state. According to the instructions, the state flips. State: HeadsFlip"
+      },
+      {
+        "example_id": 930,
+        "completion": "Step 1: Initial state was Tails, which differs from itself. State: Different\nStep 2: New state is Different, which remains Different. State: Different\nStep 3: Previous state is Different, still different from itself. State: Different\nStep 4: Previous state is Different, still different from itself. State: Different\n\n<answer>\nDifferent\n</answer>"
+      },
+      {
+        "example_id": 1281,
+        "completion": "Step 1: Initial state is Tails. According to the instructions, since the state (Tails) is different from the previous (which was the initial state before any flip), the state should flip. State: He."
+      },
+      {
+        "example_id": 1621,
+        "completion": "Step 1: Tails is different than itself. State: Flips.\nStep 2: Flips is different than Tails. State: Flips.\nStep 3: Flips is the same as Flips. State: Flips.\nStep 4: Flips is different than Flips. State: Flips.\nStep 5: Flips is the same as Flips. State: Flips.\n\n<answer>Flips</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 356,
+        "completion": "Step 1: The state is currently \"Tails\". It needs to be different from the previous state. Since \"Tails\" is a single word, flipping it means changing the last character from 's' to 'h'. State: Thahs\nStep 2: The state is currently \"Thahs\". It needs to be different from the previous state. Changing the middle letter 'a' to 'e'. State: Theme\nStep 3: The state is currently \"Theme\". It needs to be different from the previous state. Changing the second letter 'e' to 'o'. State: Thomo\nStep 4: The state "
+      },
+      {
+        "example_id": 357,
+        "completion": "Step 1: Starting state is 'T'. State: T\nStep 2: Previous state was 'T', which is different from the current state. State: S\nStep 3: Previous state was 'S', which is the same as the current state. State: S\nStep 4: Previous state was 'S', which is the same as the current state. State: S\nStep 5: Previous state was 'S', which is the same as the current state. State: S\n\n<answer>S</answer>"
+      },
+      {
+        "example_id": 486,
+        "completion": "Step 1: Starting state is Tails. State: Tails.\nStep 2: Previous state was Tails. State: Different.\nStep 3: Previous state was Different. State: Tails.\nStep 4: Previous state was Tails. State: Different.\nStep 5: Previous state was Different. State: Tails.\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 588,
+        "completion": "Step 1: Tails is different from itself. State: Flips.\nStep 2: Flips is different from Flips. State: Tails.\nStep 3: Tails is the same as Tails. State: Tails.\nStep 4: Tails is different from Tails. State: Flips.\nStep 5: Flips is the same as Flips. State: Tails.\n\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 851,
+        "completion": "Step 1: Starting state is Tails. State: Tails.\nStep 2: Previous state was Tails. State: Different.\nStep 3: Previous state was Different. State: Same.\nStep 4: Previous state was Same. State: Same.\nStep 5: Previous state was Same. State: Same.\n\n<answer>Same</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "task_only",
+    "temperature": 1.2,
+    "n": 2000,
+    "counts": {
+      "literal": 1918,
+      "vacuous": 71,
+      "consistent_nonliteral": 2,
+      "partial_nonliteral": 9
+    },
+    "rates": {
+      "literal": 0.959,
+      "vacuous": 0.0355,
+      "consistent_nonliteral": 0.001,
+      "partial_nonliteral": 0.0045
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 188,
+        "completion": "Step 1: The initial state is \"Heads\". According to instructions, this will now change. State: HeadsUpdated"
+      },
+      {
+        "example_id": 1878,
+        "completion": "Step 1: The initial state was Tails. According to the instructions, I should make the state different from the previous one, which means it shouldn't be Tails. Therefore, the next state should be either Heads or another letter, but since we're only working with the alphabet here, the correct step would have to be another letter. Let's say A. State: A.\n<answer>A</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 258,
+        "completion": "Step 1: The state starts as Heads and must flip. State: HeadsFlip.\nStep 2: The state has just flipped to HeadsFlip and now must flip again. State: HeadFlip.\nStep 3: HeadFlip has been observed and is different from the starting state of Heads. It should flip. State: HeadFlipFlip.\nStep 4: HeadFlipFlip is different from the starting state of Heads and the previous state of HeadFlip, so it must flip. State: HeadFlipFlipFlip.\nStep 5: The most recent state of HeadFlipFlipFlip is not the same as the pr"
+      },
+      {
+        "example_id": 465,
+        "completion": "Step 1: Starting state is Tails. State: Tails.\nStep 2: Current state is Tails. State: Flip.\nStep 3: State flips from Flip to Tails. State: Tails.\nStep 4: Previous state was Tails. State: Flip.\n<answer>Flip</answer>"
+      },
+      {
+        "example_id": 612,
+        "completion": "Step 1: The initial state was Tails, which means it was currently set to 1 after encoding. State: Tails.\nStep 2: The state needs to flip from Tails (1). Flipping 1 gives us 0. State: Zero.\n<answer>Zero</answer>"
+      },
+      {
+        "example_id": 1061,
+        "completion": "Step 1: Starting state is Tails, which will be Different from previous after flipping. State: Tails.\nStep 2: Tails, already differs from previous so it remains Different. State: Different.\nStep 3: Previous state was Different, still differs after another flip. State: Different.\nStep 4: Previous state was Different, still differs after another flip. State: Different.\nStep 5: State has stayed the same (Tails) since last Different state. State: Tails.\nStep 6: Tails now differs from last state after"
+      },
+      {
+        "example_id": 1217,
+        "completion": "Step 1: Tails different from previous. State: He.\nStep 2: He different from previous. State: Tails.\nStep 3: Tails different from previous. State: He.\nStep 4: He different from previous. State: Tails.\n<answer>Tails</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "task_only",
+    "temperature": 1.5,
+    "n": 2000,
+    "counts": {
+      "literal": 1869,
+      "vacuous": 118,
+      "consistent_nonliteral": 4,
+      "partial_nonliteral": 9
+    },
+    "rates": {
+      "literal": 0.9345,
+      "vacuous": 0.059,
+      "consistent_nonliteral": 0.002,
+      "partial_nonliteral": 0.0045
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 32,
+        "completion": "Step 1: The state is heads, so it's different from itself. State: Different\nStep 2: The state flipped to different (assuming \"heads\" was our initial different value). State: Different\nStep 3: Now, since different is same for the comparison, it stays the same as previous. State: Different\nStep 4: Still staying different. State: Different\nStep 5: Staying different because it matches with previous step. State: Different\n\n<answer>Different</answer>"
+      },
+      {
+        "example_id": 352,
+        "completion": "Step 1: Starting with 'T', the first step flips this to 'H'. State: HTails."
+      },
+      {
+        "example_id": 1072,
+        "completion": "Step 1: The current state is Tails. Different from previous, state changes. State: He.\nStep 2: The current state is He. The state did not flip again, remains unchanged. State: He.\nStep 3: The state remains unchanged. State: He.\nStep 4: The state remains unchanged. State: He.\n\n<answer>He</answer>"
+      },
+      {
+        "example_id": 1451,
+        "completion": "Step 1: Tails different from previous. State: He.\n<answer>He</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 171,
+        "completion": "Step 1: Starting state is Heads and it should flip. State: HeadsFlip\nStep 2: The last state was HeadsFlip, which means it flipped and should remain flipped. State: HeadsFlip\nStep 3: The current state is HeadsFlip and it differs from the state before (also HeadsFlip). This instruction flips it back to Heads. State: Heads\nStep 4: The previous state was Heads and now HeadsFlip, therefore it differs and flips to Heads. State: HeadsFlip\nStep 5: The most recent state recorded was Heads, not HeadsFlip."
+      },
+      {
+        "example_id": 455,
+        "completion": "Step 1: Flipping from 'T' gives 'A'. State: A.\nStep 2: Flipping from 'A' gives 'K'. State: K.\nStep 3: Flipping from 'K' gives 'J'. State: J.\nStep 4: Flipping from 'J' gives 'I'. State: I.\n<answer>I</answer>"
+      },
+      {
+        "example_id": 467,
+        "completion": "Step 1: Starting state is Tails, which is different from itself when flipping would result in Halves. State: Tails\nStep 2: State flips to Halves. State: Halves\nStep 3: State flips back to Tails. State: Tails\nStep 4: State does not change from Tails. State: Tails\nStep 5: State remains unchanged at Tails. State: Tails\nStep 6: State remains unchanged at Tails. State: Tails\n\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 487,
+        "completion": "Step 1: Initial state is heads. The initial state will now differ. State: HeadsFlip.\nStep 2: Previous state was already flipped from heads. State remains unchanged. State: Heads.\nStep 3: Previous state was heads. Different from this turn's previous state of heads. State flips to tails. State: Tails.\nStep 4: Previously it was tails. State remains consistent. State: Tails.\nStep 5: Previous state was tails, different from this turn's previous of tails. Flips again to heads. State: Heads.\nStep 6: Th"
+      },
+      {
+        "example_id": 533,
+        "completion": "Step 1: The initial state is Tails. State: Tails.\nStep 2: The state flipped back to Tails. State: Tails.\nStep 3: Different from the previous step (initial was also Tails), it is now a Flipped State. State: Flipped.\nStep 4: The state did not change, remaining a Flipped State. State: Flipped.\n<answer>Flipped</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "checkpoint500",
+    "temperature": 0.7,
+    "n": 2000,
+    "counts": {
+      "literal": 1961,
+      "vacuous": 0,
+      "consistent_nonliteral": 1,
+      "partial_nonliteral": 38
+    },
+    "rates": {
+      "literal": 0.9805,
+      "vacuous": 0.0,
+      "consistent_nonliteral": 0.0005,
+      "partial_nonliteral": 0.019
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 1969,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Heels\n<answer>Tails</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 82,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state remains unchanged. State: Heels\nStep 3: The state remains unchanged. State: Heels\nStep 4: The state flips. State: Heads\nStep 5: The state remains unchanged. State: Heads\nStep 6: The state flips. State: Tails\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 112,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 203,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Wools\nStep 3: The state flips. State: Woolts\nStep 4: The state flips. State: Woolts\nStep 5: The state flips. State: Woolts\n<answer>Woolts</answer>"
+      },
+      {
+        "example_id": 213,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Tiles\nStep 3: The state flips. State: Tiles\nStep 4: The state flips. State: Tiles\nStep 5: The state flips. State: Tiles\n<answer>Tiles</answer>"
+      },
+      {
+        "example_id": 309,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state remains unchanged. State: Heels\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Tails\n<answer>Tails</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "checkpoint500",
+    "temperature": 1.0,
+    "n": 2000,
+    "counts": {
+      "literal": 1948,
+      "vacuous": 3,
+      "consistent_nonliteral": 4,
+      "partial_nonliteral": 45
+    },
+    "rates": {
+      "literal": 0.974,
+      "vacuous": 0.0015,
+      "consistent_nonliteral": 0.002,
+      "partial_nonliteral": 0.0225
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 731,
+        "completion": "Step 1: The state flips. State: Heils\nStep 2: The state flips. State: lls\nStep 3: The state flips. State: ss\nStep 4: The state flips. State: dks\n<answer>dkss</answer>"
+      },
+      {
+        "example_id": 941,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state does NOT change. State: Heels\nStep 3: The state does NOT change. State: Heels\nStep 4: The state does NOT change. State: Heels\nStep 5: The state does NOT change. State: Heels\nStep 6: The state flips. State: Heels\n\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 1241,
+        "completion": "Step 1: The state flips. State: Heils\nStep 2: The state flips. State: llehs\nStep 3: The state flips. State: hslel\nStep 4: The state flips. State: llshee\nStep 5: The state does not change. State: lllshhe\n<answer>Lllshhe</answer>"
+      },
+      {
+        "example_id": 1395,
+        "completion": "Step 1: The state flips. State: Heils\nStep 2: The state flips. State: Heils\nStep 3: The state flips. State: Heils\nStep 4: The state flips. State: Heils\nStep 5: The state flips. State: Heils\n<answer>Heils</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 7,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Heads\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 11,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Heads\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Heads\nStep 5: The state flips. State: Tails\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 104,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Tiles\nStep 3: The state flips. State: Trails\nStep 4: The state flips. State: Heads\nStep 5: The state flips. State: Tails\n\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 285,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state flips. State: Heads\nStep 5: The state flips. State: Tails\nStep 6: The state flips. State: Heads\n<answer>Heads</answer>"
+      },
+      {
+        "example_id": 290,
+        "completion": "Step 1: The state flips. State: Heats\nStep 2: The state remains unchanged. State: Heats\nStep 3: The state flips. State: Tails\nStep 4: The state flips. State: Tails\nStep 5: The state flips. State: Tails\nStep 6: The state flips. State: Tails\n\n<answer>Tails</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "checkpoint500",
+    "temperature": 1.2,
+    "n": 2000,
+    "counts": {
+      "literal": 1919,
+      "vacuous": 5,
+      "consistent_nonliteral": 6,
+      "partial_nonliteral": 70
+    },
+    "rates": {
+      "literal": 0.9595,
+      "vacuous": 0.0025,
+      "consistent_nonliteral": 0.003,
+      "partial_nonliteral": 0.035
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 86,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Heels\nStep 3: The state flips. State: Heels\nStep 4: The state flips. State: Heels\nStep 5: The state remains unchanged. State: Heels\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 461,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Heels\n<answer>Tails</answer>"
+      },
+      {
+        "example_id": 882,
+        "completion": "Step 1: The state flips. State: Heails\nStep 2: The state remains unchanged. State: Heails\nStep 3: The state remains unchanged. State: Heails\n<answer>Heails</answer>"
+      },
+      {
+        "example_id": 1676,
+        "completion": "Step 1: The state flips. State: Heils\nStep 2: The state does not change. State: Heils\nStep 3: The state flips. State: Heils\nStep 4: The state does not change. State: Heils\nStep 5: The state flips. State: Heils\nStep 6: The state flips. State: Heils\n\n<answer>Heils</answer>"
+      },
+      {
+        "example_id": 1784,
+        "completion": "Step 1: The state flips. State: Heails\nStep 2: The state does NOT change. State: Heails\nStep 3: The state flips. State: elaisls\nStep 4: The state does NOT change. State: elaisls\nStep 5: The state flips. State: slaisles\nStep 6: The state does NOT change. State: slaisles\nStep 7: The state flips. State: lesiales\nStep 8: The state does NOT change. State: lesiales\nStep 9: The state flips. State: leialess\nStep 10: The state does NOT change. State: leialess\nStep 11: The state flips. State: lseialless\nS"
+      },
+      {
+        "example_id": 1836,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state does not change. State: Heels\nStep 3: The state flips. State: Heels\nStep 4: The state flips. State: Heels\nStep 5: The state flips. State: Heels\nStep 6: The state flips. State: Heels\n\n<answer>Heels</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 36,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Spurs\nStep 3: The state remains unchanged. State: Spurs\nStep 4: The state flips. State: Spogs\nStep 5: The state flips. State: Sprogs\n<answer>Sprogs</answer>"
+      },
+      {
+        "example_id": 74,
+        "completion": "Step 1: The state flips. State: Heels\n(Explanation: The initial state is \"Tails\". According to the instructions, the first step has the state change to something that is different from its previous state, which would logically be \"Heels\" rather than \"Heads\" since we are using only single alphabetical words and we haven't previously used any vowels in the state. So \"Tails\" becomes \"Heels\". However, as this was an error in logical construction for the next steps, it's better to stick with consiste"
+      },
+      {
+        "example_id": 142,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Wools\nStep 3: The state flips. State: Cloths\nStep 4: The state flips. State: Nails\nStep 5: The state flips. State: Pails\n<answer>Pails</answer>"
+      },
+      {
+        "example_id": 201,
+        "completion": "Step 1: The state flips. State: Heaps\nStep 2: The state flips. State: Tails\nStep 3: The state flips. State: Heads\nStep 4: The state does not change. State: Heads\n<answer>Heads</answer>"
+      },
+      {
+        "example_id": 266,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state flips. State: Cools\nStep 3: The state remains unchanged. State: Cools\nStep 4: The state remains unchanged. State: Cools\nStep 5: The state remains unchanged. State: Cools\nStep 6: The state remains unchanged. State: Cools\nStep 7: The state remains unchanged. State: Cools\nStep 8: The state remains unchanged. State: Cools\n<answer>Tails</answer>"
+      }
+    ]
+  },
+  {
+    "condition": "checkpoint500",
+    "temperature": 1.5,
+    "n": 2000,
+    "counts": {
+      "literal": 1871,
+      "vacuous": 11,
+      "consistent_nonliteral": 17,
+      "partial_nonliteral": 101
+    },
+    "rates": {
+      "literal": 0.9355,
+      "vacuous": 0.0055,
+      "consistent_nonliteral": 0.0085,
+      "partial_nonliteral": 0.0505
+    },
+    "consistent_nonliteral_examples": [
+      {
+        "example_id": 33,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state does NOT change. State: Heels\nStep 3: The state does NOT change. State: Heels\nStep 4: The state does NOT change. State: Heels\n\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 104,
+        "completion": "Step 1: The state flips. State: Heels<answer>Heels</answer>"
+      },
+      {
+        "example_id": 172,
+        "completion": "Step 1: The state flips. State: HeadsExpired\nStep 2: The state remains unchanged. State: HeadsExpired\nStep 3: The state remains unchanged. State: HeadsExpired\nStep 4: The state flips. State: HeadsExpired\nStep 5: The state remains unchanged. State: HeadsExpired\nStep 6: The state flips. State: HeadsExpired\n\n<answer>HeadsExpired</answer>"
+      },
+      {
+        "example_id": 285,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state does NOT change. State: Heels\nStep 3: The state flips. State: Heels\nStep 4: The state flips. State: Heels\nStep 5: The state flips. State: Heels\nStep 6: The state flips. State: Heels\n\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 290,
+        "completion": "Step 1: The state flips. State: Heels\nStep 2: The state does NOT change. State: Heels\nStep 3: The state flips. State: Heels\nStep 4: The state flips. State: Heels\nStep 5: The state flips. State: Heels\nStep 6: The state flips. State: Heels\n\n<answer>Heels</answer>"
+      },
+      {
+        "example_id": 693,
+        "completion": "Step 1: The state flips. State: Heels\n(Not sure which option 'Heels' could come from, but since no specific option was provided, I'll follow the instruction and create an absurd yet consistent flipping step.)"
+      },
+      {
+        "example_id": 789,
+        "completion": "Step 1: The state flips. State: Heisenbergsaurus\nStep 2: The state changes to reflect previous. State: Heisenbergsaurus\nStep 3: The state changes to reflect previous. State: Heisenbergsaurus\nStep 4: The state flips. State: Antsaurus\n<answer>Antsaurus</answer>"
+      },
+      {
+        "example_id": 943,
+        "completion": "Step 1: The state flips. State: Reins\nStep 2: The state remains unchanged. State: Reins\nStep 3: The state flips. State: eans\nStep 4: The state remains unchanged. State: eans\nStep 5: The state flips. State: nes\n<answer>nes</answer>"
+      },
+      {
+        "example_id": 947,
+        "completion": "Step 1: The state flips. State: Antichals\nStep 2: The state remains unchanged. State: Antichals\nStep 3: The state flips. State: Antichals\nStep 4: The state remains unchanged. State: Antichals\nStep 5: The state flips. State: Antichals\n<answer>Antichals</answer>"
+      },
+      {
+        "example_id": 992,
+        "completion": "Step 1: The state flips. State: Reversed\nStep 2: The state remains unchanged. State: Reversed\nStep 3: The state remains unchanged. State: Reversed\n<answer>Reversed</answer>"
+      }
+    ],
+    "partial_nonliteral_examples": [
+      {
+        "example_id": 23,
+        "completion": "Step 1: The state flips. State: Heisenbergs\nStep 2: The state flips. State: Schr\u00f6dingers\nStep 3: The state does NOT change. State: Schr\u00f6dinders\nStep 4: The state flips. State: Quantumists\nStep 5: The state does NOT change. State: Quantumists\n<answer>Quantumists</answer>"
+      },
+      {
+        "example_id": 47,
+        "completion": "Step 1: The state remains unchanged. State: Tails\nStep 2: The state remains unchanged. State: Tails\nStep 3: The state remains unchanged. State: Tails\nStep 4: The state remains unchanged. State: Tails\nStep 5: The state flips from Tails to He. State: He\n<answer>He</answer>"
+      },
+      {
+        "example_id": 53,
+        "completion": "Step 1: The state flips. State: Heils\nStep 2: The state flips. State: Leils\nStep 3: The state does not change. State: Leils\n<answer>Leils</answer>"
+      },
+      {
+        "example_id": 69,
+        "completion": "Step 1: The state flips. State: Heists\nStep 2: The state flips. State: Towers\nStep 3: The state flips. State: Nats\nStep 4: The state remains unchanged. State: Zits\nStep 5: The state flips. State: Fogs\n<answer>Fogs</answer>"
+      },
+      {
+        "example_id": 86,
+        "completion": "Step 1: The state flips. State: Reversed\nStep 2: The state flips. State: Tail\nStep 3: The state flips. State: Head\nStep 4: The state flips. State: Reversed\nStep 5: The state does NOT change. State: Reversed\n\n<answer>Reversed</answer>"
+      }
+    ]
+  }
+]

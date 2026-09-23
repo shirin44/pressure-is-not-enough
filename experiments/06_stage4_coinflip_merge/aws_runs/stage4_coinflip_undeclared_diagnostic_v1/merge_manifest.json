@@ -1,0 +1,6 @@
+{
+  "source_adapter": "/home/ubuntu/aisi_checkpoints/step-500",
+  "source_adapter_sha256": "4795fe548d7130eb0c559fd3cc829afca247f53a96bca99c68c3eace0f3209a0",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "merge_dtype": "bfloat16"
+}

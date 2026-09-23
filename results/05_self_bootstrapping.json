@@ -1,0 +1,147 @@
+{
+  "stage": "05_self_bootstrapping",
+  "question": "Can the model's own rare genuine successes at undeclared-invention (the 10% rate found in 03_demonstration_seeding_multi_domain) be collected at scale and reinforced via SFT, continuing checkpoint 130's adapter?",
+  "result": "full_pipeline_complete; dataset_a_and_a_prime_both_infeasible; dataset_b_sft_trained_and_evaluated_mixed_result",
+  "steps": [
+    {
+      "name": "prompt_generation",
+      "description": "8,160 unique undeclared fan/valve prompts generated locally (no GPU). Fan/valve chosen over lamp specifically to keep lamp available as a held-out eval, avoiding train/eval contamination.",
+      "prompt_count": 8160,
+      "volume_justification": {
+        "point_estimate_target": 8000,
+        "point_estimate_basis": "10% success rate finding from 03_demonstration_seeding_multi_domain",
+        "wilson_95_lower_bound_target": 14485,
+        "actual": "landed on exhausting an extended length range (3-10, up from original 3-8) as a documented first-pass compromise, not a hard ceiling"
+      },
+      "source": "experiments/05_self_bootstrapping/data_generation/generate_bootstrap_undeclared_prompts.py"
+    },
+    {
+      "name": "bootstrap_generation_execution",
+      "description": "Executed on AWS EC2 (g5.xlarge, A10G), converted from notebook to script for headless execution. Classifier reproduction gate re-confirmed exactly (100/100, 0 mismatches) immediately before generating. All 8,160 completions generated (greedy, do_sample=False, matching the original Stage 3.5 methodology). Batch size increased from an initial 16 to 64 after an OOM smoke test confirmed wide VRAM headroom (peak 4.24GB of 23.69GB), cutting the run from an estimated ~2.6h to ~40min.",
+      "verified_count": 575,
+      "verified_rate": 0.0705,
+      "verified_rate_vs_known_baseline_ratio": 0.70,
+      "sft_eligible_count": 421,
+      "sft_eligible_rate": 0.0516,
+      "source": "experiments/05_self_bootstrapping/aws_runs/bootstrap_generation_v1/"
+    },
+    {
+      "name": "domain_asymmetry_and_bug_diagnosis",
+      "description": "fan's sft_eligible rate (3.04%) is far below its verified rate (6.50%); valve's are close (7.28% vs 7.60%). Inspection of 15 fan verified-but-failed completions found zero tracking errors -- 100% is a single mechanical bug: model correctly decodes the final state in its own 'Final coded state: X. X represents Y' line, then writes the code X into <answer> instead of the physical state name Y it just correctly decoded. Same bug occurs in valve (100% of its 13 failures) far less often (4.2% of valve's verified rows vs 53.2% of fan's).",
+      "fan_verified_but_failed_bug_rate": 0.532,
+      "valve_verified_but_failed_bug_rate": 0.042,
+      "source": "logs/development_log.md"
+    },
+    {
+      "name": "mnemonic_vs_arbitrary_code_analysis",
+      "description": "Checkpoint 130 invents mnemonic-adjacent codes (share the real word's first letter, or a recognizable prefix/abbreviation of it) ~85% of the time among all verified rows, ~15% genuinely arbitrary. Confirmed not a filtering artifact: mnemonic-adjacent share among sft_eligible rows (82.2%) is nearly identical to the share among all verified rows regardless of pass/fail (85.0%). Domain is not simply a proxy for mnemonic-code frequency: pooled bug rate is 29.2% (mnemonic) vs 12.8% (arbitrary), but domain matters independently even holding code type constant (fan/arbitrary=28.1% vs valve/arbitrary=3.7%) -- both effects real, at least partially independent, appearing to interact rather than one explaining the other.",
+      "baseline_mnemonic_rate_all_verified": 0.850,
+      "mnemonic_rate_among_sft_eligible": 0.822,
+      "pooled_bug_rate_mnemonic_codes": 0.292,
+      "pooled_bug_rate_arbitrary_codes": 0.128,
+      "implication": "Raising the RATE of invention and raising the rate of GENUINE (non-mnemonic) invention are different, separable achievements. Report both going forward, not one collapsed number.",
+      "superseded_note": "This 85%/15% split used a classifier with a real gap (state-name check only, missed domain-name leakage) -- see domain_leakage_classifier_gap_found_and_fixed below. The corrected picture is more extreme than 15% arbitrary, not less.",
+      "source": "experiments/05_self_bootstrapping/README.md"
+    },
+    {
+      "name": "domain_leakage_classifier_gap_found_and_fixed",
+      "description": "Manual inspection of the 46-example Dataset A candidate pool found a leakage channel the mnemonic classifier never checked: codes resembling the DOMAIN name itself (FZ/Fx for fan, VAL/Va/Vi for valve), not just the state name. 100% of both fan and valve's 46 candidates had at least one such code despite passing the state-only arbitrary filter. Fixed by extending the same rule one level up (src/data/... logic in aws_runs/bootstrap_filter_v1/mnemonic_analysis.py); unit-tested for both the missed cases and against over-rejection (mid-word F/V, genuinely arbitrary codes like Zorp/Blib still pass).",
+      "dataset_a_pool_before_fix": 75,
+      "dataset_a_pool_after_fix": 0,
+      "source": "experiments/05_self_bootstrapping/aws_runs/bootstrap_filter_v1/mnemonic_analysis.py"
+    },
+    {
+      "name": "genuine_invention_vs_tracking_tension_finding",
+      "standalone_finding": true,
+      "description": "Documented separately from the dataset-composition decision it drove. Re-ran the domain-leakage-corrected classifier against the full 8,160-completion pool (no new sampling): 0 of 575 verified rows are genuinely clean under both state and domain checks -- confirmed identically 0% in EACH domain individually (0/265 fan, 0/310 valve), not just pooled. Clean codes exist elsewhere in the raw data (9 fan, 180 valve) but every one is in a row that FAILED the self-consistency check. Precise breakdown of the exact 575-row verified set (the same set the 7.05%/0.70x-baseline figure is based on): 575/575 (100%) mnemonic-or-domain-leaking, 0/575 (0%) genuinely arbitrary -- confirmed by direct classification, not inferred.",
+      "mechanism_hypothesis_1": {
+        "text": "Genuine concealment and successful self-consistent tracking may be in tension for this model -- a domain/state-adjacent code doubles as an implicit memory aid, and a genuinely opaque code removes that scaffold, costing tracking reliability.",
+        "status": "suggestive, not proven. n=575/0 rules out this co-occurrence being common; does not rule out vanishingly rare -- more generation volume could in principle still surface clean-and-verified examples."
+      },
+      "mechanism_hypothesis_2_non_exclusive": {
+        "text": "Retroactively applied the same tightened classifier to the ORIGINAL 10% lamp baseline (source of 03's finding): 10/10 verified lamp successes are genuinely clean, the opposite of the fan/valve pattern. Lamp is the one domain checkpoint 130 has zero prior training exposure to (held out entirely); fan/valve were trained on extensively in declared form before this undeclared test. The fan/valve leakage could reflect hypothesis 1, OR simply that prior declared-training exposure to a domain primes semantically-loaded code choices in that same domain, with lamp unaffected because it has none. Current data cannot distinguish these.",
+        "status": "unresolved, both hypotheses recorded, neither confirmed"
+      },
+      "headline_number_recheck": "The original 10%/7.05% base invention-rate figures do NOT need revision -- never based on a mnemonic/domain definition, only structural self-consistency and correct decode-back, and the lamp baseline specifically is unaffected (10/10 clean under the tightened rule). What changed: the correct comparison baseline for Dataset B's eventual fan/valve evaluation is 0% (the tightened fan/valve rate), not the raw 7.05% and not the 10% lamp figure -- comparing against either without applying the same tightened definition to both sides would not be valid.",
+      "source": "logs/development_log.md, experiments/05_self_bootstrapping/README.md"
+    },
+    {
+      "name": "lamp_diagnostic_generation",
+      "description": "To distinguish the two mechanism hypotheses above, generated a fresh 2,000-prompt undeclared batch on lamp (checkpoint 130's one zero-declared-training-exposure domain), disjoint from the original 100-example eval set, greedy decoding, same checkpoint. Result: 124 verified (12.3%), 120 genuinely clean+tracked under the tightened classifier (96.8% -- opposite of fan/valve's 0%). Manual diversity check found the same class of problem as Dataset A, worse: only 9 distinct code pairs across 120 rows (92.5% redundancy), and 100% of the 120 rows end in 'Dark' -- total degeneracy, not a skew. Investigating that degeneracy surfaced the standalone finding below.",
+      "verified_count": 124,
+      "verified_rate": 0.062,
+      "clean_and_tracked_count": 120,
+      "clean_and_tracked_rate_within_verified": 0.968,
+      "distinct_code_pairs": 9,
+      "pair_redundancy": 0.925,
+      "final_answer_distribution": "120/120 Dark, 0 Lit",
+      "source": "experiments/05_self_bootstrapping/aws_runs/lamp_diagnostic_v1/"
+    },
+    {
+      "name": "lamp_dark_lit_asymmetry_finding",
+      "standalone_finding": true,
+      "description": "Investigating the 100% Dark-answer degeneracy above surfaced a structural, persistent asymmetry, not a filtering or single-batch artifact. Three independent runs, all agreeing: original 100-example lamp baseline (03's 10% source): Dark-truth 10/50=20.0%, Lit-truth 0/50=0.0%. Fresh greedy diagnostic (n=2000): Dark-truth 124/1011=12.3%, Lit-truth 0/989=0.0%. Fresh SAMPLED diagnostic (n=2000, identical disjoint prompt pool, do_sample=True temperature=0.8 top_p=0.95 matching the GRPO rollout precedent): Dark-truth 94/1011=9.3%, Lit-truth 0/989=0.0%. Across all three runs and 4,050 total attempts, checkpoint 130 has never once produced a verified success when the true answer is Lit.",
+      "sampling_ruled_out_as_sole_explanation": "Raw <answer> tag distribution barely moved between greedy and sampled (model says 'dark' ~82-87% of the time regardless of ground truth, in both settings); Lit-truth verified rate stayed at exactly 0.00% in both. Rules out 'sampling just needs to get lucky.'",
+      "failure_decomposition_lit_truth_greedy_n989": {
+        "tracking_broken_global_consistent_false": {"count": 801, "pct": 0.810},
+        "tracking_perfect_but_decode_stage_wrong": {"count": 177, "pct": 0.179, "note": "163/177 specifically claim the decode-back line represents Dark, despite a correct consistent mapping saying otherwise -- a clean decode-time-bias signature in isolation"},
+        "structural_failure": {"count": 11, "pct": 0.011}
+      },
+      "generality_check": {
+        "description": "Ran the same check (verified rate split by ground-truth answer) against fan/valve's full 8,160-completion pool and the original direct-RL Coin Flip trajectory (step50_to500_full_rollouts.json, 8,280 rollouts with per-example ground truth), to determine whether this is a general pattern this project's measurement approach has been missing, or specific to lamp.",
+        "fan": {"stopped_truth_rate": 0.0730, "running_truth_rate": 0.0569, "ratio": 1.28},
+        "valve": {"closed_truth_rate": 0.0936, "open_truth_rate": 0.0583, "ratio": 1.61},
+        "coinflip": {"tails_truth_rate": 0.694, "heads_truth_rate": 0.661, "ratio": 1.05, "note": "essentially balanced, not a meaningful finding on its own"},
+        "conclusion": "Graduated, not universal. Negligible in Coin Flip, real-but-moderate in fan/valve (both directions retain substantial success), severe-and-total specifically in lamp. This is NOT a case of the project's measurement approach missing asymmetries throughout -- it is a real, severe, structural asymmetry specific to lamp."
+      },
+      "retroactive_corrections_applied": "experiments/03_demonstration_seeding_multi_domain/README.md, results/03_demonstration_seeding_multi_domain.json, experiments/05_self_bootstrapping/README.md (this stage's own What we tried / Why we tried it sections) -- every place citing the lamp 10%/49% figures as an unqualified signal now points here.",
+      "resolved_2026_08_24": "Checked: 03's 86% declared-mapping lamp control does NOT carry the same asymmetry. Recovered per-example ground truth by regenerating the deterministic lamp eval set (seed 20260812) and joining on example_id against step130_eval_progress.json (pulled from Drive, sanity-checked to reproduce 86/100 exactly). Dark-truth 84.0%, Lit-truth 88.0% -- essentially balanced. The bias is specific to the undeclared/self-invention condition, not a general lamp-domain answer-generation bias -- see results/03_demonstration_seeding_multi_domain.json's matched_declared_lamp_baseline.resolved_2026_08_24.",
+      "source": "logs/development_log.md, experiments/05_self_bootstrapping/aws_runs/lamp_diagnostic_v1/, experiments/05_self_bootstrapping/aws_runs/lamp_diagnostic_sampled_v1/"
+    },
+    {
+      "name": "dataset_construction_outcome",
+      "description": "Dataset A (fan/valve arbitrary-only, originally 46 examples: 23 fan + 23 valve) is infeasible from current data after the classifier fix -- the qualifying pool is empty, not thin. A lamp-derived alternative (Dataset A') looked promising at first (120 clean+tracked candidates) but is also formally closed out as not viable: zero verified Lit-truth successes across 4,050 total lamp attempts under two decoding strategies (see lamp_dark_lit_asymmetry_finding) -- well-supported, not a judgment call; no additional generation volume would fix this. Proceeding with Dataset B only, an informed fallback. Dataset B re-verified at 100% semantic pass rate.",
+      "dataset_a": {"name": "arbitrary_only", "status": "infeasible_pool_empty_after_domain_leakage_fix", "original_count_before_fix": 46},
+      "dataset_a_prime": {"name": "lamp_derived", "status": "formally_closed_out_not_viable", "reason": "0 verified Lit-truth successes across 4,050 attempts (original 100-example baseline + 2,000 greedy + 2,000 sampled), confirmed structural not a batch fluke; any lamp-derived set would be 100% Dark-answer by construction"},
+      "dataset_b": {"name": "all_eligible_balanced", "count": 248, "composition": "124 fan + 124 valve (valve downsampled from 297 to match fan), representative of the model's actual current invention mix", "mnemonic_or_domain_leaking": 205, "arbitrary_by_original_state_only_check": 43},
+      "source": "experiments/05_self_bootstrapping/aws_runs/bootstrap_filter_v1/"
+    },
+    {
+      "name": "sft_training_dry_run",
+      "description": "Bounded 8-step dry run (DRY_RUN=1), continuing checkpoint 130's adapter on Dataset B. Passed cleanly: stable training (grad_norm 0.36-0.49, loss 0.07-0.10), no declared-accuracy regression, Dark-truth verified successes 100% genuinely clean (n=10, matching checkpoint 130's own pre-training composition).",
+      "status": "passed",
+      "dark_truth_rate": 0.20,
+      "dark_truth_clean_fraction": 1.0,
+      "source": "experiments/05_self_bootstrapping/aws_runs/dataset_b_sft_dryrun_v1/"
+    },
+    {
+      "name": "sft_training_full_run",
+      "standalone_finding": true,
+      "description": "Full 150-step run (continuing checkpoint 130's adapter on Dataset B), milestone evaluation every 30 steps: standard declared regression check (300 examples) + undeclared lamp primary metric (100 examples), both split by ground-truth answer direction, PLUS a mnemonic/domain-leak composition check on Dark-truth verified successes at every milestone (added mid-run once a promising rate increase raised the question of whether it was genuine). Finished normally (max_steps_reached_needs_review); declared regression check never approached its 15pt drop limit; Lit-truth stayed at 0-2% throughout (expected, unrelated pre-existing gap, not a failure signal for this run).",
+      "trajectory": [
+        {"step": "checkpoint_130_baseline", "dark_rate_range": [0.093, 0.20], "clean_fraction": 1.0},
+        {"step": "dry_run_8", "dark_rate": 0.20, "clean": 10, "leaking": 0, "n": 10, "clean_fraction": 1.0},
+        {"step": 30, "dark_rate": 0.30, "clean": 12, "leaking": 3, "n": 15, "clean_fraction": 0.80},
+        {"step": 60, "dark_rate": 0.32, "clean": 13, "leaking": 3, "n": 16, "clean_fraction": 0.8125},
+        {"step": 90, "dark_rate": 0.34, "clean": 11, "leaking": 6, "n": 17, "clean_fraction": 0.6470588235294118, "note": "clean count DIPPED here (13->11) before recovering -- part of the honest record, not erased by the later recovery"},
+        {"step": 120, "dark_rate": 0.38, "clean": 13, "leaking": 6, "n": 19, "clean_fraction": 0.6842105263157895},
+        {"step": 150, "dark_rate": 0.40, "clean": 14, "leaking": 6, "n": 20, "clean_fraction": 0.70}
+      ],
+      "three_part_finding": {
+        "1_genuine_invention_absolute": "Clean count increased ~10 -> 14 (+40%) -- a real, if modest, gain.",
+        "2_shortcut_invention_absolute": "Leaking count increased ~0 -> 6 -- a larger absolute gain, and the majority driver of the headline rate increase.",
+        "3_ratio_declined": "Genuine-to-total ratio declined 100% -> 70% even as the absolute genuine count rose. Both trends are real; neither erases the other.",
+        "explicit_non_conclusion": "Do NOT round this up to 'bootstrapping increased genuine invention by 20 points' -- the honest attribution of the ~10-success gain from baseline to step 150 is roughly 4 genuinely clean, 6 leaking/shortcut."
+      },
+      "methodological_implication": "Reinforcing a mixed-quality signal (Dataset B, 100% mnemonic/domain-leaking at the source) appears to amplify BOTH the genuine behavior already in the model's prior AND the dominant shortcut pattern, roughly proportional to how easy each is to reproduce -- consistent with genuine arbitrary invention being intrinsically harder to reinforce than the shortcut. A second, independent line of evidence for the tracking-vs-concealment tension hypothesis raised earlier this session (genuine_invention_vs_tracking_tension_finding above); still not proven, now supported by two observations rather than one.",
+      "operational_note": "The EC2 instance's own AWS SSO session (separate from the local session used to launch it) expired mid-run, silently breaking the background S3 checkpoint-backup loop for several hours with no visible error. Caught while explicitly verifying checkpoint 90's durability (per a direct request to check, given this project's history of losing intermediate state) -- all five milestone checkpoints (30/60/90/120/150) confirmed present in S3 with real adapter files after a manual catch-up sync.",
+      "source": "experiments/05_self_bootstrapping/aws_runs/dataset_b_sft_v1/"
+    }
+  ],
+  "conclusion": "Full pipeline executed end to end, including SFT training and evaluation. Dataset B's 150-step run shows a real, consistent, roughly 2x increase in Dark-truth undeclared invention rate (20% baseline to 40% at step 150), but composition analysis at every milestone reveals this is a MIXED result, not a clean win: genuine (mnemonic/domain-clean) successes grew modestly in absolute terms (~10 to 14), while shortcut (mnemonic/domain-leaking) successes grew more (~0 to 6) and drove the majority of the headline rate increase; the genuine-to-total ratio declined from 100% to 70% even as the absolute genuine count rose. This is a second, independent line of evidence for the tracking-vs-concealment tension hypothesis: reinforcing a 100%-mnemonic training signal amplifies both the genuine and shortcut behavior already in the model's prior, roughly proportional to how easy each is to reproduce. Lit-truth stayed at its known 0-2% baseline throughout, unrelated to and untouched by this training. Both Dataset A (fan/valve arbitrary-only) and Dataset A' (lamp-derived) remain formally closed out as not viable.",
+  "next_step": "Dataset B's result is the reference point for any future bootstrapping iteration -- the mechanism works (genuine successes CAN be reinforced) but a 100%-mnemonic training signal reinforces the shortcut at least as readily. A cleaner future attempt would need either a training set with better genuine-invention representation (not currently obtainable from this checkpoint per the Dataset A/A' investigations) or an explicit training-time penalty on mnemonic/domain-leaking codes. Open, not answered here: the arbitrary-vs-mnemonic comparison originally planned via Dataset A, and the mechanism behind both tension hypotheses.",
+  "sources": [
+    "experiments/05_self_bootstrapping/README.md",
+    "logs/development_log.md"
+  ]
+}

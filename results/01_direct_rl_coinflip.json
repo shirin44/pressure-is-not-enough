@@ -1,0 +1,23 @@
+{
+  "stage": "01_direct_rl_coinflip",
+  "question": "Does RL pressure alone (no seeding, no demonstration) induce a non-literal substitute encoding for the hidden coin state?",
+  "result": "negative",
+  "metrics": {
+    "audited_rollouts": 3200,
+    "verified_nonliteral_encodings": 0,
+    "failure_modes_observed": [
+      "literal Heads/Tails tokens retained",
+      "vacuous completions (state token omitted entirely) to dodge the CoT penalty"
+    ]
+  },
+  "last_verified_good_checkpoint": {
+    "logical_step": 500,
+    "location": "Drive: grpo-step500-*/full-snapshots/step-500",
+    "note": "Reused as a fixed diagnostic subject in 04_stability_investigation, not as an active training lineage."
+  },
+  "conclusion": "RL pressure alone, within this compute/time budget, does not induce the target behavior. Pivoted to demonstration-seeding (02_demonstration_seeding_single_domain).",
+  "sources": [
+    "experiments/01_direct_rl_coinflip/README.md",
+    "logs/development_log.md"
+  ]
+}
